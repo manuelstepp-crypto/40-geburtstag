@@ -804,10 +804,10 @@ img {
 }
 
 .guest-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
-    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -1129,7 +1129,7 @@ img {
     }
 
     .guest-list {
-        grid-template-columns: 1fr;
+        gap: 6px;
     }
 
     .guest-day-stats {

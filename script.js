@@ -87,7 +87,8 @@ function renderGuests() {
     const list = document.getElementById('guestList');
     if (!list) return;
 
-    const filtered = allGuests.filter(g => g.response === 'yes');
+    const filtered = allGuests.filter(g => g.response === 'yes')
+        .sort((a, b) => a.firstName.localeCompare(b.firstName, 'de'));
 
     if (filtered.length === 0) {
         list.innerHTML = '<p class="guest-empty">Noch keine Einträge.</p>';

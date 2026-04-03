@@ -168,7 +168,7 @@
     "id": 12,
     "firstName": "Raphael",
     "lastName": "Pichlmaier",
-    "group": "München",
+    "group": "MÃÂÃÂ¼nchen",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -197,7 +197,7 @@
   {
     "id": 14,
     "firstName": "Christian",
-    "lastName": "Lütkemeyer",
+    "lastName": "LÃÂÃÂ¼tkemeyer",
     "group": "Frankfurt",
     "response": "maybe",
     "adults": 1,
@@ -212,7 +212,7 @@
   {
     "id": 15,
     "firstName": "Vera",
-    "lastName": "Lütkemeyer",
+    "lastName": "LÃÂÃÂ¼tkemeyer",
     "group": "Frankfurt",
     "response": "maybe",
     "adults": 1,
@@ -227,7 +227,7 @@
   {
     "id": 16,
     "firstName": "Emma",
-    "lastName": "Lütkemeyer",
+    "lastName": "LÃÂÃÂ¼tkemeyer",
     "group": "Frankfurt",
     "response": "maybe",
     "adults": 1,
@@ -288,7 +288,7 @@
     "id": 20,
     "firstName": "Felix",
     "lastName": "Meissner",
-    "group": "Zürich",
+    "group": "ZÃÂÃÂ¼rich",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -303,7 +303,7 @@
     "id": 21,
     "firstName": "Jose",
     "lastName": "Niethammer",
-    "group": "Saarbrücken",
+    "group": "SaarbrÃÂÃÂ¼cken",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -318,7 +318,7 @@
     "id": 22,
     "firstName": "Eva",
     "lastName": "Niethammer",
-    "group": "Saarbrücken",
+    "group": "SaarbrÃÂÃÂ¼cken",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -333,7 +333,7 @@
     "id": 23,
     "firstName": "Benni",
     "lastName": "Niethammer",
-    "group": "Saarbrücken",
+    "group": "SaarbrÃÂÃÂ¼cken",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -348,7 +348,7 @@
     "id": 24,
     "firstName": "Ruth",
     "lastName": "Niethammer",
-    "group": "Saarbrücken",
+    "group": "SaarbrÃÂÃÂ¼cken",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -363,7 +363,7 @@
     "id": 25,
     "firstName": "Andreas",
     "lastName": "Niethammer",
-    "group": "Saarbrücken",
+    "group": "SaarbrÃÂÃÂ¼cken",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -422,21 +422,6 @@
   {
     "id": 29,
     "firstName": "Janosch",
-    "lastName": "Neuweiler",
-    "group": "Familie",
-    "response": "yes",
-    "adults": 1,
-    "kids": 0,
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "comment": ""
-  },
-  {
-    "id": 30,
-    "firstName": "Julika",
     "lastName": "Neuweiler",
     "group": "Familie",
     "response": "yes",
@@ -572,11 +557,11 @@
   {
     "id": 39,
     "firstName": "Christian",
-    "lastName": "Schäfer",
+    "lastName": "SchÃÂÃÂ¤fer",
     "group": "Wien",
     "response": "yes",
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "days": {
       "friday": true,
       "saturday": true,
@@ -587,7 +572,7 @@
   {
     "id": 40,
     "firstName": "Nora",
-    "lastName": "Schäfer",
+    "lastName": "SchÃÂÃÂ¤fer",
     "group": "Wien",
     "response": "yes",
     "adults": 1,
@@ -602,7 +587,7 @@
   {
     "id": 41,
     "firstName": "Lua",
-    "lastName": "Schäfer",
+    "lastName": "SchÃÂÃÂ¤fer",
     "group": "Wien",
     "response": "yes",
     "adults": 1,
@@ -617,7 +602,7 @@
   {
     "id": 42,
     "firstName": "Manuel",
-    "lastName": "Schäfer",
+    "lastName": "SchÃÂÃÂ¤fer",
     "group": "Wien",
     "response": "yes",
     "adults": 1,
@@ -662,21 +647,6 @@
   {
     "id": 45,
     "firstName": "Eli",
-    "lastName": "Welz",
-    "group": "Berlin",
-    "response": "yes",
-    "adults": 1,
-    "kids": 0,
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "comment": ""
-  },
-  {
-    "id": 46,
-    "firstName": "Jirka",
     "lastName": "Welz",
     "group": "Berlin",
     "response": "yes",
@@ -753,7 +723,7 @@
     "id": 51,
     "firstName": "Maite",
     "lastName": "",
-    "group": "Saarbrücken",
+    "group": "SaarbrÃÂÃÂ¼cken",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -768,14 +738,14 @@
     "id": 52,
     "firstName": "Micha",
     "lastName": "",
-    "group": "Tübingen",
+    "group": "TÃÂÃÂ¼bingen",
     "response": "yes",
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "comment": ""
   },
@@ -783,7 +753,7 @@
     "id": 53,
     "firstName": "Britta",
     "lastName": "",
-    "group": "Tübingen",
+    "group": "TÃÂÃÂ¼bingen",
     "response": "yes",
     "adults": 1,
     "kids": 0,
@@ -947,7 +917,7 @@
   {
     "id": 64,
     "firstName": "Lukas",
-    "lastName": "Löhlein",
+    "lastName": "LÃÂÃÂ¶hlein",
     "group": "Waldenbuch",
     "response": "yes",
     "adults": 1,
@@ -966,7 +936,7 @@
     "group": "Abi",
     "response": "yes",
     "adults": 1,
-    "kids": 0,
+    "kids": 2,
     "days": {
       "friday": true,
       "saturday": true,
@@ -1127,7 +1097,7 @@
   {
     "id": 76,
     "firstName": "Selda",
-    "lastName": "Yücel",
+    "lastName": "YÃÂÃÂ¼cel",
     "group": "Wien",
     "response": "no",
     "adults": 1,
@@ -1202,7 +1172,7 @@
   {
     "id": 81,
     "firstName": "Paul",
-    "lastName": "Sprüssel",
+    "lastName": "SprÃÂÃÂ¼ssel",
     "group": "Hamburg",
     "response": "yes",
     "adults": 2,
@@ -1280,7 +1250,7 @@
     "lastName": "Schneider",
     "group": "Mannhim",
     "response": "yes",
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "days": {
       "friday": true,
@@ -1367,7 +1337,7 @@
   {
     "id": 92,
     "firstName": "Johannes",
-    "lastName": "Müller",
+    "lastName": "MÃÂÃÂ¼ller",
     "group": "",
     "response": "yes",
     "adults": 1,

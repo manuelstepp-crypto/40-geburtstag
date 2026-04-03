@@ -1000,6 +1000,34 @@ img {
     grid-column: 1 / -1;
 }
 
+
+/* Guest Search */
+.guest-search {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.guest-search input {
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.guest-search input::placeholder {
+    color: var(--color-text-dim);
+}
+
+.guest-search input:focus {
+    border-color: var(--color-primary);
+}
+
 /* Guest Edit Modal */
 .guest-modal-overlay {
     position: fixed;

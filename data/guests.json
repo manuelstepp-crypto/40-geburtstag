@@ -260,7 +260,7 @@
     "lastName": "Eberle",
     "group": "Frankfurt",
     "response": "yes",
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "days": {
       "friday": true,

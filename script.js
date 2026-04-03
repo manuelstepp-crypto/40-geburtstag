@@ -81,8 +81,7 @@ async function ghSaveGuests(guests, message) {
             // SHA conflict - re-read and retry
             if (resp.status === 409) {
                 console.warn('SHA conflict, re-reading...');
-                const fresh = await ghReadGuests();
-                if (fresh) ghFileSha = null;
+                await ghReadGuests();
                 return ghSaveGuests(guests, message);
             }
             throw new Error(JSON.stringify(err));
@@ -205,7 +204,7 @@ function renderGuests() {
         .sort((a, b) => a.firstName.localeCompare(b.firstName, 'de'));
 
     if (filtered.length === 0) {
-        list.innerHTML = '<p class="guest-empty">Noch keine EintrÃ¤ge.</p>';
+        list.innerHTML = '<p class="guest-empty">Noch keine Einträge.</p>';
         return;
     }
 

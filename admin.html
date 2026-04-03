@@ -167,6 +167,21 @@
 
         .group-cell { color: var(--text-dim); font-size: 13px; }
         .guests-cell { text-align: center; }
+        .day-tags { display: flex; gap: 4px; justify-content: center; }
+        .day-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 10px;
+            font-size: 11px; font-weight: 600; background: rgba(255,255,255,0.05);
+            color: var(--text-dim);
+        }
+        .day-tag.active { background: rgba(34,197,94,0.15); color: var(--success); }
+        .days-checkboxes { display: flex; gap: 16px; margin-top: 6px; }
+        .days-checkboxes label {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text); cursor: pointer;
+        }
+        .days-checkboxes input[type="checkbox"] {
+            width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer;
+        }
 
         /* Modal */
         .modal-overlay {
@@ -256,7 +271,9 @@
                         <th>Name</th>
                         <th>Gruppe</th>
                         <th>Status</th>
-                        <th>Personen</th>
+                        <th>Erw.</th>
+                        <th>Kinder</th>
+                        <th>Tage</th>
                         <th>Kommentar</th>
                         <th>Aktionen</th>
                     </tr>
@@ -291,13 +308,27 @@
                     </select>
                 </div>
                 <div class="modal-field">
-                    <label>Personen</label>
-                    <input type="number" id="mGuests" min="1" max="20" value="1">
+                    <label>Gruppe</label>
+                    <input type="text" id="mGroup" placeholder="z.B. Frankfurt, Familie, Wien...">
+                </div>
+            </div>
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label>Erwachsene</label>
+                    <input type="number" id="mAdults" min="1" max="20" value="1">
+                </div>
+                <div class="modal-field">
+                    <label>Kinder</label>
+                    <input type="number" id="mKids" min="0" max="20" value="0">
                 </div>
             </div>
             <div class="modal-field">
-                <label>Gruppe</label>
-                <input type="text" id="mGroup" placeholder="z.B. Frankfurt, Familie, Wien...">
+                <label>Tage</label>
+                <div class="days-checkboxes">
+                    <label><input type="checkbox" id="mFriday" checked> Freitag</label>
+                    <label><input type="checkbox" id="mSaturday" checked> Samstag</label>
+                    <label><input type="checkbox" id="mSunday" checked> Sonntag</label>
+                </div>
             </div>
             <div class="modal-field">
                 <label>Kommentar</label>
@@ -367,15 +398,33 @@
             const yes = guests.filter(g => g.response === 'yes');
             const maybe = guests.filter(g => g.response === 'maybe');
             const no = guests.filter(g => g.response === 'no');
-            const totalPeople = yes.reduce((s, g) => s + (g.guests || 1), 0)
-                              + maybe.reduce((s, g) => s + (g.guests || 1), 0);
+            const coming = [...yes, ...maybe];
+
+            let totalAdults = 0, totalKids = 0;
+            let friday = 0, saturday = 0, sunday = 0;
+            coming.forEach(g => {
+                const adults = g.adults || 1;
+                const kids = g.kids || 0;
+                const people = adults + kids;
+                totalAdults += adults;
+                totalKids += kids;
+                const days = g.days || { friday: true, saturday: true, sunday: true };
+                if (days.friday) friday += people;
+                if (days.saturday) saturday += people;
+                if (days.sunday) sunday += people;
+            });
 
             document.getElementById('statsBar').innerHTML = `
                 <div class="stat"><div class="stat-num">${guests.length}</div><div class="stat-label">Gesamt</div></div>
                 <div class="stat"><div class="stat-num" style="color:var(--success)">${yes.length}</div><div class="stat-label">Zusagen</div></div>
                 <div class="stat"><div class="stat-num" style="color:var(--maybe)">${maybe.length}</div><div class="stat-label">Vielleicht</div></div>
                 <div class="stat"><div class="stat-num" style="color:var(--danger)">${no.length}</div><div class="stat-label">Absagen</div></div>
-                <div class="stat"><div class="stat-num">${totalPeople}</div><div class="stat-label">Personen (Ja+Vielleicht)</div></div>
+                <div class="stat"><div class="stat-num">${totalAdults}</div><div class="stat-label">Erwachsene</div></div>
+                <div class="stat"><div class="stat-num">${totalKids}</div><div class="stat-label">Kinder</div></div>
+                <div class="stat"><div class="stat-num">${totalAdults + totalKids}</div><div class="stat-label">Personen</div></div>
+                <div class="stat"><div class="stat-num">${friday}</div><div class="stat-label">Freitag</div></div>
+                <div class="stat"><div class="stat-num">${saturday}</div><div class="stat-label">Samstag</div></div>
+                <div class="stat"><div class="stat-num">${sunday}</div><div class="stat-label">Sonntag</div></div>
             `;
         }
 
@@ -398,7 +447,7 @@
 
             const tbody = document.getElementById('guestTableBody');
             if (!filtered.length) {
-                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-dim);padding:40px">Keine Einträge</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--text-dim);padding:40px">Keine Einträge</td></tr>';
                 return;
             }
 
@@ -407,11 +456,16 @@
                 const color = getColor(g.firstName + (g.lastName || ''));
                 const statusClass = g.response === 'yes' ? 'status-yes' : g.response === 'maybe' ? 'status-maybe' : 'status-no';
                 const statusText = g.response === 'yes' ? 'Zusage' : g.response === 'maybe' ? 'Vielleicht' : 'Absage';
+                const adults = g.adults || 1;
+                const kids = g.kids || 0;
+                const days = g.days || { friday: true, saturday: true, sunday: true };
                 return `<tr>
                     <td><span class="avatar-sm" style="background:${color}">${initials}</span>${g.firstName} ${g.lastName || ''}</td>
                     <td class="group-cell">${g.group || '—'}</td>
                     <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                    <td class="guests-cell">${g.guests || 1}</td>
+                    <td class="guests-cell">${adults}</td>
+                    <td class="guests-cell">${kids}</td>
+                    <td><div class="day-tags"><span class="day-tag ${days.friday ? 'active' : ''}">Fr</span><span class="day-tag ${days.saturday ? 'active' : ''}">Sa</span><span class="day-tag ${days.sunday ? 'active' : ''}">So</span></div></td>
                     <td class="comment-cell" title="${(g.comment || '').replace(/"/g, '&quot;')}">${g.comment || '—'}</td>
                     <td>
                         <button class="btn btn-sm" onclick="editGuest(${g.id})">Bearbeiten</button>
@@ -440,23 +494,32 @@
             document.getElementById('mFirstName').value = '';
             document.getElementById('mLastName').value = '';
             document.getElementById('mResponse').value = 'yes';
-            document.getElementById('mGuests').value = '1';
+            document.getElementById('mAdults').value = '1';
+            document.getElementById('mKids').value = '0';
             document.getElementById('mGroup').value = '';
             document.getElementById('mComment').value = '';
+            document.getElementById('mFriday').checked = true;
+            document.getElementById('mSaturday').checked = true;
+            document.getElementById('mSunday').checked = true;
             document.getElementById('guestModal').classList.remove('hidden');
         }
 
         function editGuest(id) {
             const g = guests.find(x => x.id === id);
             if (!g) return;
+            const days = g.days || { friday: true, saturday: true, sunday: true };
             document.getElementById('modalTitle').textContent = 'Gast bearbeiten';
             document.getElementById('editId').value = id;
             document.getElementById('mFirstName').value = g.firstName;
             document.getElementById('mLastName').value = g.lastName || '';
             document.getElementById('mResponse').value = g.response;
-            document.getElementById('mGuests').value = g.guests || 1;
+            document.getElementById('mAdults').value = g.adults || 1;
+            document.getElementById('mKids').value = g.kids || 0;
             document.getElementById('mGroup').value = g.group || '';
             document.getElementById('mComment').value = g.comment || '';
+            document.getElementById('mFriday').checked = days.friday;
+            document.getElementById('mSaturday').checked = days.saturday;
+            document.getElementById('mSunday').checked = days.sunday;
             document.getElementById('guestModal').classList.remove('hidden');
         }
 
@@ -473,9 +536,15 @@
                 firstName,
                 lastName: document.getElementById('mLastName').value.trim(),
                 response: document.getElementById('mResponse').value,
-                guests: parseInt(document.getElementById('mGuests').value) || 1,
+                adults: parseInt(document.getElementById('mAdults').value) || 1,
+                kids: parseInt(document.getElementById('mKids').value) || 0,
                 group: document.getElementById('mGroup').value.trim(),
-                comment: document.getElementById('mComment').value.trim()
+                comment: document.getElementById('mComment').value.trim(),
+                days: {
+                    friday: document.getElementById('mFriday').checked,
+                    saturday: document.getElementById('mSaturday').checked,
+                    sunday: document.getElementById('mSunday').checked
+                }
             };
 
             if (editId) {
@@ -512,10 +581,11 @@
         }
 
         function exportCSV() {
-            const header = 'Vorname,Nachname,Status,Personen,Gruppe,Kommentar\n';
-            const rows = guests.map(g =>
-                `"${g.firstName}","${g.lastName || ''}","${g.response}","${g.guests || 1}","${g.group || ''}","${(g.comment || '').replace(/"/g, '""')}"`
-            ).join('\n');
+            const header = 'Vorname,Nachname,Status,Erwachsene,Kinder,Freitag,Samstag,Sonntag,Gruppe,Kommentar\n';
+            const rows = guests.map(g => {
+                const days = g.days || { friday: true, saturday: true, sunday: true };
+                return `"${g.firstName}","${g.lastName || ''}","${g.response}","${g.adults || 1}","${g.kids || 0}","${days.friday ? 'Ja' : 'Nein'}","${days.saturday ? 'Ja' : 'Nein'}","${days.sunday ? 'Ja' : 'Nein'}","${g.group || ''}","${(g.comment || '').replace(/"/g, '""')}"`;
+            }).join('\n');
             const blob = new Blob([header + rows], { type: 'text/csv;charset=utf-8;' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);

@@ -5,14 +5,14 @@
     "lastName": "Frankfurt",
     "group": "Frankfurt",
     "response": "yes",
-    "adults": 2,
+    "adults": 1,
     "kids": 0,
     "days": {
       "friday": true,
       "saturday": true,
       "sunday": true
     },
-    "comment": "Test-Aenderung via API"
+    "comment": ""
   },
   {
     "id": 2,

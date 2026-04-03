@@ -668,9 +668,9 @@
     "adults": 1,
     "kids": 0,
     "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
+      "friday": false,
+      "saturday": false,
+      "sunday": false
     },
     "comment": ""
   },

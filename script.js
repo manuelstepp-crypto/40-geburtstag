@@ -188,7 +188,7 @@ function updateStats() {
 }
 
 
-function filterGuests(query) {
+window.filterGuests = function filterGuests(query) {
     const cards = document.querySelectorAll('.guest-card');
     const q = query.toLowerCase().trim();
     cards.forEach(card => {
@@ -205,7 +205,7 @@ function renderGuests() {
         .sort((a, b) => a.firstName.localeCompare(b.firstName, 'de'));
 
     if (filtered.length === 0) {
-        list.innerHTML = '<p class="guest-empty">Noch keine Einträge.</p>';
+        list.innerHTML = '<p class="guest-empty">Noch keine EintrÃ¤ge.</p>';
         return;
     }
 

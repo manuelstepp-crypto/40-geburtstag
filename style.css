@@ -789,6 +789,32 @@ img {
     color: var(--color-primary-light);
 }
 
+.accommodation-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+}
+
+.accommodation-price-night {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.accommodation-price-label {
+    font-size: 12px;
+    color: var(--color-text-dim);
+}
+
+.accommodation-price-total {
+    font-size: 12px;
+    color: var(--color-text-dim);
+    margin-left: auto;
+}
+
 /* ============================================
    RSVP Section
    ============================================ */

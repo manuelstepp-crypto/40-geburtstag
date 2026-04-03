@@ -8,7 +8,6 @@ let allGuests = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     initParticles();
-    initCountdown();
     initNavigation();
     initScrollReveal();
     initTabs();
@@ -214,39 +213,6 @@ function initParticles() {
         particle.style.opacity = Math.random() * 0.3 + 0.1;
         container.appendChild(particle);
     }
-}
-
-// ============================================
-// Countdown Timer
-// ============================================
-function initCountdown() {
-    const targetDate = new Date('2026-07-10T15:00:00+02:00');
-
-    function update() {
-        const now = new Date();
-        const diff = targetDate - now;
-
-        if (diff <= 0) {
-            document.getElementById('days').textContent = '00';
-            document.getElementById('hours').textContent = '00';
-            document.getElementById('minutes').textContent = '00';
-            document.getElementById('seconds').textContent = '00';
-            return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById('days').textContent = String(days).padStart(2, '0');
-        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-    }
-
-    update();
-    setInterval(update, 1000);
 }
 
 // ============================================

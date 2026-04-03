@@ -187,6 +187,16 @@ function updateStats() {
     if (el('statSunday')) el('statSunday').textContent = sunday;
 }
 
+
+function filterGuests(query) {
+    const cards = document.querySelectorAll('.guest-card');
+    const q = query.toLowerCase().trim();
+    cards.forEach(card => {
+        const name = card.querySelector('.guest-name').textContent.toLowerCase();
+        card.style.display = name.includes(q) ? '' : 'none';
+    });
+}
+
 function renderGuests() {
     const list = document.getElementById('guestList');
     if (!list) return;

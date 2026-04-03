@@ -560,8 +560,8 @@
     "lastName": "SchÃ¤fer",
     "group": "Wien",
     "response": "yes",
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "days": {
       "friday": true,
       "saturday": true,

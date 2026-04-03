@@ -1003,8 +1003,30 @@ img {
     margin-bottom: 28px;
 }
 
+.guest-modal-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
 .guest-modal-field {
     margin-bottom: 20px;
+}
+
+.guest-modal-field input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+}
+
+.guest-modal-field input[type="text"]:focus {
+    border-color: var(--color-primary);
 }
 
 .guest-modal-field > label {

@@ -145,7 +145,9 @@ function openGuestModal(id) {
     if (!guest) return;
 
     document.getElementById('guestEditId').value = id;
-    document.getElementById('guestEditTitle').textContent = guest.firstName + ' ' + (guest.lastName || '');
+    document.getElementById('guestEditTitle').textContent = 'Details anpassen';
+    document.getElementById('guestFirstName').value = guest.firstName;
+    document.getElementById('guestLastName').value = guest.lastName || '';
     document.getElementById('guestAdults').value = guest.adults || 1;
     document.getElementById('guestKids').value = guest.kids || 0;
     document.getElementById('guestComment').value = guest.comment || '';
@@ -173,6 +175,8 @@ function saveGuestEdit() {
     const guest = allGuests.find(g => g.id === id);
     if (!guest) return;
 
+    guest.firstName = document.getElementById('guestFirstName').value.trim() || guest.firstName;
+    guest.lastName = document.getElementById('guestLastName').value.trim();
     guest.adults = parseInt(document.getElementById('guestAdults').value) || 1;
     guest.kids = parseInt(document.getElementById('guestKids').value) || 0;
     guest.comment = document.getElementById('guestComment').value.trim();

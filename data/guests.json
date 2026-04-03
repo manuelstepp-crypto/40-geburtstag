@@ -755,12 +755,12 @@
     "lastName": "",
     "group": "TÃ¼bingen",
     "response": "yes",
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "comment": ""
   },

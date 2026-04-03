@@ -1,1 +1,775 @@
-undefined
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuel wird 40! - Sommerfest am Sonnenhang</title>
+    <meta name="description" content="Einladung zum 40. Geburtstag von Manuel Stepp - Sommerfest am Sonnenhang, 10.-12. Juli 2026">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1775248145338">
+</head>
+<body>
+    <!-- Floating particles background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="#program">Programm</a>
+                <a href="#rsvp">Zusagen</a>
+                <a href="#details">Details</a>
+                <a href="#guests">GÃ¤ste</a>
+                <a href="#accommodations">UnterkÃ¼nfte</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-mobile" id="navMobile">
+            <a href="#program">Programm</a>
+            <a href="#rsvp">Zusagen</a>
+            <a href="#details">Details</a>
+            <a href="#guests">GÃ¤ste</a>
+            <a href="#accommodations">UnterkÃ¼nfte</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-image">
+            <img src="hero.png" alt="Sommerfest am Sonnenhang - Kunstwerk">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle animate-in">Sommerfest am Sonnenhang</p>
+
+
+            <div class="hero-buttons animate-in">
+                <a href="#rsvp" class="hero-cta">Jetzt Zusagen</a>
+                <a href="#guests" class="hero-cta hero-cta-secondary">Anmeldung anpassen</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="section details" id="details">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Die Details</h2>
+            <p class="section-subtitle scroll-reveal">Ein ganzes Wochenende feiern!</p>
+
+            <div class="details-grid">
+                <div class="detail-card scroll-reveal">
+                    <div class="detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Wann?</h3>
+                    <p class="detail-main">10. - 12. Juli 2026</p>
+                    <p class="detail-sub">Freitag 15:00 Uhr bis Sonntag 15:00 Uhr</p>
+                </div>
+
+                <div class="detail-card scroll-reveal">
+                    <div class="detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Wo?</h3>
+                    <p class="detail-main">Am Sonnenhang 34</p>
+                    <p class="detail-sub">71111 Waldenbuch</p>
+                    <a href="https://maps.google.com/?q=Am+Sonnenhang+34,+71111+Waldenbuch" target="_blank" rel="noopener" class="detail-link">
+                        Route planen &rarr;
+                    </a>
+                </div>
+
+                <div class="detail-card scroll-reveal">
+                    <div class="detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>Was?</h3>
+                    <p class="detail-main">Sommerfest</p>
+                    <p class="detail-sub">Ein ganzes Wochenende mit Kind und Kegel, Grillen, Feiern und guter Laune!</p>
+                </div>
+            </div>
+
+            <!-- Map embed -->
+            <div class="map-container scroll-reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2634.5!2d9.1316!3d48.6344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799a5c7a3c5f7ed%3A0x0!2sAm+Sonnenhang+34%2C+71111+Waldenbuch!5e0!3m2!1sde!2sde!4v1"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="section program" id="program">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Das Programm</h2>
+            <p class="section-subtitle scroll-reveal">3 Tage, 3 Locations &mdash; parallel Programm!</p>
+
+            <!-- Location Legend -->
+            <div class="program-legend scroll-reveal">
+                <span class="legend-item"><span class="legend-dot legend-sportplatz"></span>Sportplatz</span>
+                <span class="legend-item"><span class="legend-dot legend-casino"></span>Casino</span>
+                <span class="legend-item"><span class="legend-dot legend-musik"></span>Musikzimmer</span>
+            </div>
+
+            <!-- FREITAG -->
+            <div class="program-day scroll-reveal">
+                <div class="program-day-header">
+                    <span class="timeline-day-badge">Fr</span>
+                    <h3>Freitag, 10. Juli</h3>
+                </div>
+
+                <div class="program-schedule">
+                    <div class="program-slot">
+                        <span class="program-time">15:00 - 17:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Kaffee & Kuchen</h4>
+                                <p>Ankommen & Wichteln mit Franzi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">17:00 - 19:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Tischtennis-Turnier</h4>
+                                <p>mit Felix</p>
+                            </div>
+                            <div class="program-activity casino">
+                                <span class="activity-location">Casino</span>
+                                <h4>Dixit spielen</h4>
+                                <p>mit Julika</p>
+                            </div>
+                            <div class="program-activity musik">
+                                <span class="activity-location">Musikzimmer</span>
+                                <h4>Tarot legen</h4>
+                                <p>mit Cristian</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">18:00 - 21:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz highlight">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Pizza!</h4>
+                                <p>Frisch aus dem Pizzaofen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">21:00 - 23:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Nacht-Spaziergang</h4>
+                                <p>mit Benni</p>
+                            </div>
+                            <div class="program-activity casino">
+                                <span class="activity-location">Casino</span>
+                                <h4>Pokerturnier</h4>
+                                <p>mit Matze</p>
+                            </div>
+                            <div class="program-activity musik">
+                                <span class="activity-location">Musikzimmer</span>
+                                <h4>Impuls von Prof. LÃ¶hlein</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">23:00 - 01:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Lagerfeuer & Atmen</h4>
+                                <p>mit Mieszko</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAMSTAG -->
+            <div class="program-day scroll-reveal">
+                <div class="program-day-header">
+                    <span class="timeline-day-badge">Sa</span>
+                    <h3>Samstag, 11. Juli</h3>
+                </div>
+
+                <div class="program-schedule">
+                    <div class="program-slot">
+                        <span class="program-time">09:00 - 11:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>FrÃ¼hstÃ¼ck & CrÃªpes</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">11:00 - 13:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Wikingerschach</h4>
+                                <p>mit Bela</p>
+                            </div>
+                            <div class="program-activity casino">
+                                <span class="activity-location">Casino</span>
+                                <h4>Skatturnier</h4>
+                                <p>mit Paul</p>
+                            </div>
+                            <div class="program-activity musik">
+                                <span class="activity-location">Musikzimmer</span>
+                                <h4>Stimme erleben</h4>
+                                <p>mit Colla</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">13:00 - 15:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Mittagssnack</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">15:00 - 17:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>FuÃballturnier</h4>
+                                <p>mit Jose</p>
+                            </div>
+                            <div class="program-activity casino">
+                                <span class="activity-location">Casino</span>
+                                <h4>Brettspiele</h4>
+                                <p>mit Christian</p>
+                            </div>
+                            <div class="program-activity musik">
+                                <span class="activity-location">Musikzimmer</span>
+                                <h4>Tanzen</h4>
+                                <p>mit Isi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">17:00 - 19:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz highlight">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Grill & Salatbuffet</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">21:00 - 23:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width casino highlight">
+                                <span class="activity-location">Casino</span>
+                                <h4>Cocktailbar + Lichtshow</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">23:00 - 01:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz highlight">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>DJ Bibi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SONNTAG -->
+            <div class="program-day scroll-reveal">
+                <div class="program-day-header">
+                    <span class="timeline-day-badge">So</span>
+                    <h3>Sonntag, 12. Juli</h3>
+                </div>
+
+                <div class="program-schedule">
+                    <div class="program-slot">
+                        <span class="program-time">09:00 - 11:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>FrÃ¼hstÃ¼ck / Brunch</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">13:00 - 15:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Abreise</h4>
+                                <p>TschÃ¼ss sagen und nach Hause fahren</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-slot">
+                        <span class="program-time">15:00 - 17:00</span>
+                        <div class="program-activities">
+                            <div class="program-activity full-width sportplatz">
+                                <span class="activity-location">Sportplatz</span>
+                                <h4>Beachvolleyball-Turnier</h4>
+                                <p>mit Leo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="section rsvp" id="rsvp">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Bist du dabei?</h2>
+            <p class="section-subtitle scroll-reveal">Sag mir Bescheid!</p>
+
+            <div class="rsvp-card scroll-reveal">
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="rsvp-buttons">
+                        <label class="rsvp-option">
+                            <input type="radio" name="response" value="yes" required>
+                            <span class="rsvp-btn yes">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                                Ja, bin dabei!
+                            </span>
+                        </label>
+                        <label class="rsvp-option">
+                            <input type="radio" name="response" value="maybe">
+                            <span class="rsvp-btn maybe">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                Vielleicht
+                            </span>
+                        </label>
+                        <label class="rsvp-option">
+                            <input type="radio" name="response" value="no">
+                            <span class="rsvp-btn no">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                Leider nein
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="rsvp-fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Vorname *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="Dein Vorname">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nachname *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Dein Nachname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Anzahl Personen</label>
+                            <select id="guests" name="guests">
+                                <option value="1">1 Person</option>
+                                <option value="2">2 Personen</option>
+                                <option value="3">3 Personen</option>
+                                <option value="4">4 Personen</option>
+                                <option value="5">5 Personen</option>
+                                <option value="6">6 Personen</option>
+                                <option value="7">7 Personen</option>
+                                <option value="8">8 Personen</option>
+                                <option value="9">9 Personen</option>
+                                <option value="10">10 Personen</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Nachricht (optional)</label>
+                            <textarea id="comment" name="comment" rows="3" placeholder="Nachricht an Manuel..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Antwort senden</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="rsvp-success hidden" id="rsvpSuccess">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3>Danke fÃ¼r deine Antwort!</h3>
+                    <p>Manuel freut sich auf dich!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guests Section -->
+    <section class="section guests-section" id="guests">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Wer kommt?</h2>
+            <p class="section-subtitle scroll-reveal">Klick auf deinen Namen um deine Details anzupassen</p>
+
+            <div class="guest-stats scroll-reveal">
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statTotal">0</span>
+                    <span class="guest-stat-label">Personen gesamt</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statAdults">0</span>
+                    <span class="guest-stat-label">Erwachsene</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statKids">0</span>
+                    <span class="guest-stat-label">Kinder</span>
+                </div>
+            </div>
+
+            <div class="guest-day-stats scroll-reveal">
+                <div class="day-stat">
+                    <span class="day-stat-label">Freitag</span>
+                    <span class="day-stat-number" id="statFriday">0</span>
+                </div>
+                <div class="day-stat">
+                    <span class="day-stat-label">Samstag</span>
+                    <span class="day-stat-number" id="statSaturday">0</span>
+                </div>
+                <div class="day-stat">
+                    <span class="day-stat-label">Sonntag</span>
+                    <span class="day-stat-number" id="statSunday">0</span>
+                </div>
+            </div>
+
+            
+            <div class="guest-search scroll-reveal">
+                <input type="text" id="guestSearch" placeholder="Name suchen..." oninput="filterGuests(this.value)">
+            </div>
+
+            <div class="guest-list scroll-reveal" id="guestList">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Edit Modal -->
+    <div class="guest-modal-overlay hidden" id="guestEditModal">
+        <div class="guest-modal">
+            <button class="guest-modal-close" onclick="closeGuestModal()">&times;</button>
+            <h3 id="guestEditTitle">Details anpassen</h3>
+            <input type="hidden" id="guestEditId">
+
+            <div class="guest-modal-field">
+                <label>Erwachsene</label>
+                <div class="stepper">
+                    <button type="button" onclick="stepValue('guestAdults', -1)">-</button>
+                    <input type="number" id="guestAdults" min="0" max="20" value="1">
+                    <button type="button" onclick="stepValue('guestAdults', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Kinder</label>
+                <div class="stepper">
+                    <button type="button" onclick="stepValue('guestKids', -1)">-</button>
+                    <input type="number" id="guestKids" min="0" max="20" value="0">
+                    <button type="button" onclick="stepValue('guestKids', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Wann bist du da?</label>
+                <div class="day-checkboxes">
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="dayFriday" checked>
+                        <span>Freitag</span>
+                    </label>
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="daySaturday" checked>
+                        <span>Samstag</span>
+                    </label>
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="daySunday" checked>
+                        <span>Sonntag</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Kommentar (optional)</label>
+                <textarea id="guestComment" rows="2" placeholder="Nachricht..."></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="saveGuestEdit()">
+                <span>Speichern</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Accommodations Section -->
+    <section class="section accommodations" id="accommodations">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">UnterkÃ¼nfte</h2>
+            <p class="section-subtitle scroll-reveal">Reservierte Optionen fÃ¼r das Wochenende - einfach Bescheid geben!</p>
+
+            <div class="accommodation-tabs scroll-reveal">
+                <button class="tab-btn active" data-tab="airbnb">Airbnb</button>
+                <button class="tab-btn" data-tab="booking">Booking.com</button>
+            </div>
+
+            <div class="accommodation-grid" id="airbnb">
+                <div class="accommodation-card scroll-reveal">
+                    <div class="accommodation-badge">Top Pick</div>
+                    <h4>WunderschÃ¶ne 2-Zimmer-Wohnung</h4>
+                    <p class="accommodation-details">4 GÃ¤ste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Mit groÃem Balkon</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;110,96</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;221,92</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/991084854634177390?guests=1&adults=1&s=67&unique_share_id=4e319fa4-8b87-4a9e-a29b-7eeaada170f7" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>GemÃ¼tlichkeit</h4>
+                    <p class="accommodation-details">2 Einzelbetten &bull; Gemeinsames Bad</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;95,78</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;191,55</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/38570207?guests=1&adults=1&s=67&unique_share_id=cd365ad9-af72-4690-87ba-240cad249077" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Urlaub im GrÃ¼nen!</h4>
+                    <p class="accommodation-details">4 GÃ¤ste &bull; Studio &bull; 2 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Biken, Wandern, Abschalten</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;87,60</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;175,20</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/36065765?guests=1&adults=1&s=67&unique_share_id=47578c20-bc4d-439f-b4ab-d5937f95d822" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>GrÃ¼ne Oase Waldenbuch</h4>
+                    <p class="accommodation-details">3 GÃ¤ste &bull; 1 Schlafzimmer &bull; 2 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">NÃ¤he Messe / Flughafen Stuttgart</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;102,79</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;205,57</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/923034546035000814?guests=1&adults=1&s=67&unique_share_id=54711484-c3e7-412a-9d96-ec6ed5bdd4b3" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>StayIN Apartment bei Stuttgart</h4>
+                    <p class="accommodation-details">5 GÃ¤ste &bull; 1 Schlafzimmer &bull; 3 Betten &bull; 1 Bad</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;110,00</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;220,00</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/4596786?guests=1&adults=1&s=67&unique_share_id=23abfdde-fa7b-4efc-b03c-b227d5a3292d" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Monteurwohnung</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 2 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">30mÂ² mit KÃ¼che & WLAN</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;67,00</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;134,00</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/1597565235352116105?guests=1&adults=1&s=67&unique_share_id=b3710abd-222c-4b18-977b-083cd2368070" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>MÃ¶blierte 2-Zi-Wohnung</h4>
+                    <p class="accommodation-details">5 GÃ¤ste &bull; 2 Schlafzimmer &bull; 5 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Mit KÃ¼che, WLAN & Parken</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;127,00</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;254,00</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/1518676443555462044?guests=1&adults=1&s=67&unique_share_id=e6e62d16-a8be-48ea-ab69-967ea180d527" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>GemÃ¼tliches Privatzimmer</h4>
+                    <p class="accommodation-details">1 Bett &bull; Gemeinsames Bad</p>
+                    <a href="https://www.airbnb.de/rooms/1413877176106132286?guests=1&adults=1&s=67&unique_share_id=683eabbf-b3a2-4790-9c36-0253afc97004" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Tiny Home "Alte Schlosserei"</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 3 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">NÃ¤he Flughafen/Messe</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;85,50</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;171,00</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/920256995468504260?guests=1&adults=1&s=67&unique_share_id=d80ef0b7-77db-4dac-878f-360f15c35ab4" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Apt. "SIMS" bei Stuttgart</h4>
+                    <p class="accommodation-details">6 GÃ¤ste &bull; 1 Schlafzimmer &bull; 4 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Flughafen/Metzingen, 2-6 Personen</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;128,48</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;256,96</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/51973811?guests=1&adults=1&s=67&unique_share_id=570f8239-34b5-4f6f-93da-6e38a6e2f166" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Modernes Studio 25/55 SchlÃ¶ssle</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Messe/Flughafen</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;74,75</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;149,50</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/1006941852176528653?guests=1&adults=1&s=67&unique_share_id=45f63964-4230-4aee-9d38-92e7841246df" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Designer-Studio 31/61 SchlÃ¶ssle</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Messe/Flughafen</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;79,43</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;158,85</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/24062020?guests=1&adults=1&s=67&unique_share_id=067d05c1-1d31-4fde-a8fe-882c66c49762" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Designer Wohnung SchlÃ¶Ãle 2</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; Studio &bull; 1 Bett &bull; 1 Bad</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;127,00</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;254,00</span>
+                    </div>
+                    <a href="https://www.airbnb.de/rooms/32431603?guests=1&adults=1&s=67&unique_share_id=3443dfc2-392f-40f3-97fd-60368f84abbb" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
+                </div>
+            </div>
+
+            <div class="accommodation-grid hidden" id="booking">
+                <div class="accommodation-card scroll-reveal">
+                    <div class="accommodation-badge">Hotel</div>
+                    <h4>Residenzhotel Stuttgart Airport</h4>
+                    <p class="accommodation-details">Sure Hotel Collection by Best Western</p>
+                    <p class="accommodation-highlight">Doppelzimmer</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;93,93</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;187,86</span>
+                    </div>
+                    <a href="https://www.booking.com/hotel/de/apartmenthotel-residenz.de.html" target="_blank" rel="noopener" class="accommodation-link">Auf Booking.com ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>Altes Forsthaus Waldenbuch</h4>
+                    <p class="accommodation-details">Bei der Messe Stuttgart</p>
+                    <p class="accommodation-highlight">Doppelzimmer</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;208,39</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;416,78</span>
+                    </div>
+                    <a href="https://www.booking.com/hotel/de/altes-forsthaus-waldenbuch-47-bei-der-messe-stuttgart.de.html" target="_blank" rel="noopener" class="accommodation-link">Auf Booking.com ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>MÃ¶blierte Monteurswohnungen</h4>
+                    <p class="accommodation-details">Stuttgart, BÃ¶blingen, Reutlingen, Waldenbuch</p>
+                    <p class="accommodation-highlight">5 Betten - HeimbachOG</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;162,64</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;325,27</span>
+                    </div>
+                    <a href="https://www.booking.com/hotel/de/mobilierte-monteuerswohnungen-mit-5-betten-stuttgart-boblingen-reutlingen-walden.de.html" target="_blank" rel="noopener" class="accommodation-link">Auf Booking.com ansehen &rarr;</a>
+                </div>
+
+                <div class="accommodation-card scroll-reveal">
+                    <h4>StayIN Apartment near Stuttgart</h4>
+                    <p class="accommodation-details">1 Einzelbett, 1 Doppelbett, 1 Schlafsofa</p>
+                    <div class="accommodation-price">
+                        <span class="accommodation-price-night">&euro;110,00</span>
+                        <span class="accommodation-price-label">/ Nacht</span>
+                        <span class="accommodation-price-total">Gesamt: &euro;220,00</span>
+                    </div>
+                    <a href="https://www.booking.com/hotel/de/stayin-apartment-near-stuttgart.de.html" target="_blank" rel="noopener" class="accommodation-link">Auf Booking.com ansehen &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-emoji">&#127881;</p>
+            <p class="footer-text">Manuel wird 40 &mdash; Sommerfest am Sonnenhang</p>
+            <p class="footer-date">10. - 12. Juli 2026 &bull; Waldenbuch</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1775248145338"></script>
+</body>
+</html>

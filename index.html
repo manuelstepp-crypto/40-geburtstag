@@ -18,22 +18,22 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <div class="nav-links">
-                <a href="#details">Details</a>
                 <a href="#program">Programm</a>
+                <a href="#rsvp">Zusagen</a>
+                <a href="#details">Details</a>
                 <a href="#guests">Gäste</a>
                 <a href="#accommodations">Unterkünfte</a>
-                <a href="#rsvp">Zusagen</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <div class="nav-mobile" id="navMobile">
-            <a href="#details">Details</a>
             <a href="#program">Programm</a>
+            <a href="#rsvp">Zusagen</a>
+            <a href="#details">Details</a>
             <a href="#guests">Gäste</a>
             <a href="#accommodations">Unterkünfte</a>
-            <a href="#rsvp">Zusagen</a>
         </div>
     </nav>
 
@@ -364,6 +364,185 @@
         </div>
     </section>
 
+    <!-- RSVP Section -->
+    <section class="section rsvp" id="rsvp">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Bist du dabei?</h2>
+            <p class="section-subtitle scroll-reveal">Sag mir Bescheid!</p>
+
+            <div class="rsvp-card scroll-reveal">
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="rsvp-buttons">
+                        <label class="rsvp-option">
+                            <input type="radio" name="response" value="yes" required>
+                            <span class="rsvp-btn yes">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+                                Ja, bin dabei!
+                            </span>
+                        </label>
+                        <label class="rsvp-option">
+                            <input type="radio" name="response" value="maybe">
+                            <span class="rsvp-btn maybe">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                Vielleicht
+                            </span>
+                        </label>
+                        <label class="rsvp-option">
+                            <input type="radio" name="response" value="no">
+                            <span class="rsvp-btn no">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                Leider nein
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="rsvp-fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Vorname *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="Dein Vorname">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nachname *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Dein Nachname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Anzahl Personen</label>
+                            <select id="guests" name="guests">
+                                <option value="1">1 Person</option>
+                                <option value="2">2 Personen</option>
+                                <option value="3">3 Personen</option>
+                                <option value="4">4 Personen</option>
+                                <option value="5">5 Personen</option>
+                                <option value="6">6 Personen</option>
+                                <option value="7">7 Personen</option>
+                                <option value="8">8 Personen</option>
+                                <option value="9">9 Personen</option>
+                                <option value="10">10 Personen</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Nachricht (optional)</label>
+                            <textarea id="comment" name="comment" rows="3" placeholder="Nachricht an Manuel..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Antwort senden</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="rsvp-success hidden" id="rsvpSuccess">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3>Danke für deine Antwort!</h3>
+                    <p>Manuel freut sich auf dich!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guests Section -->
+    <section class="section guests-section" id="guests">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Wer kommt?</h2>
+            <p class="section-subtitle scroll-reveal">Klick auf deinen Namen um deine Details anzupassen</p>
+
+            <div class="guest-stats scroll-reveal">
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statTotal">0</span>
+                    <span class="guest-stat-label">Personen gesamt</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statAdults">0</span>
+                    <span class="guest-stat-label">Erwachsene</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statKids">0</span>
+                    <span class="guest-stat-label">Kinder</span>
+                </div>
+            </div>
+
+            <div class="guest-day-stats scroll-reveal">
+                <div class="day-stat">
+                    <span class="day-stat-label">Freitag</span>
+                    <span class="day-stat-number" id="statFriday">0</span>
+                </div>
+                <div class="day-stat">
+                    <span class="day-stat-label">Samstag</span>
+                    <span class="day-stat-number" id="statSaturday">0</span>
+                </div>
+                <div class="day-stat">
+                    <span class="day-stat-label">Sonntag</span>
+                    <span class="day-stat-number" id="statSunday">0</span>
+                </div>
+            </div>
+
+            <div class="guest-list scroll-reveal" id="guestList">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Edit Modal -->
+    <div class="guest-modal-overlay hidden" id="guestEditModal">
+        <div class="guest-modal">
+            <button class="guest-modal-close" onclick="closeGuestModal()">&times;</button>
+            <h3 id="guestEditTitle">Details anpassen</h3>
+            <input type="hidden" id="guestEditId">
+
+            <div class="guest-modal-field">
+                <label>Erwachsene</label>
+                <div class="stepper">
+                    <button type="button" onclick="stepValue('guestAdults', -1)">-</button>
+                    <input type="number" id="guestAdults" min="0" max="20" value="1">
+                    <button type="button" onclick="stepValue('guestAdults', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Kinder</label>
+                <div class="stepper">
+                    <button type="button" onclick="stepValue('guestKids', -1)">-</button>
+                    <input type="number" id="guestKids" min="0" max="20" value="0">
+                    <button type="button" onclick="stepValue('guestKids', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Wann bist du da?</label>
+                <div class="day-checkboxes">
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="dayFriday" checked>
+                        <span>Freitag</span>
+                    </label>
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="daySaturday" checked>
+                        <span>Samstag</span>
+                    </label>
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="daySunday" checked>
+                        <span>Sonntag</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Kommentar (optional)</label>
+                <textarea id="guestComment" rows="2" placeholder="Nachricht..."></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="saveGuestEdit()">
+                <span>Speichern</span>
+            </button>
+        </div>
+    </div>
+
     <!-- Accommodations Section -->
     <section class="section accommodations" id="accommodations">
         <div class="container">
@@ -572,185 +751,6 @@
                         <span class="accommodation-price-total">Gesamt: &euro;220,00</span>
                     </div>
                     <a href="https://www.booking.com/hotel/de/stayin-apartment-near-stuttgart.de.html" target="_blank" rel="noopener" class="accommodation-link">Auf Booking.com ansehen &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guests Section -->
-    <section class="section guests-section" id="guests">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Wer kommt?</h2>
-            <p class="section-subtitle scroll-reveal">Klick auf deinen Namen um deine Details anzupassen</p>
-
-            <div class="guest-stats scroll-reveal">
-                <div class="guest-stat">
-                    <span class="guest-stat-number" id="statTotal">0</span>
-                    <span class="guest-stat-label">Personen gesamt</span>
-                </div>
-                <div class="guest-stat">
-                    <span class="guest-stat-number" id="statAdults">0</span>
-                    <span class="guest-stat-label">Erwachsene</span>
-                </div>
-                <div class="guest-stat">
-                    <span class="guest-stat-number" id="statKids">0</span>
-                    <span class="guest-stat-label">Kinder</span>
-                </div>
-            </div>
-
-            <div class="guest-day-stats scroll-reveal">
-                <div class="day-stat">
-                    <span class="day-stat-label">Freitag</span>
-                    <span class="day-stat-number" id="statFriday">0</span>
-                </div>
-                <div class="day-stat">
-                    <span class="day-stat-label">Samstag</span>
-                    <span class="day-stat-number" id="statSaturday">0</span>
-                </div>
-                <div class="day-stat">
-                    <span class="day-stat-label">Sonntag</span>
-                    <span class="day-stat-number" id="statSunday">0</span>
-                </div>
-            </div>
-
-            <div class="guest-list scroll-reveal" id="guestList">
-                <!-- Filled by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Guest Edit Modal -->
-    <div class="guest-modal-overlay hidden" id="guestEditModal">
-        <div class="guest-modal">
-            <button class="guest-modal-close" onclick="closeGuestModal()">&times;</button>
-            <h3 id="guestEditTitle">Details anpassen</h3>
-            <input type="hidden" id="guestEditId">
-
-            <div class="guest-modal-field">
-                <label>Erwachsene</label>
-                <div class="stepper">
-                    <button type="button" onclick="stepValue('guestAdults', -1)">-</button>
-                    <input type="number" id="guestAdults" min="0" max="20" value="1">
-                    <button type="button" onclick="stepValue('guestAdults', 1)">+</button>
-                </div>
-            </div>
-
-            <div class="guest-modal-field">
-                <label>Kinder</label>
-                <div class="stepper">
-                    <button type="button" onclick="stepValue('guestKids', -1)">-</button>
-                    <input type="number" id="guestKids" min="0" max="20" value="0">
-                    <button type="button" onclick="stepValue('guestKids', 1)">+</button>
-                </div>
-            </div>
-
-            <div class="guest-modal-field">
-                <label>Wann bist du da?</label>
-                <div class="day-checkboxes">
-                    <label class="day-checkbox">
-                        <input type="checkbox" id="dayFriday" checked>
-                        <span>Freitag</span>
-                    </label>
-                    <label class="day-checkbox">
-                        <input type="checkbox" id="daySaturday" checked>
-                        <span>Samstag</span>
-                    </label>
-                    <label class="day-checkbox">
-                        <input type="checkbox" id="daySunday" checked>
-                        <span>Sonntag</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="guest-modal-field">
-                <label>Kommentar (optional)</label>
-                <textarea id="guestComment" rows="2" placeholder="Nachricht..."></textarea>
-            </div>
-
-            <button class="submit-btn" onclick="saveGuestEdit()">
-                <span>Speichern</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- RSVP Section -->
-    <section class="section rsvp" id="rsvp">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Bist du dabei?</h2>
-            <p class="section-subtitle scroll-reveal">Sag mir Bescheid!</p>
-
-            <div class="rsvp-card scroll-reveal">
-                <form class="rsvp-form" id="rsvpForm">
-                    <div class="rsvp-buttons">
-                        <label class="rsvp-option">
-                            <input type="radio" name="response" value="yes" required>
-                            <span class="rsvp-btn yes">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
-                                Ja, bin dabei!
-                            </span>
-                        </label>
-                        <label class="rsvp-option">
-                            <input type="radio" name="response" value="maybe">
-                            <span class="rsvp-btn maybe">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                                Vielleicht
-                            </span>
-                        </label>
-                        <label class="rsvp-option">
-                            <input type="radio" name="response" value="no">
-                            <span class="rsvp-btn no">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                                Leider nein
-                            </span>
-                        </label>
-                    </div>
-
-                    <div class="rsvp-fields">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">Vorname *</label>
-                                <input type="text" id="firstName" name="firstName" required placeholder="Dein Vorname">
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Nachname *</label>
-                                <input type="text" id="lastName" name="lastName" required placeholder="Dein Nachname">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="guests">Anzahl Personen</label>
-                            <select id="guests" name="guests">
-                                <option value="1">1 Person</option>
-                                <option value="2">2 Personen</option>
-                                <option value="3">3 Personen</option>
-                                <option value="4">4 Personen</option>
-                                <option value="5">5 Personen</option>
-                                <option value="6">6 Personen</option>
-                                <option value="7">7 Personen</option>
-                                <option value="8">8 Personen</option>
-                                <option value="9">9 Personen</option>
-                                <option value="10">10 Personen</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="comment">Nachricht (optional)</label>
-                            <textarea id="comment" name="comment" rows="3" placeholder="Nachricht an Manuel..."></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn">
-                            <span>Antwort senden</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        </button>
-                    </div>
-                </form>
-
-                <div class="rsvp-success hidden" id="rsvpSuccess">
-                    <div class="success-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    </div>
-                    <h3>Danke für deine Antwort!</h3>
-                    <p>Manuel freut sich auf dich!</p>
                 </div>
             </div>
         </div>

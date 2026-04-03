@@ -5,7 +5,7 @@
     "lastName": "Frankfurt",
     "group": "Frankfurt",
     "response": "yes",
-    "adults": 1,
+    "adults": 3,
     "kids": 0,
     "days": {
       "friday": true,

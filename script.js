@@ -81,16 +81,14 @@ function renderGuests() {
     }
 
     list.innerHTML = filtered.map(guest => {
-        const initials = (guest.firstName[0] || '') + (guest.lastName?.[0] || '');
-        const color = getAvatarColor(guest.firstName + guest.lastName);
-        const guestCount = guest.guests > 1 ? `<span class="guest-plus">+${guest.guests - 1}</span>` : '';
-        const comment = guest.comment ? `<p class="guest-comment">"${guest.comment}"</p>` : '';
+        const initial = guest.firstName[0] || '';
+        const color = getAvatarColor(guest.firstName + (guest.lastName || ''));
+        const plus = guest.guests > 1 ? ` <span class="guest-plus">+${guest.guests - 1}</span>` : '';
         return `
             <div class="guest-card">
-                <div class="guest-avatar" style="background:${color}">${initials}${guestCount}</div>
+                <div class="guest-avatar" style="background:${color}">${initial}</div>
                 <div class="guest-info">
-                    <div class="guest-name">${guest.firstName} ${guest.lastName || ''}</div>
-                    ${comment}
+                    <div class="guest-name">${guest.firstName}${plus}</div>
                 </div>
             </div>
         `;

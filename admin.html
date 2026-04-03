@@ -342,57 +342,95 @@
     </div>
 
     <script>
-
-        var GH_TOKEN_PARTS = ['Z2hwX3JrN0g=','VlVUanpSazY=','YnQ5R0Jsd1Y=','c3lhUURKalU=','T0IxRzJUZEs='];
-        var GH_TOKEN = GH_TOKEN_PARTS.map(function(p){return atob(p)}).join('');
-        var GH_REPO = 'manuelstepp-crypto/40-geburtstag';
-        var GH_FILE = 'data/guests.json';
-        var ghSha = null;
-
-        function ghReadGuests() {
-            return fetch('https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE, {
-                headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' }
-            }).then(function(resp) {
-                if (!resp.ok) return null;
-                return resp.json();
-            }).then(function(data) {
-                if (!data) return null;
-                ghSha = data.sha;
-                return JSON.parse(atob(data.content.replace(/\n/g, '')));
-            }).catch(function(e) { console.error('GH read error:', e); return null; });
-        }
-
-        function ghSaveGuests(guestList, message) {
-            var doSave = function() {
-                var getsha = ghSha ? Promise.resolve(ghSha) : fetch('https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE, {
-                    headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' }
-                }).then(function(r){return r.json()}).then(function(d){ ghSha = d.sha; return d.sha; });
-                
-                return Promise.resolve(getsha).then(function(sha) {
-                    var content = btoa(unescape(encodeURIComponent(JSON.stringify(guestList, null, 2))));
-                    return fetch('https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE, {
-                        method: 'PUT',
-                        headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: message || 'Admin update', content: content, sha: ghSha })
-                    });
-                }).then(function(resp) {
-                    if (resp.status === 409) {
-                        ghSha = null;
-                        return ghSaveGuests(guestList, message);
-                    }
-                    return resp.json();
-                }).then(function(result) {
-                    if (result && result.content) ghSha = result.content.sha;
-                    console.log('GH save OK:', message);
-                }).catch(function(e) { console.error('GH save error:', e); });
-            };
-            return doSave();
-        }
+        const GH_TOKEN = ['Z2hwX3JrN0g=','VlVUanpSazY=','YnQ5R0Jsd1Y=','c3lhUURKalU=','T0IxRzJUZEs='].map(p => atob(p)).join('');
+        const GH_REPO = 'manuelstepp-crypto/40-geburtstag';
+        const GH_FILE = 'data/guests.json';
         const STORAGE_KEY = 'geburtstag40_guests';
         const ADMIN_PASS = 'manu40';
         let guests = [];
+        let ghFileSha = null;
+        let saveTimeout = null;
         let currentFilter = 'all';
         let searchTerm = '';
+
+        // ============================================
+        // GitHub API
+        // ============================================
+        async function ghReadGuests() {
+            try {
+                const resp = await fetch(
+                    'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE + '?ref=main',
+                    { headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' } }
+                );
+                if (!resp.ok) throw new Error('GitHub read failed');
+                const data = await resp.json();
+                ghFileSha = data.sha;
+                return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
+            } catch (e) {
+                console.warn('GitHub read failed:', e);
+                return null;
+            }
+        }
+
+        async function ghSaveGuests(message) {
+            if (!ghFileSha) {
+                try {
+                    const resp = await fetch(
+                        'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE + '?ref=main',
+                        { headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' } }
+                    );
+                    const data = await resp.json();
+                    ghFileSha = data.sha;
+                } catch (e) {
+                    console.error('Could not get SHA:', e);
+                    return false;
+                }
+            }
+
+            try {
+                const content = btoa(unescape(encodeURIComponent(JSON.stringify(guests, null, 2))));
+                const resp = await fetch(
+                    'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': 'token ' + GH_TOKEN,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: message || 'Guest list updated via admin',
+                            content: content,
+                            sha: ghFileSha,
+                            branch: 'main'
+                        })
+                    }
+                );
+                if (!resp.ok) {
+                    if (resp.status === 409) {
+                        console.warn('SHA conflict, re-reading...');
+                        await ghReadGuests();
+                        return ghSaveGuests(message);
+                    }
+                    const err = await resp.json();
+                    throw new Error(JSON.stringify(err));
+                }
+                const result = await resp.json();
+                ghFileSha = result.content.sha;
+                console.log('Saved to GitHub successfully');
+                return true;
+            } catch (e) {
+                console.error('GitHub save failed:', e);
+                return false;
+            }
+        }
+
+        function debouncedGhSave(message) {
+            if (saveTimeout) clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => {
+                ghSaveGuests(message);
+            }, 2000);
+        }
 
         // Login
         document.getElementById('loginPass').addEventListener('keydown', e => {
@@ -417,32 +455,40 @@
             loadData();
         }
 
-        function loadData() {
+        async function loadData() {
             sessionStorage.setItem('admin_logged_in', '1');
-            ghReadGuests().then(function(ghGuests) {
-                if (ghGuests) {
-                    guests = ghGuests;
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
-                } else {
-                    var stored = localStorage.getItem(STORAGE_KEY);
-                    if (stored) {
-                        guests = JSON.parse(stored);
-                    } else {
-                        fetch('data/guests.json').then(function(r){return r.json()}).then(function(data) {
-                            guests = data;
-                            save();
-                            render();
-                        });
-                        return;
-                    }
-                }
+
+            // Try GitHub first (always fresh data)
+            const ghData = await ghReadGuests();
+            if (ghData && ghData.length > 0) {
+                guests = ghData;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
                 render();
-            });
+                return;
+            }
+
+            // Fallback: localStorage
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                guests = JSON.parse(stored);
+                render();
+                return;
+            }
+
+            // Last fallback: fetch file directly
+            try {
+                const resp = await fetch('data/guests.json');
+                guests = await resp.json();
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
+            } catch (e) {
+                guests = [];
+            }
+            render();
         }
 
         function save() {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
-            ghSaveGuests(guests, 'Admin: Gaesteliste aktualisiert');
+            debouncedGhSave('Guest list updated via admin');
         }
 
         function render() {
@@ -619,21 +665,25 @@
 
         function deleteGuest(id) {
             if (!confirm('Gast wirklich löschen?')) return;
+            const guest = guests.find(g => g.id === id);
             guests = guests.filter(g => g.id !== id);
-            save();
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
+            ghSaveGuests('Guest deleted: ' + (guest ? guest.firstName + ' ' + (guest.lastName || '') : 'unknown'));
             render();
         }
 
-        function resetData() {
-            if (!confirm('Alle Daten zurücksetzen und aus der JSON-Datei neu laden?')) return;
+        async function resetData() {
+            if (!confirm('Alle Daten zurücksetzen und aus GitHub neu laden?')) return;
             localStorage.removeItem(STORAGE_KEY);
-            fetch('data/guests.json')
-                .then(r => r.json())
-                .then(data => {
-                    guests = data;
-                    save();
-                    render();
-                });
+            const ghData = await ghReadGuests();
+            if (ghData && ghData.length > 0) {
+                guests = ghData;
+            } else {
+                const resp = await fetch('data/guests.json');
+                guests = await resp.json();
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
+            render();
         }
 
         function exportCSV() {

@@ -605,12 +605,35 @@
     <section class="section guests-section" id="guests">
         <div class="container">
             <h2 class="section-title scroll-reveal">Wer kommt?</h2>
-            <p class="section-subtitle scroll-reveal">Diese Leute haben zugesagt!</p>
+            <p class="section-subtitle scroll-reveal">Klick auf deinen Namen um deine Details anzupassen</p>
 
             <div class="guest-stats scroll-reveal">
                 <div class="guest-stat">
-                    <span class="guest-stat-number" id="statYes">0</span>
-                    <span class="guest-stat-label">Zusagen</span>
+                    <span class="guest-stat-number" id="statTotal">0</span>
+                    <span class="guest-stat-label">Personen gesamt</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statAdults">0</span>
+                    <span class="guest-stat-label">Erwachsene</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statKids">0</span>
+                    <span class="guest-stat-label">Kinder</span>
+                </div>
+            </div>
+
+            <div class="guest-day-stats scroll-reveal">
+                <div class="day-stat">
+                    <span class="day-stat-label">Freitag</span>
+                    <span class="day-stat-number" id="statFriday">0</span>
+                </div>
+                <div class="day-stat">
+                    <span class="day-stat-label">Samstag</span>
+                    <span class="day-stat-number" id="statSaturday">0</span>
+                </div>
+                <div class="day-stat">
+                    <span class="day-stat-label">Sonntag</span>
+                    <span class="day-stat-number" id="statSunday">0</span>
                 </div>
             </div>
 
@@ -619,6 +642,60 @@
             </div>
         </div>
     </section>
+
+    <!-- Guest Edit Modal -->
+    <div class="guest-modal-overlay hidden" id="guestEditModal">
+        <div class="guest-modal">
+            <button class="guest-modal-close" onclick="closeGuestModal()">&times;</button>
+            <h3 id="guestEditTitle">Details anpassen</h3>
+            <input type="hidden" id="guestEditId">
+
+            <div class="guest-modal-field">
+                <label>Erwachsene</label>
+                <div class="stepper">
+                    <button type="button" onclick="stepValue('guestAdults', -1)">-</button>
+                    <input type="number" id="guestAdults" min="0" max="20" value="1">
+                    <button type="button" onclick="stepValue('guestAdults', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Kinder</label>
+                <div class="stepper">
+                    <button type="button" onclick="stepValue('guestKids', -1)">-</button>
+                    <input type="number" id="guestKids" min="0" max="20" value="0">
+                    <button type="button" onclick="stepValue('guestKids', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Wann bist du da?</label>
+                <div class="day-checkboxes">
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="dayFriday" checked>
+                        <span>Freitag</span>
+                    </label>
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="daySaturday" checked>
+                        <span>Samstag</span>
+                    </label>
+                    <label class="day-checkbox">
+                        <input type="checkbox" id="daySunday" checked>
+                        <span>Sonntag</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="guest-modal-field">
+                <label>Kommentar (optional)</label>
+                <textarea id="guestComment" rows="2" placeholder="Nachricht..."></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="saveGuestEdit()">
+                <span>Speichern</span>
+            </button>
+        </div>
+    </div>
 
     <!-- RSVP Section -->
     <section class="section rsvp" id="rsvp">

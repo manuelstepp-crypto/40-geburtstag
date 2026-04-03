@@ -57,16 +57,30 @@ function addGuest(guest) {
 
 function updateStats() {
     const yes = allGuests.filter(g => g.response === 'yes');
-    const maybe = allGuests.filter(g => g.response === 'maybe');
-    const totalPeople = yes.reduce((sum, g) => sum + (g.guests || 1), 0);
 
-    const statYes = document.getElementById('statYes');
-    const statMaybe = document.getElementById('statMaybe');
-    const statTotal = document.getElementById('statTotal');
+    let totalAdults = 0, totalKids = 0;
+    let friday = 0, saturday = 0, sunday = 0;
 
-    if (statYes) statYes.textContent = yes.length;
-    if (statMaybe) statMaybe.textContent = maybe.length;
-    if (statTotal) statTotal.textContent = totalPeople;
+    yes.forEach(g => {
+        const adults = g.adults || 1;
+        const kids = g.kids || 0;
+        const people = adults + kids;
+        totalAdults += adults;
+        totalKids += kids;
+
+        const days = g.days || { friday: true, saturday: true, sunday: true };
+        if (days.friday) friday += people;
+        if (days.saturday) saturday += people;
+        if (days.sunday) sunday += people;
+    });
+
+    const el = id => document.getElementById(id);
+    if (el('statTotal')) el('statTotal').textContent = totalAdults + totalKids;
+    if (el('statAdults')) el('statAdults').textContent = totalAdults;
+    if (el('statKids')) el('statKids').textContent = totalKids;
+    if (el('statFriday')) el('statFriday').textContent = friday;
+    if (el('statSaturday')) el('statSaturday').textContent = saturday;
+    if (el('statSunday')) el('statSunday').textContent = sunday;
 }
 
 function renderGuests() {
@@ -81,14 +95,34 @@ function renderGuests() {
     }
 
     list.innerHTML = filtered.map(guest => {
-        const initial = guest.firstName[0] || '';
+        const initials = (guest.firstName[0] || '') + (guest.lastName?.[0] || '');
         const color = getAvatarColor(guest.firstName + (guest.lastName || ''));
-        const plus = guest.guests > 1 ? ` <span class="guest-plus">+${guest.guests - 1}</span>` : '';
+        const adults = guest.adults || 1;
+        const kids = guest.kids || 0;
+        const days = guest.days || { friday: true, saturday: true, sunday: true };
+
+        let details = [];
+        if (adults > 1 || kids > 0) {
+            details.push(adults + (adults === 1 ? ' Erw.' : ' Erw.'));
+            if (kids > 0) details.push(kids + (kids === 1 ? ' Kind' : ' Kinder'));
+        }
+        const detailStr = details.length ? `<span class="guest-detail">${details.join(', ')}</span>` : '';
+
+        const dayTags = `<div class="guest-days">` +
+            `<span class="guest-day-tag ${days.friday ? 'active' : ''}">Fr</span>` +
+            `<span class="guest-day-tag ${days.saturday ? 'active' : ''}">Sa</span>` +
+            `<span class="guest-day-tag ${days.sunday ? 'active' : ''}">So</span>` +
+            `</div>`;
+
         return `
-            <div class="guest-card">
-                <div class="guest-avatar" style="background:${color}">${initial}</div>
+            <div class="guest-card" onclick="openGuestModal(${guest.id})" title="Klick zum Bearbeiten">
+                <div class="guest-avatar" style="background:${color}">${initials}</div>
                 <div class="guest-info">
-                    <div class="guest-name">${guest.firstName}${plus}</div>
+                    <div class="guest-name">${guest.firstName} ${guest.lastName || ''} ${detailStr}</div>
+                    ${dayTags}
+                </div>
+                <div class="guest-edit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                 </div>
             </div>
         `;
@@ -100,9 +134,64 @@ function getAvatarColor(name) {
     for (let i = 0; i < name.length; i++) {
         hash = name.charCodeAt(i) + ((hash << 5) - hash);
     }
-    const hue = Math.abs(hash % 360);
-    return `hsl(${hue}, 45%, 40%)`;
+    return `hsl(${Math.abs(hash % 360)}, 45%, 40%)`;
 }
+
+// ============================================
+// Guest Edit Modal
+// ============================================
+function openGuestModal(id) {
+    const guest = allGuests.find(g => g.id === id);
+    if (!guest) return;
+
+    document.getElementById('guestEditId').value = id;
+    document.getElementById('guestEditTitle').textContent = guest.firstName + ' ' + (guest.lastName || '');
+    document.getElementById('guestAdults').value = guest.adults || 1;
+    document.getElementById('guestKids').value = guest.kids || 0;
+    document.getElementById('guestComment').value = guest.comment || '';
+
+    const days = guest.days || { friday: true, saturday: true, sunday: true };
+    document.getElementById('dayFriday').checked = days.friday;
+    document.getElementById('daySaturday').checked = days.saturday;
+    document.getElementById('daySunday').checked = days.sunday;
+
+    document.getElementById('guestEditModal').classList.remove('hidden');
+}
+
+function closeGuestModal() {
+    document.getElementById('guestEditModal').classList.add('hidden');
+}
+
+function stepValue(inputId, delta) {
+    const input = document.getElementById(inputId);
+    const val = Math.max(0, parseInt(input.value) + delta);
+    input.value = val;
+}
+
+function saveGuestEdit() {
+    const id = parseInt(document.getElementById('guestEditId').value);
+    const guest = allGuests.find(g => g.id === id);
+    if (!guest) return;
+
+    guest.adults = parseInt(document.getElementById('guestAdults').value) || 1;
+    guest.kids = parseInt(document.getElementById('guestKids').value) || 0;
+    guest.comment = document.getElementById('guestComment').value.trim();
+    guest.days = {
+        friday: document.getElementById('dayFriday').checked,
+        saturday: document.getElementById('daySaturday').checked,
+        sunday: document.getElementById('daySunday').checked
+    };
+
+    saveGuests();
+    renderGuests();
+    updateStats();
+    closeGuestModal();
+}
+
+// Close modal on overlay click
+document.addEventListener('click', e => {
+    if (e.target.id === 'guestEditModal') closeGuestModal();
+});
 
 // ============================================
 // Floating Particles
@@ -276,7 +365,9 @@ function initRSVP() {
             lastName: data.lastName.trim(),
             group: '',
             response: data.response,
-            guests: parseInt(data.guests) || 1,
+            adults: parseInt(data.guests) || 1,
+            kids: 0,
+            days: { friday: true, saturday: true, sunday: true },
             comment: data.comment?.trim() || ''
         };
 

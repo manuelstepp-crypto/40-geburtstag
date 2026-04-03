@@ -811,6 +811,38 @@ img {
     margin: 0 auto;
 }
 
+.guest-day-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.day-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 24px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    min-width: 100px;
+}
+
+.day-stat-label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.day-stat-number {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+
 .guest-card {
     display: flex;
     align-items: center;
@@ -820,6 +852,7 @@ img {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     transition: all var(--transition);
+    cursor: pointer;
 }
 
 .guest-card:hover {
@@ -869,34 +902,53 @@ img {
     flex-wrap: wrap;
 }
 
-.guest-group {
-    font-size: 11px;
+.guest-detail {
+    font-size: 12px;
     font-weight: 500;
     color: var(--color-text-dim);
     background: rgba(255,255,255,0.06);
-    padding: 2px 8px;
+    padding: 2px 10px;
     border-radius: 10px;
 }
 
-.guest-badge-maybe {
+.guest-days {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.guest-day-tag {
     font-size: 10px;
     font-weight: 600;
-    color: var(--color-maybe);
-    background: rgba(234, 179, 8, 0.12);
     padding: 2px 8px;
-    border-radius: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    color: var(--color-text-dim);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
-.guest-comment {
-    font-size: 12px;
+.guest-day-tag.active {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--color-success);
+}
+
+.guest-edit-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
     color: var(--color-text-dim);
-    margin-top: 4px;
-    font-style: italic;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.guest-card:hover .guest-edit-icon {
+    opacity: 1;
+}
+
+.guest-edit-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .guest-empty {
@@ -904,6 +956,167 @@ img {
     color: var(--color-text-dim);
     padding: 40px;
     grid-column: 1 / -1;
+}
+
+/* Guest Edit Modal */
+.guest-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.guest-modal-overlay.hidden {
+    display: none;
+}
+
+.guest-modal {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 36px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+}
+
+.guest-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--color-text-dim);
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.guest-modal h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.guest-modal-field {
+    margin-bottom: 20px;
+}
+
+.guest-modal-field > label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.stepper button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+
+.stepper button:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.stepper button:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.stepper button:hover {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border-color: var(--color-primary);
+}
+
+.stepper input {
+    width: 60px;
+    height: 44px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-left: none;
+    border-right: none;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 18px;
+    font-weight: 700;
+    font-family: inherit;
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.day-checkboxes {
+    display: flex;
+    gap: 8px;
+}
+
+.day-checkbox {
+    flex: 1;
+    cursor: pointer;
+}
+
+.day-checkbox input {
+    display: none;
+}
+
+.day-checkbox span {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: all var(--transition);
+}
+
+.day-checkbox input:checked + span {
+    border-color: var(--color-success);
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--color-success);
+}
+
+.guest-modal-field textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+    resize: vertical;
+}
+
+.guest-modal-field textarea:focus {
+    border-color: var(--color-primary);
 }
 
 @media (max-width: 768px) {
@@ -917,6 +1130,19 @@ img {
 
     .guest-list {
         grid-template-columns: 1fr;
+    }
+
+    .guest-day-stats {
+        gap: 12px;
+    }
+
+    .day-stat {
+        padding: 12px 16px;
+        min-width: 80px;
+    }
+
+    .day-stat-number {
+        font-size: 22px;
     }
 }
 

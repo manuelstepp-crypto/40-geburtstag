@@ -269,7 +269,7 @@ img {
     width: 100%;
     object-fit: cover;
     object-position: center 15%;
-    opacity: 0.55;
+    opacity: 0.75;
     filter: saturate(1.1);
 }
 
@@ -277,7 +277,7 @@ img {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to bottom, rgba(10, 10, 15, 0.15) 0%, rgba(10, 10, 15, 0.1) 40%, rgba(10, 10, 15, 0.45) 65%, rgba(10, 10, 15, 1) 92%);
+        linear-gradient(to bottom, rgba(10, 10, 15, 0.05) 0%, rgba(10, 10, 15, 0.05) 40%, rgba(10, 10, 15, 0.3) 65%, rgba(10, 10, 15, 0.95) 92%);
 }
 
 .hero-content {
@@ -1582,12 +1582,14 @@ img {
     }
 
     .rsvp-buttons {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
     }
 
     .rsvp-btn {
-        flex-direction: row;
-        padding: 14px 20px;
+        flex-direction: column;
+        padding: 14px 10px;
+        font-size: 12px;
     }
 
     .form-row {

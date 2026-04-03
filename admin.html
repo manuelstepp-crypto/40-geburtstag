@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - 40. Geburtstag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #1a1a2e;
+            --border: rgba(255,255,255,0.08);
+            --primary: #f59e0b;
+            --accent: #f97316;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --success: #22c55e;
+            --maybe: #eab308;
+            --danger: #ef4444;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Login */
+        .login-overlay {
+            position: fixed; inset: 0;
+            background: var(--bg);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000;
+        }
+        .login-overlay.hidden { display: none; }
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .login-box h2 { font-size: 24px; margin-bottom: 8px; }
+        .login-box p { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; }
+        .login-box input {
+            width: 100%; padding: 14px 18px;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text);
+            font-size: 16px; font-family: inherit;
+            text-align: center; outline: none;
+            margin-bottom: 16px;
+        }
+        .login-box input:focus { border-color: var(--primary); }
+        .login-box button {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--bg); border: none; border-radius: 8px;
+            font-size: 16px; font-weight: 600; cursor: pointer;
+            font-family: inherit;
+        }
+        .login-error { color: var(--danger); font-size: 13px; margin-top: 12px; display: none; }
+
+        /* Header */
+        .admin-header {
+            padding: 20px 32px;
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
+        }
+        .admin-header h1 { font-size: 20px; font-weight: 700; }
+        .admin-header h1 span { color: var(--primary); }
+        .admin-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn {
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: transparent; color: var(--text-muted); font-size: 13px;
+            font-weight: 500; cursor: pointer; font-family: inherit;
+            transition: all 0.2s;
+        }
+        .btn:hover { border-color: var(--primary); color: var(--text); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--bg); border-color: transparent;
+        }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(245,158,11,0.3); }
+        .btn-danger { border-color: var(--danger); color: var(--danger); }
+        .btn-danger:hover { background: rgba(239,68,68,0.1); }
+        .btn-sm { padding: 6px 14px; font-size: 12px; }
+
+        /* Stats */
+        .stats-bar {
+            display: flex; gap: 24px; padding: 24px 32px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-num { font-size: 28px; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Filters */
+        .filters {
+            padding: 20px 32px;
+            display: flex; gap: 10px; align-items: center;
+            flex-wrap: wrap; border-bottom: 1px solid var(--border);
+        }
+        .filter-btn {
+            padding: 6px 18px; border-radius: 20px; border: 1px solid var(--border);
+            background: transparent; color: var(--text-muted); font-size: 13px;
+            cursor: pointer; font-family: inherit; transition: all 0.2s;
+        }
+        .filter-btn:hover { border-color: var(--primary); color: var(--text); }
+        .filter-btn.active { background: var(--primary); color: var(--bg); border-color: transparent; }
+        .search-input {
+            margin-left: auto; padding: 8px 16px;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text); font-size: 14px;
+            font-family: inherit; outline: none; min-width: 200px;
+        }
+        .search-input:focus { border-color: var(--primary); }
+
+        /* Table */
+        .table-wrap { overflow-x: auto; padding: 0 32px 32px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th {
+            text-align: left; padding: 12px 16px;
+            font-size: 11px; font-weight: 600;
+            color: var(--text-dim); text-transform: uppercase;
+            letter-spacing: 1px; border-bottom: 1px solid var(--border);
+        }
+        td {
+            padding: 14px 16px; font-size: 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+
+        .status-badge {
+            display: inline-block; padding: 3px 12px;
+            border-radius: 12px; font-size: 12px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.3px;
+        }
+        .status-yes { background: rgba(34,197,94,0.12); color: var(--success); }
+        .status-maybe { background: rgba(234,179,8,0.12); color: var(--maybe); }
+        .status-no { background: rgba(239,68,68,0.12); color: var(--danger); }
+
+        .avatar-sm {
+            width: 32px; height: 32px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700; color: #fff;
+            margin-right: 10px; vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        .comment-cell {
+            max-width: 200px; white-space: nowrap;
+            overflow: hidden; text-overflow: ellipsis;
+            color: var(--text-dim); font-style: italic;
+        }
+
+        .group-cell { color: var(--text-dim); font-size: 13px; }
+        .guests-cell { text-align: center; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 100;
+        }
+        .modal-overlay.hidden { display: none; }
+        .modal {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 36px;
+            max-width: 500px; width: 90%;
+        }
+        .modal h3 { font-size: 20px; margin-bottom: 24px; }
+        .modal-field { margin-bottom: 16px; }
+        .modal-field label {
+            display: block; font-size: 13px; font-weight: 500;
+            color: var(--text-muted); margin-bottom: 6px;
+        }
+        .modal-field input, .modal-field select, .modal-field textarea {
+            width: 100%; padding: 12px 16px;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text);
+            font-size: 14px; font-family: inherit; outline: none;
+        }
+        .modal-field input:focus, .modal-field select:focus, .modal-field textarea:focus {
+            border-color: var(--primary);
+        }
+        .modal-field textarea { resize: vertical; min-height: 60px; }
+        .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 24px; }
+
+        .back-link {
+            color: var(--text-dim); text-decoration: none;
+            font-size: 13px; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .admin-header, .stats-bar, .filters, .table-wrap { padding-left: 16px; padding-right: 16px; }
+            .search-input { margin-left: 0; width: 100%; }
+            td, th { padding: 10px 8px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <h2>Admin</h2>
+            <p>Passwort eingeben um fortzufahren</p>
+            <input type="password" id="loginPass" placeholder="Passwort" autofocus>
+            <button onclick="tryLogin()">Anmelden</button>
+            <p class="login-error" id="loginError">Falsches Passwort</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" style="display:none">
+        <header class="admin-header">
+            <div>
+                <h1><span>40.</span> Geburtstag &mdash; Admin</h1>
+                <a href="index.html" class="back-link">&larr; Zur Einladung</a>
+            </div>
+            <div class="admin-actions">
+                <button class="btn" onclick="exportCSV()">CSV Export</button>
+                <button class="btn btn-danger" onclick="resetData()">Daten zurücksetzen</button>
+                <button class="btn btn-primary" onclick="openAddModal()">+ Gast hinzufügen</button>
+            </div>
+        </header>
+
+        <div class="stats-bar" id="statsBar"></div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">Alle</button>
+            <button class="filter-btn" data-filter="yes" onclick="setFilter('yes', this)">Zusagen</button>
+            <button class="filter-btn" data-filter="maybe" onclick="setFilter('maybe', this)">Vielleicht</button>
+            <button class="filter-btn" data-filter="no" onclick="setFilter('no', this)">Absagen</button>
+            <input type="text" class="search-input" placeholder="Suchen..." oninput="searchGuests(this.value)">
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gruppe</th>
+                        <th>Status</th>
+                        <th>Personen</th>
+                        <th>Kommentar</th>
+                        <th>Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody id="guestTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal-overlay hidden" id="guestModal">
+        <div class="modal">
+            <h3 id="modalTitle">Gast hinzufügen</h3>
+            <input type="hidden" id="editId">
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label>Vorname *</label>
+                    <input type="text" id="mFirstName">
+                </div>
+                <div class="modal-field">
+                    <label>Nachname</label>
+                    <input type="text" id="mLastName">
+                </div>
+            </div>
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label>Status</label>
+                    <select id="mResponse">
+                        <option value="yes">Zusage</option>
+                        <option value="maybe">Vielleicht</option>
+                        <option value="no">Absage</option>
+                    </select>
+                </div>
+                <div class="modal-field">
+                    <label>Personen</label>
+                    <input type="number" id="mGuests" min="1" max="20" value="1">
+                </div>
+            </div>
+            <div class="modal-field">
+                <label>Gruppe</label>
+                <input type="text" id="mGroup" placeholder="z.B. Frankfurt, Familie, Wien...">
+            </div>
+            <div class="modal-field">
+                <label>Kommentar</label>
+                <textarea id="mComment" rows="2"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn" onclick="closeModal()">Abbrechen</button>
+                <button class="btn btn-primary" onclick="saveGuest()">Speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'geburtstag40_guests';
+        const ADMIN_PASS = 'manu40';
+        let guests = [];
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        // Login
+        document.getElementById('loginPass').addEventListener('keydown', e => {
+            if (e.key === 'Enter') tryLogin();
+        });
+
+        function tryLogin() {
+            const pass = document.getElementById('loginPass').value;
+            if (pass === ADMIN_PASS) {
+                document.getElementById('loginOverlay').classList.add('hidden');
+                document.getElementById('adminPanel').style.display = 'block';
+                loadData();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+
+        // Check if already logged in this session
+        if (sessionStorage.getItem('admin_logged_in')) {
+            document.getElementById('loginOverlay').classList.add('hidden');
+            document.getElementById('adminPanel').style.display = 'block';
+            loadData();
+        }
+
+        function loadData() {
+            sessionStorage.setItem('admin_logged_in', '1');
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                guests = JSON.parse(stored);
+            } else {
+                fetch('data/guests.json')
+                    .then(r => r.json())
+                    .then(data => { guests = data; save(); render(); });
+                return;
+            }
+            render();
+        }
+
+        function save() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
+        }
+
+        function render() {
+            renderStats();
+            renderTable();
+        }
+
+        function renderStats() {
+            const yes = guests.filter(g => g.response === 'yes');
+            const maybe = guests.filter(g => g.response === 'maybe');
+            const no = guests.filter(g => g.response === 'no');
+            const totalPeople = yes.reduce((s, g) => s + (g.guests || 1), 0)
+                              + maybe.reduce((s, g) => s + (g.guests || 1), 0);
+
+            document.getElementById('statsBar').innerHTML = `
+                <div class="stat"><div class="stat-num">${guests.length}</div><div class="stat-label">Gesamt</div></div>
+                <div class="stat"><div class="stat-num" style="color:var(--success)">${yes.length}</div><div class="stat-label">Zusagen</div></div>
+                <div class="stat"><div class="stat-num" style="color:var(--maybe)">${maybe.length}</div><div class="stat-label">Vielleicht</div></div>
+                <div class="stat"><div class="stat-num" style="color:var(--danger)">${no.length}</div><div class="stat-label">Absagen</div></div>
+                <div class="stat"><div class="stat-num">${totalPeople}</div><div class="stat-label">Personen (Ja+Vielleicht)</div></div>
+            `;
+        }
+
+        function getColor(name) {
+            let h = 0;
+            for (let i = 0; i < name.length; i++) h = name.charCodeAt(i) + ((h << 5) - h);
+            return `hsl(${Math.abs(h % 360)}, 45%, 40%)`;
+        }
+
+        function renderTable() {
+            let filtered = guests;
+            if (currentFilter !== 'all') filtered = filtered.filter(g => g.response === currentFilter);
+            if (searchTerm) {
+                const s = searchTerm.toLowerCase();
+                filtered = filtered.filter(g =>
+                    (g.firstName + ' ' + (g.lastName || '') + ' ' + (g.group || '') + ' ' + (g.comment || ''))
+                        .toLowerCase().includes(s)
+                );
+            }
+
+            const tbody = document.getElementById('guestTableBody');
+            if (!filtered.length) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-dim);padding:40px">Keine Einträge</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(g => {
+                const initials = (g.firstName[0] || '') + (g.lastName?.[0] || '');
+                const color = getColor(g.firstName + (g.lastName || ''));
+                const statusClass = g.response === 'yes' ? 'status-yes' : g.response === 'maybe' ? 'status-maybe' : 'status-no';
+                const statusText = g.response === 'yes' ? 'Zusage' : g.response === 'maybe' ? 'Vielleicht' : 'Absage';
+                return `<tr>
+                    <td><span class="avatar-sm" style="background:${color}">${initials}</span>${g.firstName} ${g.lastName || ''}</td>
+                    <td class="group-cell">${g.group || '—'}</td>
+                    <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                    <td class="guests-cell">${g.guests || 1}</td>
+                    <td class="comment-cell" title="${(g.comment || '').replace(/"/g, '&quot;')}">${g.comment || '—'}</td>
+                    <td>
+                        <button class="btn btn-sm" onclick="editGuest(${g.id})">Bearbeiten</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteGuest(${g.id})">Löschen</button>
+                    </td>
+                </tr>`;
+            }).join('');
+        }
+
+        function setFilter(f, btn) {
+            currentFilter = f;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderTable();
+        }
+
+        function searchGuests(val) {
+            searchTerm = val;
+            renderTable();
+        }
+
+        // Modal
+        function openAddModal() {
+            document.getElementById('modalTitle').textContent = 'Gast hinzufügen';
+            document.getElementById('editId').value = '';
+            document.getElementById('mFirstName').value = '';
+            document.getElementById('mLastName').value = '';
+            document.getElementById('mResponse').value = 'yes';
+            document.getElementById('mGuests').value = '1';
+            document.getElementById('mGroup').value = '';
+            document.getElementById('mComment').value = '';
+            document.getElementById('guestModal').classList.remove('hidden');
+        }
+
+        function editGuest(id) {
+            const g = guests.find(x => x.id === id);
+            if (!g) return;
+            document.getElementById('modalTitle').textContent = 'Gast bearbeiten';
+            document.getElementById('editId').value = id;
+            document.getElementById('mFirstName').value = g.firstName;
+            document.getElementById('mLastName').value = g.lastName || '';
+            document.getElementById('mResponse').value = g.response;
+            document.getElementById('mGuests').value = g.guests || 1;
+            document.getElementById('mGroup').value = g.group || '';
+            document.getElementById('mComment').value = g.comment || '';
+            document.getElementById('guestModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('guestModal').classList.add('hidden');
+        }
+
+        function saveGuest() {
+            const firstName = document.getElementById('mFirstName').value.trim();
+            if (!firstName) return;
+
+            const editId = document.getElementById('editId').value;
+            const data = {
+                firstName,
+                lastName: document.getElementById('mLastName').value.trim(),
+                response: document.getElementById('mResponse').value,
+                guests: parseInt(document.getElementById('mGuests').value) || 1,
+                group: document.getElementById('mGroup').value.trim(),
+                comment: document.getElementById('mComment').value.trim()
+            };
+
+            if (editId) {
+                const idx = guests.findIndex(g => g.id === parseInt(editId));
+                if (idx >= 0) Object.assign(guests[idx], data);
+            } else {
+                data.id = guests.length ? Math.max(...guests.map(g => g.id)) + 1 : 1;
+                data.timestamp = new Date().toISOString();
+                guests.push(data);
+            }
+
+            save();
+            render();
+            closeModal();
+        }
+
+        function deleteGuest(id) {
+            if (!confirm('Gast wirklich löschen?')) return;
+            guests = guests.filter(g => g.id !== id);
+            save();
+            render();
+        }
+
+        function resetData() {
+            if (!confirm('Alle Daten zurücksetzen und aus der JSON-Datei neu laden?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            fetch('data/guests.json')
+                .then(r => r.json())
+                .then(data => {
+                    guests = data;
+                    save();
+                    render();
+                });
+        }
+
+        function exportCSV() {
+            const header = 'Vorname,Nachname,Status,Personen,Gruppe,Kommentar\n';
+            const rows = guests.map(g =>
+                `"${g.firstName}","${g.lastName || ''}","${g.response}","${g.guests || 1}","${g.group || ''}","${(g.comment || '').replace(/"/g, '""')}"`
+            ).join('\n');
+            const blob = new Blob([header + rows], { type: 'text/csv;charset=utf-8;' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'gaesteliste_40_geburtstag.csv';
+            a.click();
+        }
+
+        // Close modal on overlay click
+        document.getElementById('guestModal').addEventListener('click', e => {
+            if (e.target === document.getElementById('guestModal')) closeModal();
+        });
+    </script>
+</body>
+</html>

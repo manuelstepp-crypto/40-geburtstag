@@ -21,6 +21,7 @@
             <div class="nav-links">
                 <a href="#details">Details</a>
                 <a href="#program">Programm</a>
+                <a href="#guests">Gäste</a>
                 <a href="#accommodations">Unterkünfte</a>
                 <a href="#rsvp">Zusagen</a>
             </div>
@@ -31,6 +32,7 @@
         <div class="nav-mobile" id="navMobile">
             <a href="#details">Details</a>
             <a href="#program">Programm</a>
+            <a href="#guests">Gäste</a>
             <a href="#accommodations">Unterkünfte</a>
             <a href="#rsvp">Zusagen</a>
         </div>
@@ -444,6 +446,39 @@
                     </div>
                     <a href="https://www.booking.com/hotel/de/stayin-apartment-near-stuttgart.de.html" target="_blank" rel="noopener" class="accommodation-link">Auf Booking.com ansehen &rarr;</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guests Section -->
+    <section class="section guests-section" id="guests">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Wer kommt?</h2>
+            <p class="section-subtitle scroll-reveal">Diese Leute sind dabei!</p>
+
+            <div class="guest-stats scroll-reveal">
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statYes">0</span>
+                    <span class="guest-stat-label">Zusagen</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statMaybe">0</span>
+                    <span class="guest-stat-label">Vielleicht</span>
+                </div>
+                <div class="guest-stat">
+                    <span class="guest-stat-number" id="statTotal">0</span>
+                    <span class="guest-stat-label">Personen gesamt</span>
+                </div>
+            </div>
+
+            <div class="guest-filter scroll-reveal">
+                <button class="guest-filter-btn active" data-filter="yes">Zusagen</button>
+                <button class="guest-filter-btn" data-filter="maybe">Vielleicht</button>
+                <button class="guest-filter-btn" data-filter="all">Alle</button>
+            </div>
+
+            <div class="guest-list scroll-reveal" id="guestList">
+                <!-- Filled by JS -->
             </div>
         </div>
     </section>

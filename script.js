@@ -2,20 +2,139 @@
 // 40. Geburtstag - Script
 // ============================================
 
+const STORAGE_KEY = 'geburtstag40_guests';
+const ADMIN_PASS = 'manu40';
+let allGuests = [];
+
 document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initCountdown();
     initNavigation();
     initScrollReveal();
     initTabs();
+    loadGuests();
     initRSVP();
+    initGuestFilter();
 });
+
+// ============================================
+// Guest Data Management
+// ============================================
+function loadGuests() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+        allGuests = JSON.parse(stored);
+        renderGuests();
+        updateStats();
+    } else {
+        fetch('data/guests.json')
+            .then(r => r.json())
+            .then(data => {
+                allGuests = data;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(allGuests));
+                renderGuests();
+                updateStats();
+            })
+            .catch(() => {
+                allGuests = [];
+                renderGuests();
+                updateStats();
+            });
+    }
+}
+
+function saveGuests() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(allGuests));
+}
+
+function addGuest(guest) {
+    guest.id = allGuests.length ? Math.max(...allGuests.map(g => g.id)) + 1 : 1;
+    guest.timestamp = new Date().toISOString();
+    allGuests.push(guest);
+    saveGuests();
+    renderGuests();
+    updateStats();
+}
+
+function updateStats() {
+    const yes = allGuests.filter(g => g.response === 'yes');
+    const maybe = allGuests.filter(g => g.response === 'maybe');
+    const totalPeople = yes.reduce((sum, g) => sum + (g.guests || 1), 0);
+
+    const statYes = document.getElementById('statYes');
+    const statMaybe = document.getElementById('statMaybe');
+    const statTotal = document.getElementById('statTotal');
+
+    if (statYes) statYes.textContent = yes.length;
+    if (statMaybe) statMaybe.textContent = maybe.length;
+    if (statTotal) statTotal.textContent = totalPeople;
+}
+
+function renderGuests(filter = 'yes') {
+    const list = document.getElementById('guestList');
+    if (!list) return;
+
+    let filtered;
+    if (filter === 'all') {
+        filtered = allGuests.filter(g => g.response === 'yes' || g.response === 'maybe');
+    } else {
+        filtered = allGuests.filter(g => g.response === filter);
+    }
+
+    if (filtered.length === 0) {
+        list.innerHTML = '<p class="guest-empty">Noch keine Einträge.</p>';
+        return;
+    }
+
+    list.innerHTML = filtered.map(guest => {
+        const initials = (guest.firstName[0] || '') + (guest.lastName?.[0] || '');
+        const color = getAvatarColor(guest.firstName + guest.lastName);
+        const guestCount = guest.guests > 1 ? `<span class="guest-plus">+${guest.guests - 1}</span>` : '';
+        const comment = guest.comment ? `<p class="guest-comment">"${guest.comment}"</p>` : '';
+        const badge = guest.response === 'maybe' ? '<span class="guest-badge-maybe">Vielleicht</span>' : '';
+        const group = guest.group ? `<span class="guest-group">${guest.group}</span>` : '';
+
+        return `
+            <div class="guest-card">
+                <div class="guest-avatar" style="background:${color}">${initials}${guestCount}</div>
+                <div class="guest-info">
+                    <div class="guest-name">${guest.firstName} ${guest.lastName || ''} ${badge} ${group}</div>
+                    ${comment}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function getAvatarColor(name) {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash % 360);
+    return `hsl(${hue}, 45%, 40%)`;
+}
+
+// ============================================
+// Guest Filter
+// ============================================
+function initGuestFilter() {
+    const buttons = document.querySelectorAll('.guest-filter-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderGuests(btn.dataset.filter);
+        });
+    });
+}
 
 // ============================================
 // Floating Particles
 // ============================================
 function initParticles() {
     const container = document.getElementById('particles');
+    if (!container) return;
     const count = window.innerWidth < 768 ? 15 : 30;
 
     for (let i = 0; i < count; i++) {
@@ -73,7 +192,6 @@ function initNavigation() {
     const toggle = document.getElementById('navToggle');
     const mobile = document.getElementById('navMobile');
 
-    // Scroll effect
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
@@ -81,13 +199,11 @@ function initNavigation() {
         lastScroll = scrollY;
     });
 
-    // Mobile toggle
     toggle.addEventListener('click', () => {
         toggle.classList.toggle('active');
         mobile.classList.toggle('open');
     });
 
-    // Close mobile on link click
     mobile.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             toggle.classList.remove('active');
@@ -95,7 +211,6 @@ function initNavigation() {
         });
     });
 
-    // Smooth scroll for all nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
             const targetId = anchor.getAttribute('href');
@@ -116,9 +231,8 @@ function initScrollReveal() {
     const elements = document.querySelectorAll('.scroll-reveal');
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Stagger the animation
                 const delay = Array.from(entry.target.parentElement.children)
                     .filter(el => el.classList.contains('scroll-reveal'))
                     .indexOf(entry.target) * 100;
@@ -160,7 +274,6 @@ function initTabs() {
                 airbnb.classList.add('hidden');
             }
 
-            // Re-trigger scroll reveal for newly visible cards
             const cards = document.querySelectorAll(`#${target} .scroll-reveal:not(.visible)`);
             cards.forEach((card, i) => {
                 setTimeout(() => card.classList.add('visible'), i * 80);
@@ -175,6 +288,7 @@ function initTabs() {
 function initRSVP() {
     const form = document.getElementById('rsvpForm');
     const success = document.getElementById('rsvpSuccess');
+    if (!form) return;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -182,14 +296,19 @@ function initRSVP() {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        // Log the response (in production, send to a backend)
-        console.log('RSVP Response:', data);
+        const guest = {
+            firstName: data.firstName.trim(),
+            lastName: data.lastName.trim(),
+            group: '',
+            response: data.response,
+            guests: parseInt(data.guests) || 1,
+            comment: data.comment?.trim() || ''
+        };
 
-        // Show success
+        addGuest(guest);
+
         form.classList.add('hidden');
         success.classList.remove('hidden');
-
-        // Scroll to success message
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 }

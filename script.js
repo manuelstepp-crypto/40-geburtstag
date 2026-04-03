@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs();
     loadGuests();
     initRSVP();
-    initGuestFilter();
 });
 
 // ============================================
@@ -70,16 +69,11 @@ function updateStats() {
     if (statTotal) statTotal.textContent = totalPeople;
 }
 
-function renderGuests(filter = 'yes') {
+function renderGuests() {
     const list = document.getElementById('guestList');
     if (!list) return;
 
-    let filtered;
-    if (filter === 'all') {
-        filtered = allGuests.filter(g => g.response === 'yes' || g.response === 'maybe');
-    } else {
-        filtered = allGuests.filter(g => g.response === filter);
-    }
+    const filtered = allGuests.filter(g => g.response === 'yes');
 
     if (filtered.length === 0) {
         list.innerHTML = '<p class="guest-empty">Noch keine Einträge.</p>';
@@ -91,14 +85,11 @@ function renderGuests(filter = 'yes') {
         const color = getAvatarColor(guest.firstName + guest.lastName);
         const guestCount = guest.guests > 1 ? `<span class="guest-plus">+${guest.guests - 1}</span>` : '';
         const comment = guest.comment ? `<p class="guest-comment">"${guest.comment}"</p>` : '';
-        const badge = guest.response === 'maybe' ? '<span class="guest-badge-maybe">Vielleicht</span>' : '';
-        const group = guest.group ? `<span class="guest-group">${guest.group}</span>` : '';
-
         return `
             <div class="guest-card">
                 <div class="guest-avatar" style="background:${color}">${initials}${guestCount}</div>
                 <div class="guest-info">
-                    <div class="guest-name">${guest.firstName} ${guest.lastName || ''} ${badge} ${group}</div>
+                    <div class="guest-name">${guest.firstName} ${guest.lastName || ''}</div>
                     ${comment}
                 </div>
             </div>
@@ -113,20 +104,6 @@ function getAvatarColor(name) {
     }
     const hue = Math.abs(hash % 360);
     return `hsl(${hue}, 45%, 40%)`;
-}
-
-// ============================================
-// Guest Filter
-// ============================================
-function initGuestFilter() {
-    const buttons = document.querySelectorAll('.guest-filter-btn');
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderGuests(btn.dataset.filter);
-        });
-    });
 }
 
 // ============================================

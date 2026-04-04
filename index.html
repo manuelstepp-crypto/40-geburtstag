@@ -111,11 +111,25 @@
 
             <!-- Map embed -->
             <div class="map-container scroll-reveal">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2634.5!2d9.1316!3d48.6344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799a5c7a3c5f7ed%3A0x0!2sAm+Sonnenhang+34%2C+71111+Waldenbuch!5e0!3m2!1sde!2sde!4v1"
-                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <div id="leafletMap" style="width:100%;height:100%;border-radius:var(--radius-sm);"></div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var map = L.map('leafletMap').setView([48.6344, 9.1316], 16);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap'
+                    }).addTo(map);
+
+                    var iconLocation = L.divIcon({className:'', html:'<div style="background:#e74c3c;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">🎉</div>', iconSize:[32,32], iconAnchor:[16,32]});
+                    var iconParking = L.divIcon({className:'', html:'<div style="background:#3498db;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">P</div>', iconSize:[32,32], iconAnchor:[16,32]});
+                    var iconSport = L.divIcon({className:'', html:'<div style="background:#2ecc71;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">⚽</div>', iconSize:[32,32], iconAnchor:[16,32]});
+
+                    L.marker([48.6344, 9.1316], {icon: iconLocation}).addTo(map).bindPopup('<b>Sommerfest am Sonnenhang</b><br>Am Sonnenhang 34, Waldenbuch');
+                    L.marker([48.641366886303324, 9.12785388427032], {icon: iconParking}).addTo(map).bindPopup('<b>Parkplatz</b>');
+                    L.marker([48.64035122147733, 9.126865093843508], {icon: iconSport}).addTo(map).bindPopup('<b>Sportplatz</b>');
+                });
+                </script>
             </div>
         </div>
     </section>

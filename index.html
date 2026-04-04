@@ -21,8 +21,8 @@
                 <a href="#program">Programm</a>
                 <a href="#rsvp">Zusagen</a>
                 <a href="#details">Details</a>
-                <a href="#guests">Gäste</a>
-                <a href="#accommodations">Unterkünfte</a>
+                <a href="#guests">GÃ¤ste</a>
+                <a href="#accommodations">UnterkÃ¼nfte</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -32,8 +32,8 @@
             <a href="#program">Programm</a>
             <a href="#rsvp">Zusagen</a>
             <a href="#details">Details</a>
-            <a href="#guests">Gäste</a>
-            <a href="#accommodations">Unterkünfte</a>
+            <a href="#guests">GÃ¤ste</a>
+            <a href="#accommodations">UnterkÃ¼nfte</a>
         </div>
     </nav>
 
@@ -111,19 +111,19 @@
 
             <!-- Map embed -->
             <div class="map-container scroll-reveal">
-                <div id="leafletMap" style="width:100%;height:100%;border-radius:var(--radius-sm);"></div>
+                <div id="leafletMap" style="width:100%;height:450px;border-radius:var(--radius-sm);"></div>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
                 <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     var map = L.map('leafletMap').setView([48.6344, 9.1316], 16);
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '© OpenStreetMap'
+                        attribution: 'Â© OpenStreetMap'
                     }).addTo(map);
 
-                    var iconLocation = L.divIcon({className:'', html:'<div style="background:#e74c3c;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">🎉</div>', iconSize:[32,32], iconAnchor:[16,32]});
+                    var iconLocation = L.divIcon({className:'', html:'<div style="background:#e74c3c;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">ð</div>', iconSize:[32,32], iconAnchor:[16,32]});
                     var iconParking = L.divIcon({className:'', html:'<div style="background:#3498db;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">P</div>', iconSize:[32,32], iconAnchor:[16,32]});
-                    var iconSport = L.divIcon({className:'', html:'<div style="background:#2ecc71;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">⚽</div>', iconSize:[32,32], iconAnchor:[16,32]});
+                    var iconSport = L.divIcon({className:'', html:'<div style="background:#2ecc71;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,.3);border:2px solid #fff;">â½</div>', iconSize:[32,32], iconAnchor:[16,32]});
 
                     L.marker([48.6344, 9.1316], {icon: iconLocation}).addTo(map).bindPopup('<b>Sommerfest am Sonnenhang</b><br>Am Sonnenhang 34, Waldenbuch');
                     L.marker([48.641366886303324, 9.12785388427032], {icon: iconParking}).addTo(map).bindPopup('<b>Parkplatz</b>');
@@ -213,7 +213,7 @@
                             </div>
                             <div class="program-activity musik">
                                 <span class="activity-location">Musikzimmer</span>
-                                <h4>Impuls von Prof. Löhlein</h4>
+                                <h4>Impuls von Prof. LÃ¶hlein</h4>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                         <div class="program-activities">
                             <div class="program-activity full-width sportplatz">
                                 <span class="activity-location">Sportplatz</span>
-                                <h4>Frühstück & Crêpes</h4>
+                                <h4>FrÃ¼hstÃ¼ck & CrÃªpes</h4>
                             </div>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                         <div class="program-activities">
                             <div class="program-activity sportplatz">
                                 <span class="activity-location">Sportplatz</span>
-                                <h4>Fußballturnier</h4>
+                                <h4>FuÃballturnier</h4>
                                 <p>mit Jose</p>
                             </div>
                             <div class="program-activity casino">
@@ -346,7 +346,7 @@
                         <div class="program-activities">
                             <div class="program-activity full-width sportplatz">
                                 <span class="activity-location">Sportplatz</span>
-                                <h4>Frühstück / Brunch</h4>
+                                <h4>FrÃ¼hstÃ¼ck / Brunch</h4>
                             </div>
                         </div>
                     </div>
@@ -357,7 +357,7 @@
                             <div class="program-activity full-width sportplatz">
                                 <span class="activity-location">Sportplatz</span>
                                 <h4>Abreise</h4>
-                                <p>Tschüss sagen und nach Hause fahren</p>
+                                <p>TschÃ¼ss sagen und nach Hause fahren</p>
                             </div>
                         </div>
                     </div>
@@ -454,7 +454,7 @@
                     <div class="success-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
-                    <h3>Danke für deine Antwort!</h3>
+                    <h3>Danke fÃ¼r deine Antwort!</h3>
                     <p>Manuel freut sich auf dich!</p>
                 </div>
             </div>
@@ -565,8 +565,8 @@
     <!-- Accommodations Section -->
     <section class="section accommodations" id="accommodations">
         <div class="container">
-            <h2 class="section-title scroll-reveal">Unterkünfte</h2>
-            <p class="section-subtitle scroll-reveal">Reservierte Optionen für das Wochenende - einfach Bescheid geben!</p>
+            <h2 class="section-title scroll-reveal">UnterkÃ¼nfte</h2>
+            <p class="section-subtitle scroll-reveal">Reservierte Optionen fÃ¼r das Wochenende - einfach Bescheid geben!</p>
 
             <div class="accommodation-tabs scroll-reveal">
                 <button class="tab-btn active" data-tab="airbnb">Airbnb</button>
@@ -576,9 +576,9 @@
             <div class="accommodation-grid" id="airbnb">
                 <div class="accommodation-card scroll-reveal">
                     <div class="accommodation-badge">Top Pick</div>
-                    <h4>Wunderschöne 2-Zimmer-Wohnung</h4>
-                    <p class="accommodation-details">4 Gäste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
-                    <p class="accommodation-highlight">Mit großem Balkon</p>
+                    <h4>WunderschÃ¶ne 2-Zimmer-Wohnung</h4>
+                    <p class="accommodation-details">4 GÃ¤ste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Mit groÃem Balkon</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;110,96</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -588,7 +588,7 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Gemütlichkeit</h4>
+                    <h4>GemÃ¼tlichkeit</h4>
                     <p class="accommodation-details">2 Einzelbetten &bull; Gemeinsames Bad</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;95,78</span>
@@ -599,8 +599,8 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Urlaub im Grünen!</h4>
-                    <p class="accommodation-details">4 Gäste &bull; Studio &bull; 2 Betten &bull; 1 Bad</p>
+                    <h4>Urlaub im GrÃ¼nen!</h4>
+                    <p class="accommodation-details">4 GÃ¤ste &bull; Studio &bull; 2 Betten &bull; 1 Bad</p>
                     <p class="accommodation-highlight">Biken, Wandern, Abschalten</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;87,60</span>
@@ -611,9 +611,9 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Grüne Oase Waldenbuch</h4>
-                    <p class="accommodation-details">3 Gäste &bull; 1 Schlafzimmer &bull; 2 Betten &bull; 1 Bad</p>
-                    <p class="accommodation-highlight">Nähe Messe / Flughafen Stuttgart</p>
+                    <h4>GrÃ¼ne Oase Waldenbuch</h4>
+                    <p class="accommodation-details">3 GÃ¤ste &bull; 1 Schlafzimmer &bull; 2 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">NÃ¤he Messe / Flughafen Stuttgart</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;102,79</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -624,7 +624,7 @@
 
                 <div class="accommodation-card scroll-reveal">
                     <h4>StayIN Apartment bei Stuttgart</h4>
-                    <p class="accommodation-details">5 Gäste &bull; 1 Schlafzimmer &bull; 3 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-details">5 GÃ¤ste &bull; 1 Schlafzimmer &bull; 3 Betten &bull; 1 Bad</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;110,00</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -635,8 +635,8 @@
 
                 <div class="accommodation-card scroll-reveal">
                     <h4>Monteurwohnung</h4>
-                    <p class="accommodation-details">2 Gäste &bull; 1 Schlafzimmer &bull; 2 Betten &bull; 1 Bad</p>
-                    <p class="accommodation-highlight">30m² mit Küche & WLAN</p>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 2 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">30mÂ² mit KÃ¼che & WLAN</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;67,00</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -646,9 +646,9 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Möblierte 2-Zi-Wohnung</h4>
-                    <p class="accommodation-details">5 Gäste &bull; 2 Schlafzimmer &bull; 5 Betten &bull; 1 Bad</p>
-                    <p class="accommodation-highlight">Mit Küche, WLAN & Parken</p>
+                    <h4>MÃ¶blierte 2-Zi-Wohnung</h4>
+                    <p class="accommodation-details">5 GÃ¤ste &bull; 2 Schlafzimmer &bull; 5 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">Mit KÃ¼che, WLAN & Parken</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;127,00</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -658,15 +658,15 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Gemütliches Privatzimmer</h4>
+                    <h4>GemÃ¼tliches Privatzimmer</h4>
                     <p class="accommodation-details">1 Bett &bull; Gemeinsames Bad</p>
                     <a href="https://www.airbnb.de/rooms/1413877176106132286?guests=1&adults=1&s=67&unique_share_id=683eabbf-b3a2-4790-9c36-0253afc97004" target="_blank" rel="noopener" class="accommodation-link">Auf Airbnb ansehen &rarr;</a>
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
                     <h4>Tiny Home "Alte Schlosserei"</h4>
-                    <p class="accommodation-details">2 Gäste &bull; 1 Schlafzimmer &bull; 3 Betten &bull; 1 Bad</p>
-                    <p class="accommodation-highlight">Nähe Flughafen/Messe</p>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 3 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-highlight">NÃ¤he Flughafen/Messe</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;85,50</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -677,7 +677,7 @@
 
                 <div class="accommodation-card scroll-reveal">
                     <h4>Apt. "SIMS" bei Stuttgart</h4>
-                    <p class="accommodation-details">6 Gäste &bull; 1 Schlafzimmer &bull; 4 Betten &bull; 1 Bad</p>
+                    <p class="accommodation-details">6 GÃ¤ste &bull; 1 Schlafzimmer &bull; 4 Betten &bull; 1 Bad</p>
                     <p class="accommodation-highlight">Flughafen/Metzingen, 2-6 Personen</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;128,48</span>
@@ -688,8 +688,8 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Modernes Studio 25/55 Schlössle</h4>
-                    <p class="accommodation-details">2 Gäste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
+                    <h4>Modernes Studio 25/55 SchlÃ¶ssle</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
                     <p class="accommodation-highlight">Messe/Flughafen</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;74,75</span>
@@ -700,8 +700,8 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Designer-Studio 31/61 Schlössle</h4>
-                    <p class="accommodation-details">2 Gäste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
+                    <h4>Designer-Studio 31/61 SchlÃ¶ssle</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; 1 Schlafzimmer &bull; 1 Bett &bull; 1 Bad</p>
                     <p class="accommodation-highlight">Messe/Flughafen</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;79,43</span>
@@ -712,8 +712,8 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Designer Wohnung Schlößle 2</h4>
-                    <p class="accommodation-details">2 Gäste &bull; Studio &bull; 1 Bett &bull; 1 Bad</p>
+                    <h4>Designer Wohnung SchlÃ¶Ãle 2</h4>
+                    <p class="accommodation-details">2 GÃ¤ste &bull; Studio &bull; 1 Bett &bull; 1 Bad</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;127,00</span>
                         <span class="accommodation-price-label">/ Nacht</span>
@@ -750,8 +750,8 @@
                 </div>
 
                 <div class="accommodation-card scroll-reveal">
-                    <h4>Möblierte Monteurswohnungen</h4>
-                    <p class="accommodation-details">Stuttgart, Böblingen, Reutlingen, Waldenbuch</p>
+                    <h4>MÃ¶blierte Monteurswohnungen</h4>
+                    <p class="accommodation-details">Stuttgart, BÃ¶blingen, Reutlingen, Waldenbuch</p>
                     <p class="accommodation-highlight">5 Betten - HeimbachOG</p>
                     <div class="accommodation-price">
                         <span class="accommodation-price-night">&euro;162,64</span>

@@ -600,21 +600,6 @@
     "comment": ""
   },
   {
-    "id": 42,
-    "firstName": "Manuel",
-    "lastName": "SchÃÂÃÂ¤fer",
-    "group": "Wien",
-    "response": "yes",
-    "adults": 1,
-    "kids": 0,
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "comment": ""
-  },
-  {
     "id": 43,
     "firstName": "Eike",
     "lastName": "Johann",

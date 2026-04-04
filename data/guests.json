@@ -210,21 +210,6 @@
     "comment": ""
   },
   {
-    "id": 16,
-    "firstName": "Emma",
-    "lastName": "LÃÂÃÂ¼tkemeyer",
-    "group": "Frankfurt",
-    "response": "maybe",
-    "adults": 1,
-    "kids": 0,
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "comment": ""
-  },
-  {
     "id": 17,
     "firstName": "Christian",
     "lastName": "Proffesor",

@@ -197,11 +197,11 @@
   {
     "id": 14,
     "firstName": "Christian",
-    "lastName": "LÃÂÃÂ¼tkemeyer",
+    "lastName": "Lütkemeyer",
     "group": "Frankfurt",
-    "response": "maybe",
-    "adults": 1,
-    "kids": 0,
+    "response": "yes",
+    "adults": 2,
+    "kids": 2,
     "days": {
       "friday": true,
       "saturday": true,

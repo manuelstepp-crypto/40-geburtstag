@@ -210,6 +210,36 @@
     "comment": ""
   },
   {
+    "id": 15,
+    "firstName": "Vera",
+    "lastName": "Lütkemeyer",
+    "group": "Frankfurt",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 16,
+    "firstName": "Emma",
+    "lastName": "Lütkemeyer",
+    "group": "Frankfurt",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
     "id": 17,
     "firstName": "Christian",
     "lastName": "Proffesor",
@@ -570,6 +600,21 @@
     "comment": ""
   },
   {
+    "id": 42,
+    "firstName": "Manuel",
+    "lastName": "Schäfer",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
     "id": 43,
     "firstName": "Eike",
     "lastName": "Johann",
@@ -602,6 +647,21 @@
   {
     "id": 45,
     "firstName": "Eli",
+    "lastName": "Welz",
+    "group": "Berlin",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 46,
+    "firstName": "Jirka",
     "lastName": "Welz",
     "group": "Berlin",
     "response": "yes",

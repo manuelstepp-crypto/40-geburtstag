@@ -372,7 +372,7 @@
             }
         }
 
-        async function ghSaveGuests(message) {
+        async function ghSaveGuests(guestList, message) {
             if (!ghFileSha) {
                 try {
                     const resp = await fetch(
@@ -488,6 +488,7 @@
 
         function save() {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
+            ghSaveGuests(guests, 'Admin: Gaesteliste aktualisiert');
             debouncedGhSave('Guest list updated via admin');
         }
 

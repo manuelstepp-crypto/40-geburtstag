@@ -1,1 +1,1397 @@
-"Guest list updated via admin"
+[
+  {
+    "id": 1,
+    "firstName": "Patrick",
+    "lastName": "Frankfurt",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 2,
+    "firstName": "Isabel",
+    "lastName": "Kloppenburg",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 3,
+    "firstName": "Leo",
+    "lastName": "Kloppenburg",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 4,
+    "firstName": "Benni",
+    "lastName": "Hartmann",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 5,
+    "firstName": "Steffi",
+    "lastName": "Hartmann",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 6,
+    "firstName": "Frida",
+    "lastName": "Hartmann",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 7,
+    "firstName": "Carla",
+    "lastName": "Hartmann",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 8,
+    "firstName": "Thomas",
+    "lastName": "Hansmeier",
+    "group": "Hamburg",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 9,
+    "firstName": "Doro",
+    "lastName": "Hansmeier",
+    "group": "Hamburg",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 10,
+    "firstName": "Moritz",
+    "lastName": "Hansmeier",
+    "group": "Hamburg",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 11,
+    "firstName": "Mathilda",
+    "lastName": "Hansmeier",
+    "group": "Hamburg",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 12,
+    "firstName": "Raphael",
+    "lastName": "Pichlmaier",
+    "group": "München",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 13,
+    "firstName": "Simon",
+    "lastName": "Enz",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 14,
+    "firstName": "Christian",
+    "lastName": "Lütkemeyer",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 2,
+    "kids": 2,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 15,
+    "firstName": "Vera",
+    "lastName": "Lütkemeyer",
+    "group": "Frankfurt",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 16,
+    "firstName": "Emma",
+    "lastName": "Lütkemeyer",
+    "group": "Frankfurt",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 17,
+    "firstName": "Christian",
+    "lastName": "Proffesor",
+    "group": "Frankfurt",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 18,
+    "firstName": "Matthias",
+    "lastName": "Eberle",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 2,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 19,
+    "firstName": "Franzi",
+    "lastName": "Eberle",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 20,
+    "firstName": "Felix",
+    "lastName": "Meissner",
+    "group": "Zürich",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 21,
+    "firstName": "Jose",
+    "lastName": "Niethammer",
+    "group": "Saarbrücken",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 22,
+    "firstName": "Eva",
+    "lastName": "Niethammer",
+    "group": "Saarbrücken",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 23,
+    "firstName": "Benni",
+    "lastName": "Niethammer",
+    "group": "Saarbrücken",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 24,
+    "firstName": "Ruth",
+    "lastName": "Niethammer",
+    "group": "Saarbrücken",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 25,
+    "firstName": "Andreas",
+    "lastName": "Niethammer",
+    "group": "Saarbrücken",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 26,
+    "firstName": "Volkhard",
+    "lastName": "Stepp",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 27,
+    "firstName": "Barbara",
+    "lastName": "Werner",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 28,
+    "firstName": "Cordula",
+    "lastName": "Stepp",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 29,
+    "firstName": "Janosch",
+    "lastName": "Neuweiler",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 31,
+    "firstName": "Lucy",
+    "lastName": "Weller",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 32,
+    "firstName": "Angela",
+    "lastName": "Weller",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 33,
+    "firstName": "Tobias",
+    "lastName": "Flaig",
+    "group": "Familie",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 34,
+    "firstName": "Andreas",
+    "lastName": "Kaiser",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 35,
+    "firstName": "Latina",
+    "lastName": "Kaiser",
+    "group": "Wien",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 36,
+    "firstName": "Carmen",
+    "lastName": "Schickinger",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 37,
+    "firstName": "Emil",
+    "lastName": "Diaconu",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 38,
+    "firstName": "Tuba",
+    "lastName": "Diaconu",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 39,
+    "firstName": "Christian",
+    "lastName": "Schäfer",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 2,
+    "kids": 2,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 40,
+    "firstName": "Nora",
+    "lastName": "Schäfer",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 41,
+    "firstName": "Lua",
+    "lastName": "Schäfer",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 42,
+    "firstName": "Manuel",
+    "lastName": "Schäfer",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 43,
+    "firstName": "Eike",
+    "lastName": "Johann",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 44,
+    "firstName": "Bibi",
+    "lastName": "Johann",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 45,
+    "firstName": "Eli",
+    "lastName": "Welz",
+    "group": "Berlin",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 46,
+    "firstName": "Jirka",
+    "lastName": "Welz",
+    "group": "Berlin",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 47,
+    "firstName": "Irina",
+    "lastName": "",
+    "group": "Berlin",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 48,
+    "firstName": "Flo",
+    "lastName": "Schneider",
+    "group": "Berlin",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 49,
+    "firstName": "Bela",
+    "lastName": "Bartmes",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 50,
+    "firstName": "Pau",
+    "lastName": "Navalon",
+    "group": "Navalon",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 51,
+    "firstName": "Maite",
+    "lastName": "Rohr",
+    "group": "Saarbrücken",
+    "response": "yes",
+    "adults": 2,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 52,
+    "firstName": "Micha",
+    "lastName": "",
+    "group": "Tübingen",
+    "response": "yes",
+    "adults": 2,
+    "kids": 2,
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "comment": ""
+  },
+  {
+    "id": 53,
+    "firstName": "Britta",
+    "lastName": "",
+    "group": "Tübingen",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 54,
+    "firstName": "Steffen",
+    "lastName": "Petruch",
+    "group": "Stuttgart",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 55,
+    "firstName": "Laura",
+    "lastName": "Oberhofer",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 56,
+    "firstName": "Nina",
+    "lastName": "Maier",
+    "group": "Stuttgart",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 57,
+    "firstName": "Josip",
+    "lastName": "",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 58,
+    "firstName": "David",
+    "lastName": "Weber",
+    "group": "Berlin",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 59,
+    "firstName": "Sophia",
+    "lastName": "Weber",
+    "group": "Berlin",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 60,
+    "firstName": "Felix",
+    "lastName": "Weber",
+    "group": "Berlin",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 61,
+    "firstName": "Anton",
+    "lastName": "Weber",
+    "group": "Berlin",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 62,
+    "firstName": "Simon",
+    "lastName": "Kesch",
+    "group": "Berlin",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 63,
+    "firstName": "Vivian",
+    "lastName": "Kesch",
+    "group": "Berlin",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 64,
+    "firstName": "Lukas",
+    "lastName": "Löhlein",
+    "group": "Waldenbuch",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 65,
+    "firstName": "Anabell",
+    "lastName": "Becker",
+    "group": "Abi",
+    "response": "yes",
+    "adults": 1,
+    "kids": 2,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 66,
+    "firstName": "Tobias",
+    "lastName": "Hertler",
+    "group": "Waldenbuch",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 67,
+    "firstName": "Lydia",
+    "lastName": "Hertler",
+    "group": "Waldenbuch",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 68,
+    "firstName": "Boas",
+    "lastName": "Hertler",
+    "group": "Waldenbuch",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 69,
+    "firstName": "Feline",
+    "lastName": "",
+    "group": "Amsterdam",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 70,
+    "firstName": "Nathalena",
+    "lastName": "Hein",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 71,
+    "firstName": "Isi",
+    "lastName": "Hein",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 72,
+    "firstName": "Mieszko",
+    "lastName": "Hein",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 73,
+    "firstName": "Christina",
+    "lastName": "Selle",
+    "group": "Mannheim",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 74,
+    "firstName": "Basti",
+    "lastName": "Gugel",
+    "group": "Berlin",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 75,
+    "firstName": "Marcel",
+    "lastName": "Wolf",
+    "group": "Wien",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 76,
+    "firstName": "Selda",
+    "lastName": "Yücel",
+    "group": "Wien",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 77,
+    "firstName": "Clare",
+    "lastName": "Murray",
+    "group": "Berlin",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 78,
+    "firstName": "Robert",
+    "lastName": "Beach",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 79,
+    "firstName": "Arne",
+    "lastName": "Neubauer",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 80,
+    "firstName": "Cristian",
+    "lastName": "Bossetti",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 81,
+    "firstName": "Paul",
+    "lastName": "Sprüssel",
+    "group": "Hamburg",
+    "response": "yes",
+    "adults": 2,
+    "kids": 2,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 82,
+    "firstName": "Steffen",
+    "lastName": "Ketterer",
+    "group": "Mannheim",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 83,
+    "firstName": "Kerstin",
+    "lastName": "Weller",
+    "group": "Familie",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 84,
+    "firstName": "Leonie",
+    "lastName": "May",
+    "group": "Frankfurt",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 85,
+    "firstName": "Sohn",
+    "lastName": "May",
+    "group": "Frankfurt",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 86,
+    "firstName": "Andy",
+    "lastName": "Schneider",
+    "group": "Mannheim",
+    "response": "yes",
+    "adults": 2,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 87,
+    "firstName": "Sarah",
+    "lastName": "Aderhold",
+    "group": "Waldenbuch",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 88,
+    "firstName": "Ralf",
+    "lastName": "Single Hotel",
+    "group": "Frankfurt",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 89,
+    "firstName": "Richard",
+    "lastName": "Christian",
+    "group": "Frankfurt",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 90,
+    "firstName": "Anni",
+    "lastName": "",
+    "group": "Waldenbuch",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 91,
+    "firstName": "Daniel",
+    "lastName": "Bruch",
+    "group": "Waldenbuch",
+    "response": "no",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 92,
+    "firstName": "Johannes",
+    "lastName": "Müller",
+    "group": "",
+    "response": "yes",
+    "adults": 2,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 93,
+    "firstName": "Maximilian",
+    "lastName": "Trompetter",
+    "group": "",
+    "response": "maybe",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
+    "id": 94,
+    "firstName": "Micha",
+    "lastName": "Bristle",
+    "group": "",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  }
+]

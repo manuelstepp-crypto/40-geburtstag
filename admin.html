@@ -407,7 +407,7 @@
         function debouncedGhSave(message) {
             if (saveTimeout) clearTimeout(saveTimeout);
             saveTimeout = setTimeout(() => {
-                ghSaveGuests(message);
+                ghSaveGuests(guests, message);
             }, 2000);
         }
 
@@ -468,7 +468,7 @@
         function save() {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
             ghSaveGuests(guests, 'Admin: Gaesteliste aktualisiert');
-            debouncedGhSave('Guest list updated via admin');
+            // debouncedGhSave removed - ghSaveGuests already called above
         }
 
         function render() {

@@ -388,7 +388,7 @@
             }
 
             try {
-                const content = btoa(unescape(encodeURIComponent(JSON.stringify(guests, null, 2))));
+                const content = (function(){var e=new TextEncoder(),b=e.encode(JSON.stringify(guestList, null, 2)),s="";for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s)})();
                 const resp = await fetch(
                     'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE,
                     {

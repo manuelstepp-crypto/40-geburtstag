@@ -58,7 +58,12 @@ async function ghSaveGuests(guests, message) {
     }
 
     try {
-        const content = btoa(unescape(encodeURIComponent(JSON.stringify(guests, null, 2))));
+        const jsonStr = JSON.stringify(guests, null, 2);
+        const encoder = new TextEncoder();
+        const bytes = encoder.encode(jsonStr);
+        let binary = '';
+        for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+        const content = btoa(binary);
         const resp = await fetch(
             'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE,
             {

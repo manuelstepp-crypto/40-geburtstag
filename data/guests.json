@@ -435,6 +435,21 @@
     "comment": ""
   },
   {
+    "id": 30,
+    "firstName": "Julika",
+    "lastName": "Neuweiler",
+    "group": "Familie",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": ""
+  },
+  {
     "id": 31,
     "firstName": "Lucy",
     "lastName": "Weller",

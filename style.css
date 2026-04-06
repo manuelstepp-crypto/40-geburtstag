@@ -602,11 +602,13 @@ img {
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--color-border);
+    margin-top: 40px;
 }
 
 .map-container iframe {
     display: block;
-    filter: invert(0.9) hue-rotate(180deg) saturate(0.3) brightness(0.8);
+    width: 100%;
+    min-height: 300px;
 }
 
 /* ============================================

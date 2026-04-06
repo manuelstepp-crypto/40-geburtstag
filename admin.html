@@ -373,35 +373,61 @@
         }
 
         async function ghSaveGuests(guestList, message) {
-            var doSave = function() {
-                var getsha = ghSha ? Promise.resolve(ghSha) : fetch('https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE, {
-                    headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' }
-                }).then(function(r){return r.json()}).then(function(d){ ghSha = d.sha; return d.sha; });
-                
-                return Promise.resolve(getsha).then(function() {
-                    var jsonStr = JSON.stringify(guestList, null, 2);
-                    var encoder = new TextEncoder();
-                    var bytes = encoder.encode(jsonStr);
-                    var binary = '';
-                    for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-                    var content = btoa(binary);
-                    return fetch('https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE, {
+            if (!ghFileSha) {
+                try {
+                    const resp = await fetch(
+                        'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE + '?ref=main',
+                        { headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json' } }
+                    );
+                    const data = await resp.json();
+                    ghFileSha = data.sha;
+                } catch (e) {
+                    console.error('Could not get SHA:', e);
+                    return false;
+                }
+            }
+
+            try {
+                const jsonStr = JSON.stringify(guestList, null, 2);
+                const encoder = new TextEncoder();
+                const bytes = encoder.encode(jsonStr);
+                let binary = '';
+                for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+                const content = btoa(binary);
+                const resp = await fetch(
+                    'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_FILE,
+                    {
                         method: 'PUT',
-                        headers: { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: message || 'Admin update', content: content, sha: ghSha })
-                    });
-                }).then(function(resp) {
+                        headers: {
+                            'Authorization': 'token ' + GH_TOKEN,
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: message || 'Guest list updated via admin',
+                            content: content,
+                            sha: ghFileSha,
+                            branch: 'main'
+                        })
+                    }
+                );
+                if (!resp.ok) {
                     if (resp.status === 409) {
-                        ghSha = null;
+                        console.warn('SHA conflict, re-reading...');
+                        await ghReadGuests();
                         return ghSaveGuests(guestList, message);
                     }
-                    return resp.json();
-                }).then(function(result) {
-                    if (result && result.content) ghSha = result.content.sha;
-                    console.log('GH save OK:', message);
-                }).catch(function(e) { console.error('GitHub save failed:', e); });
-            };
-            return doSave();
+                    const err = await resp.json();
+                    throw new Error(JSON.stringify(err));
+                }
+                const result = await resp.json();
+                ghFileSha = result.content.sha;
+                console.log('Saved to GitHub successfully');
+                return true;
+            } catch (e) {
+                console.error('GitHub save failed:', e);
+                return false;
+            }
         }
 
         function debouncedGhSave(message) {
@@ -467,8 +493,7 @@
 
         function save() {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
-            ghSaveGuests(guests, 'Admin: Gaesteliste aktualisiert');
-            // debouncedGhSave removed - ghSaveGuests already called above
+            debouncedGhSave('Guest list updated via admin');
         }
 
         function render() {

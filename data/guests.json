@@ -1424,5 +1424,21 @@
     "comment": "",
     "id": 95,
     "timestamp": "2026-04-08T20:46:58.364Z"
+  },
+  {
+    "firstName": "Marcel",
+    "lastName": "Wolf",
+    "group": "",
+    "response": "yes",
+    "adults": 1,
+    "kids": 0,
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "comment": "",
+    "id": 96,
+    "timestamp": "2026-04-19T08:51:41.233Z"
   }
 ]

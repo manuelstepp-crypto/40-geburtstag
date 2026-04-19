@@ -1120,7 +1120,7 @@
     "days": {
       "friday": true,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "comment": ""
   },

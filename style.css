@@ -1690,33 +1690,43 @@ img {
 }
 
 
-/* === Übernachtung in Gästekarte === */
+
+
+/* === Erweiterte Karten-Anzeige (v3) === */
 .guest-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   flex: 1;
   min-width: 0;
 }
-.guest-uebernachtung {
-  font-size: 13px;
+.guest-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+.guest-meta-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 12px;
   color: var(--color-text-muted);
-  font-weight: 400;
-  line-height: 1.4;
   word-break: break-word;
 }
-.guest-uebernachtung-empty {
-  color: var(--color-text-dim);
-  font-style: italic;
-  opacity: 0.7;
+.guest-days {
+  display: flex;
+  gap: 4px;
 }
 
-/* === Stat-Karte (nur Zusagen) zentriert === */
-.guest-stats {
-  justify-content: center;
+/* === Modal Row (Erw/Kinder nebeneinander) === */
+.guest-modal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
-
-/* === Modal-Textarea === */
 .guest-modal-field textarea {
   width: 100%;
   padding: 12px 14px;
@@ -1727,7 +1737,7 @@ img {
   font-family: var(--font-body);
   font-size: 15px;
   resize: vertical;
-  min-height: 80px;
+  min-height: 60px;
   box-sizing: border-box;
 }
 .guest-modal-field textarea:focus {

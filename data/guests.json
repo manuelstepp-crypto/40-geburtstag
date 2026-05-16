@@ -531,7 +531,7 @@
     "response": "yes",
     "days": {
       "friday": true,
-      "saturday": true,
+      "saturday": false,
       "sunday": true
     },
     "adults": 1,

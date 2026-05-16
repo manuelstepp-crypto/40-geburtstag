@@ -215,7 +215,7 @@
     "lastName": "Weller",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
       "sunday": true
     },

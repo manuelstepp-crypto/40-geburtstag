@@ -395,12 +395,12 @@
     "lastName": "Maier",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 1,
     "uebernachtung": "kein Bedarf (Tante/heimfahren)",
     "mitbringen": ""
   },
@@ -564,10 +564,10 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 2,
-    "kids": 3,
-    "uebernachtung": "Zelt oder Camper",
-    "mitbringen": "Börek"
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
   },
   {
     "id": 39,
@@ -575,9 +575,9 @@
     "lastName": "Ketterer",
     "response": "yes",
     "days": {
-      "friday": false,
+      "friday": true,
       "saturday": true,
-      "sunday": false
+      "sunday": true
     },
     "adults": 2,
     "kids": 0,

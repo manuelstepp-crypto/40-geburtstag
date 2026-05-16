@@ -54,8 +54,8 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "uebernachtung": "Zuhause bei sich",
     "mitbringen": "Salat"
   },
@@ -69,7 +69,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 3,
+    "adults": 1,
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": ""
@@ -114,7 +114,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "Dachtest",
     "mitbringen": ""
@@ -131,7 +131,7 @@
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "kein Bedarf (Hängematte)",
+    "uebernachtung": "kein Bedarf",
     "mitbringen": ""
   },
   {
@@ -144,9 +144,9 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
-    "uebernachtung": "Bei Manu (kein AirBnB)",
+    "uebernachtung": "AirBnB (mit Benni-Gruppe, Fr-So)",
     "mitbringen": ""
   },
   {
@@ -174,7 +174,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "AirBnB mit Benni (Fr-So)",
     "mitbringen": ""
@@ -215,7 +215,7 @@
     "lastName": "Weller",
     "response": "yes",
     "days": {
-      "friday": false,
+      "friday": true,
       "saturday": true,
       "sunday": true
     },
@@ -249,7 +249,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": ""
@@ -264,8 +264,8 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "uebernachtung": "Eigenes AirBnB (Filderstadt)",
     "mitbringen": ""
   },
@@ -279,7 +279,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "Im Van",
     "mitbringen": "Pizzaofen"
@@ -294,7 +294,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "Bei sich (FFM Anreise Do Abend)",
     "mitbringen": ""
@@ -339,8 +339,8 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "uebernachtung": "kein Bedarf (Hotel NH Stuttgart Airport, 7 Pers)",
     "mitbringen": ""
   },
@@ -350,12 +350,12 @@
     "lastName": "",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 2,
     "uebernachtung": "Nur Samstag",
     "mitbringen": ""
   },
@@ -459,8 +459,8 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
+    "adults": 2,
+    "kids": 1,
     "uebernachtung": "",
     "mitbringen": ""
   },
@@ -472,9 +472,9 @@
     "days": {
       "friday": true,
       "saturday": true,
-      "sunday": false
+      "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": ""
@@ -489,7 +489,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": ""
@@ -519,7 +519,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 2,
+    "adults": 1,
     "kids": 0,
     "uebernachtung": "Monteur 1",
     "mitbringen": ""
@@ -531,7 +531,7 @@
     "response": "yes",
     "days": {
       "friday": true,
-      "saturday": false,
+      "saturday": true,
       "sunday": true
     },
     "adults": 1,
@@ -579,7 +579,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": ""
@@ -590,14 +590,14 @@
     "lastName": "Schneider",
     "response": "yes",
     "days": {
-      "friday": false,
+      "friday": true,
       "saturday": true,
-      "sunday": false
+      "sunday": true
     },
-    "adults": 2,
+    "adults": 1,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": "Salat"
+    "mitbringen": ""
   },
   {
     "id": 41,
@@ -654,7 +654,7 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": ""

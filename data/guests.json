@@ -575,9 +575,9 @@
     "lastName": "Ketterer",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "adults": 2,
     "kids": 0,

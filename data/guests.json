@@ -472,7 +472,7 @@
     "days": {
       "friday": true,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "adults": 1,
     "kids": 0,

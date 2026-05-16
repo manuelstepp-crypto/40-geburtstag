@@ -50,14 +50,14 @@
     "lastName": "Hartmann",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
       "sunday": true
     },
-    "adults": 2,
-    "kids": 2,
+    "adults": 1,
+    "kids": 0,
     "uebernachtung": "Zuhause bei sich",
-    "mitbringen": "Salat"
+    "mitbringen": "Nudelsalat"
   },
   {
     "id": 5,

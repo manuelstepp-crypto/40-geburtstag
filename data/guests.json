@@ -590,14 +590,14 @@
     "lastName": "Schneider",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
-    "adults": 1,
+    "adults": 2,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "Salat"
   },
   {
     "id": 41,

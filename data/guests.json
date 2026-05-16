@@ -564,10 +564,10 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "adults": 2,
+    "kids": 3,
+    "uebernachtung": "Zelt oder Camper",
+    "mitbringen": "Börek"
   },
   {
     "id": 39,

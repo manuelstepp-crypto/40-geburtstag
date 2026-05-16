@@ -1688,3 +1688,49 @@ img {
         font-size: 28px;
     }
 }
+
+
+/* === Übernachtung in Gästekarte === */
+.guest-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.guest-uebernachtung {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.guest-uebernachtung-empty {
+  color: var(--color-text-dim);
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* === Stat-Karte (nur Zusagen) zentriert === */
+.guest-stats {
+  justify-content: center;
+}
+
+/* === Modal-Textarea === */
+.guest-modal-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+.guest-modal-field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}

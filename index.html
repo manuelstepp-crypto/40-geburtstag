@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1779000000000">
+<link rel="stylesheet" href="style.css?v=1779100000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -359,12 +359,24 @@ referrerpolicy="no-referrer-when-downgrade">
 <section class="section guests-section" id="guests">
 <div class="container">
 <h2 class="section-title scroll-reveal">Wer kommt?</h2>
-<p class="section-subtitle scroll-reveal">Klick auf deinen Namen, um deine Übernachtung einzutragen oder zu ändern.</p>
+<p class="section-subtitle scroll-reveal">Klick auf deinen Namen, um deine Details (Tage, Personen, Übernachtung, Mitbringsel) einzutragen oder zu ändern.</p>
 
 <div class="guest-stats scroll-reveal">
 <div class="guest-stat">
 <span class="guest-stat-number" id="statTotal">0</span>
-<span class="guest-stat-label">Zusagen</span>
+<span class="guest-stat-label">Personen gesamt</span>
+</div>
+<div class="guest-stat">
+<span class="guest-stat-number" id="statFriday">0</span>
+<span class="guest-stat-label">Freitag</span>
+</div>
+<div class="guest-stat">
+<span class="guest-stat-number" id="statSaturday">0</span>
+<span class="guest-stat-label">Samstag</span>
+</div>
+<div class="guest-stat">
+<span class="guest-stat-number" id="statSunday">0</span>
+<span class="guest-stat-label">Sonntag</span>
 </div>
 </div>
 
@@ -382,12 +394,54 @@ referrerpolicy="no-referrer-when-downgrade">
 <div class="guest-modal-overlay hidden" id="guestEditModal">
 <div class="guest-modal">
 <button class="guest-modal-close" onclick="closeGuestModal()">&times;</button>
-<h3 id="guestEditTitle">Übernachtung anpassen</h3>
+<h3 id="guestEditTitle">Deine Details</h3>
 <input type="hidden" id="guestEditId">
 
 <div class="guest-modal-field">
+<label>Wann bist du da?</label>
+<div class="day-checkboxes">
+<label class="day-checkbox">
+<input type="checkbox" id="dayFriday" checked>
+<span>Freitag</span>
+</label>
+<label class="day-checkbox">
+<input type="checkbox" id="daySaturday" checked>
+<span>Samstag</span>
+</label>
+<label class="day-checkbox">
+<input type="checkbox" id="daySunday" checked>
+<span>Sonntag</span>
+</label>
+</div>
+</div>
+
+<div class="guest-modal-row">
+<div class="guest-modal-field">
+<label>Erwachsene</label>
+<div class="stepper">
+<button type="button" onclick="stepValue('guestAdults', -1)">-</button>
+<input type="number" id="guestAdults" min="0" max="20" value="1">
+<button type="button" onclick="stepValue('guestAdults', 1)">+</button>
+</div>
+</div>
+<div class="guest-modal-field">
+<label>Kinder</label>
+<div class="stepper">
+<button type="button" onclick="stepValue('guestKids', -1)">-</button>
+<input type="number" id="guestKids" min="0" max="20" value="0">
+<button type="button" onclick="stepValue('guestKids', 1)">+</button>
+</div>
+</div>
+</div>
+
+<div class="guest-modal-field">
 <label for="guestUebernachtung">Wo übernachtest du?</label>
-<textarea id="guestUebernachtung" rows="3" placeholder="z. B. AirBnB, bei Manu, Camper, Hotel ..."></textarea>
+<textarea id="guestUebernachtung" rows="2" placeholder="z. B. AirBnB, bei Manu, Camper, kein Bedarf ..."></textarea>
+</div>
+
+<div class="guest-modal-field">
+<label for="guestMitbringen">Was bringst du mit?</label>
+<textarea id="guestMitbringen" rows="2" placeholder="z. B. Salat, Kuchen, Pizzaofen ..."></textarea>
 </div>
 
 <button class="submit-btn" onclick="saveGuestEdit()">
@@ -594,6 +648,6 @@ referrerpolicy="no-referrer-when-downgrade">
 </div>
 </footer>
 
-<script src="script.js?v=1779000000000"></script>
+<script src="script.js?v=1779100000000"></script>
 </body>
 </html>

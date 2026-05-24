@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1779200000000">
+<link rel="stylesheet" href="style.css?v=1779300000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -862,18 +862,32 @@ function renderGuests() {
     const extra = (adults - 1) + kids;
     const plusStr = extra > 0 ? `<span class="guest-plus">+${extra}</span>` : '';
 
+    const updatedStr = guest.updatedAt
+      ? `<div class="guest-updated">Zuletzt gespeichert: ${escapeHtml(formatUpdated(guest.updatedAt))}</div>`
+      : '';
+
     return `
       <div class="guest-card" onclick="openGuestModal(${guest.id})" title="Klick zum Bearbeiten">
         <div class="guest-avatar" style="background:${color}">${escapeHtml(initials)}</div>
         <div class="guest-info">
           <div class="guest-name">${escapeHtml(fn)} ${escapeHtml(ln)}${plusStr}</div>
           ${dayTags}
+          ${updatedStr}
         </div>
         <div class="guest-edit-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
         </div>
       </div>`;
   }).join('');
+}
+
+function formatUpdated(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return '';
+  return d.toLocaleString('de-DE', {
+    day: '2-digit', month: '2-digit', year: 'numeric',
+    hour: '2-digit', minute: '2-digit'
+  }) + ' Uhr';
 }
 
 function getAvatarColor(name) {
@@ -931,6 +945,7 @@ function saveGuestEdit() {
   guest.kids = parseInt(document.getElementById('guestKids').value) || 0;
   guest.uebernachtung = document.getElementById('guestUebernachtung').value.trim();
   guest.mitbringen = document.getElementById('guestMitbringen').value.trim();
+  guest.updatedAt = new Date().toISOString();
 
   saveGuests();
   renderGuests();

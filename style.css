@@ -961,6 +961,13 @@ img {
     margin-top: 6px;
 }
 
+.guest-updated {
+    font-size: 11px;
+    color: var(--color-text-dim);
+    margin-top: 6px;
+    opacity: 0.8;
+}
+
 .guest-day-tag {
     font-size: 10px;
     font-weight: 600;

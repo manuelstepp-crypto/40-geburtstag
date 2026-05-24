@@ -232,13 +232,14 @@
     "response": "yes",
     "days": {
       "friday": true,
-      "saturday": true,
+      "saturday": false,
       "sunday": true
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "Bei ihrem Papa",
-    "mitbringen": ""
+    "uebernachtung": "Bei ihrem Papa; mein Vater kommt vielleicht eine Weile dazu",
+    "mitbringen": "Salat (oder etwas Deiner Wahl)",
+    "updatedAt": "2026-05-24T21:03:51.258Z"
   },
   {
     "id": 17,

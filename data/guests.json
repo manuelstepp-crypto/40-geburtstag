@@ -365,13 +365,13 @@
     "lastName": "Petruch",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
       "sunday": true
     },
     "adults": 2,
-    "kids": 0,
-    "uebernachtung": "",
+    "kids": 1,
+    "uebernachtung": "Zelt falls gutes Wetter",
     "mitbringen": ""
   },
   {

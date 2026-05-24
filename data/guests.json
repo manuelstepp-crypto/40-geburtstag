@@ -458,14 +458,15 @@
     "lastName": "Hein",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
       "sunday": true
     },
     "adults": 2,
     "kids": 1,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "uebernachtung": "Air BnB",
+    "mitbringen": "Muffins",
+    "updatedAt": "2026-05-24T20:53:29.435Z"
   },
   {
     "id": 32,

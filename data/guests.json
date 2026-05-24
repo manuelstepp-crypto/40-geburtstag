@@ -117,8 +117,9 @@
     },
     "adults": 2,
     "kids": 0,
-    "uebernachtung": "Dachtest",
-    "mitbringen": ""
+    "uebernachtung": "Dachzelt",
+    "mitbringen": "Geiler Raketensalat",
+    "updatedAt": "2026-05-24T21:06:52.324Z"
   },
   {
     "id": 9,
@@ -232,14 +233,13 @@
     "response": "yes",
     "days": {
       "friday": true,
-      "saturday": false,
+      "saturday": true,
       "sunday": true
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "Bei ihrem Papa; mein Vater kommt vielleicht eine Weile dazu",
-    "mitbringen": "Salat (oder etwas Deiner Wahl)",
-    "updatedAt": "2026-05-24T21:03:51.258Z"
+    "uebernachtung": "Bei ihrem Papa",
+    "mitbringen": ""
   },
   {
     "id": 17,
@@ -459,15 +459,14 @@
     "lastName": "Hein",
     "response": "yes",
     "days": {
-      "friday": false,
+      "friday": true,
       "saturday": true,
       "sunday": true
     },
     "adults": 2,
     "kids": 1,
-    "uebernachtung": "Air BnB",
-    "mitbringen": "Muffins",
-    "updatedAt": "2026-05-24T20:53:29.435Z"
+    "uebernachtung": "",
+    "mitbringen": ""
   },
   {
     "id": 32,

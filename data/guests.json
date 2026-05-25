@@ -659,13 +659,14 @@
     "lastName": "Müller",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "adults": 2,
     "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "uebernachtung": "Kein Bedarf",
+    "mitbringen": "Kuchen",
+    "updatedAt": "2026-05-25T10:34:01.536Z"
   }
 ]

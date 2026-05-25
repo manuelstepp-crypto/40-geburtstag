@@ -1,0 +1,372 @@
+[
+  {
+    "id": "zeremonienmeister",
+    "title": "Zeremonienmeister / Programm-Manager",
+    "emoji": "🎤",
+    "category": "Programm & Stimmung",
+    "description": "Der rote Faden des Wochenendes: koordiniert Programm, Ansagen und Übergänge und behält den Überblick über alle anderen Rollen.",
+    "reportsTo": null,
+    "worksWith": ["soundmeister", "dj", "grillmeister"],
+    "schenktAn": "crepes-meister"
+  },
+  {
+    "id": "crepes-meister",
+    "title": "Crêpes-Meister",
+    "emoji": "🥞",
+    "category": "Essen & Trinken",
+    "description": "Hält den Crêpes-Stand am Laufen: Teig anrühren, wenden, süß wie herzhaft belegen. Sorgt dafür, dass niemand mit leerem Teller dasteht.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["kuchenfee", "barista"],
+    "schenktAn": "getraenke"
+  },
+  {
+    "id": "getraenke",
+    "title": "Getränke- & Kühl-Beauftragter",
+    "emoji": "🧊",
+    "category": "Essen & Trinken",
+    "description": "Behält Getränkevorräte und Kühlung im Blick. Stellt sicher, dass Bier, Wasser und Limo immer kalt und griffbereit sind.",
+    "reportsTo": "barkeeper",
+    "worksWith": ["barkeeper"],
+    "schenktAn": "barkeeper"
+  },
+  {
+    "id": "barkeeper",
+    "title": "Barkeeper",
+    "emoji": "🍸",
+    "category": "Essen & Trinken",
+    "description": "Mixt Cocktails und Longdrinks, kennt jedes Rezept und schenkt mit ruhiger Hand aus.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["getraenke", "barista"],
+    "schenktAn": "barista"
+  },
+  {
+    "id": "barista",
+    "title": "Barista",
+    "emoji": "☕",
+    "category": "Essen & Trinken",
+    "description": "Zuständig für Espresso, Cappuccino & Co. Rettet am Samstagmorgen Leben.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["fruehstuecksteam", "kuchenfee"],
+    "schenktAn": "kuchenfee"
+  },
+  {
+    "id": "kuchenfee",
+    "title": "Kuchenfee",
+    "emoji": "🧁",
+    "category": "Essen & Trinken",
+    "description": "Zaubert Kuchen und süße Stückchen herbei und sorgt dafür, dass die Kuchentheke nie leer wird.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["barista", "crepes-meister"],
+    "schenktAn": "pizza-meister"
+  },
+  {
+    "id": "pizza-meister",
+    "title": "Pizza-Meister",
+    "emoji": "🍕",
+    "category": "Essen & Trinken",
+    "description": "Heizt den Pizzaofen an und belegt, was das Zeug hält. Wacht über Teig, Temperatur und Timing.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["grillmeister", "feuerteufel"],
+    "schenktAn": "fruehstuecksteam"
+  },
+  {
+    "id": "fruehstuecksteam",
+    "title": "Frühstücks-Team",
+    "emoji": "🍳",
+    "category": "Essen & Trinken",
+    "description": "Deckt das Frühstücksbuffet auf und sorgt für einen gemütlichen Start in den Tag.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["broetchenservice", "eierkocher", "barista"],
+    "schenktAn": "broetchenservice"
+  },
+  {
+    "id": "broetchenservice",
+    "title": "Brötchenservice",
+    "emoji": "🥐",
+    "category": "Essen & Trinken",
+    "description": "Holt frische Brötchen und sorgt dafür, dass der Frühstückskorb morgens gut gefüllt ist.",
+    "reportsTo": "fruehstuecksteam",
+    "worksWith": ["fruehstuecksteam", "fruehaufsteher"],
+    "schenktAn": "grillmeister"
+  },
+  {
+    "id": "grillmeister",
+    "title": "Grillmeister",
+    "emoji": "🔥",
+    "category": "Essen & Trinken",
+    "description": "Herrscher über Kohle und Rost. Bestimmt, wann das Fleisch (und das Gemüse) perfekt ist.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["salatdiener", "feuerteufel", "tischservice"],
+    "schenktAn": "salatdiener"
+  },
+  {
+    "id": "salatdiener",
+    "title": "Salatdiener",
+    "emoji": "🥗",
+    "category": "Essen & Trinken",
+    "description": "Bereitet Salate zu und hält das Buffet frisch und bunt.",
+    "reportsTo": "grillmeister",
+    "worksWith": ["grillmeister", "tischservice"],
+    "schenktAn": "eierkocher"
+  },
+  {
+    "id": "eierkocher",
+    "title": "Eierkocher",
+    "emoji": "🥚",
+    "category": "Essen & Trinken",
+    "description": "Kümmert sich um die perfekte Frühstücksei-Versorgung – weich, hart, ganz nach Wunsch.",
+    "reportsTo": "fruehstuecksteam",
+    "worksWith": ["fruehstuecksteam"],
+    "schenktAn": "mittagssnack"
+  },
+  {
+    "id": "mittagssnack",
+    "title": "Mittagssnack-Beauftragter",
+    "emoji": "🥪",
+    "category": "Essen & Trinken",
+    "description": "Sorgt mittags für die kleine Stärkung zwischendurch, damit niemand schwächelt.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["tischservice", "salatdiener"],
+    "schenktAn": "besteckoffizier"
+  },
+  {
+    "id": "besteckoffizier",
+    "title": "Besteckoffizier",
+    "emoji": "🍴",
+    "category": "Essen & Trinken",
+    "description": "Hat Messer, Gabel und Löffel im Griff: nachlegen, einsammeln, organisieren.",
+    "reportsTo": "tischservice",
+    "worksWith": ["tischservice"],
+    "schenktAn": "tischservice"
+  },
+  {
+    "id": "tischservice",
+    "title": "Tischservice",
+    "emoji": "🍽️",
+    "category": "Essen & Trinken",
+    "description": "Deckt Tische ein, räumt ab und hält die Tafel ansehnlich.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["besteckoffizier", "mittagssnack"],
+    "schenktAn": "soundmeister"
+  },
+  {
+    "id": "soundmeister",
+    "title": "Soundmeister",
+    "emoji": "🎚️",
+    "category": "Programm & Stimmung",
+    "description": "Verantwortlich für Anlage, Mikros und Pegel. Sorgt für guten Klang ohne Rückkopplung.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["dj", "zeremonienmeister"],
+    "schenktAn": "dj"
+  },
+  {
+    "id": "dj",
+    "title": "DJ",
+    "emoji": "🎧",
+    "category": "Programm & Stimmung",
+    "description": "Legt auf, liest die Stimmung und hält die Tanzfläche am Kochen.",
+    "reportsTo": "soundmeister",
+    "worksWith": ["soundmeister", "domteur"],
+    "schenktAn": "reporterin"
+  },
+  {
+    "id": "reporterin",
+    "title": "Reporter:in",
+    "emoji": "📸",
+    "category": "Programm & Stimmung",
+    "description": "Fängt die schönsten Momente mit Kamera und Mikro ein – für die Nachwelt.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["zeremonienmeister"],
+    "schenktAn": "kinderprogramm"
+  },
+  {
+    "id": "kinderprogramm",
+    "title": "Kinderprogramm",
+    "emoji": "🎈",
+    "category": "Programm & Stimmung",
+    "description": "Plant und leitet die Aktionen für die jüngsten Gäste.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["kinderbespasser", "spieleleitung"],
+    "schenktAn": "kinderbespasser"
+  },
+  {
+    "id": "kinderbespasser",
+    "title": "Kinderbespaßer",
+    "emoji": "🤹",
+    "category": "Programm & Stimmung",
+    "description": "Hält die Kinder bei Laune: Spiele, Quatsch und gute Laune garantiert.",
+    "reportsTo": "kinderprogramm",
+    "worksWith": ["kinderprogramm", "spieleleitung"],
+    "schenktAn": "spieleleitung"
+  },
+  {
+    "id": "spieleleitung",
+    "title": "Spieleleitung",
+    "emoji": "🎲",
+    "category": "Programm & Stimmung",
+    "description": "Organisiert Spiele und Turniere für Groß und Klein.",
+    "reportsTo": "kinderprogramm",
+    "worksWith": ["kinderbespasser", "pingpong"],
+    "schenktAn": "pingpong"
+  },
+  {
+    "id": "pingpong",
+    "title": "Ping-Pong-Captain",
+    "emoji": "🏓",
+    "category": "Programm & Stimmung",
+    "description": "Captain der Tischtennisplatte: organisiert Matches und führt die Rangliste.",
+    "reportsTo": "spieleleitung",
+    "worksWith": ["spieleleitung"],
+    "schenktAn": "domteur"
+  },
+  {
+    "id": "domteur",
+    "title": "Domteur",
+    "emoji": "🦁",
+    "category": "Programm & Stimmung",
+    "description": "Bändigt wilde Gäste und sorgt mit Charme für Ordnung auf der Tanzfläche.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["dj", "joker"],
+    "schenktAn": "amor"
+  },
+  {
+    "id": "amor",
+    "title": "Amor",
+    "emoji": "💘",
+    "category": "Programm & Stimmung",
+    "description": "Verkuppelt, was zusammengehört, und sorgt für romantische Funken.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["joker"],
+    "schenktAn": "joker"
+  },
+  {
+    "id": "joker",
+    "title": "Joker",
+    "emoji": "🃏",
+    "category": "Programm & Stimmung",
+    "description": "Die flexible Allzweckwaffe: springt überall ein, wo gerade Hände fehlen.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["zeremonienmeister"],
+    "schenktAn": "dekorateur"
+  },
+  {
+    "id": "dekorateur",
+    "title": "Dekorateur",
+    "emoji": "🎀",
+    "category": "Aufbau & Logistik",
+    "description": "Verwandelt den Sonnenhang in eine Festkulisse: Lichter, Blumen, Details.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["deko-onkel", "empfang"],
+    "schenktAn": "deko-onkel"
+  },
+  {
+    "id": "deko-onkel",
+    "title": "Deko-Onkel",
+    "emoji": "🛠️",
+    "category": "Aufbau & Logistik",
+    "description": "Rechte Hand der Deko-Abteilung: schleppt, hängt auf und schraubt fest.",
+    "reportsTo": "dekorateur",
+    "worksWith": ["dekorateur", "wikinger"],
+    "schenktAn": "feuerteufel"
+  },
+  {
+    "id": "feuerteufel",
+    "title": "Feuerteufel",
+    "emoji": "🪵",
+    "category": "Aufbau & Logistik",
+    "description": "Hält das Lagerfeuer am Brennen und sorgt rechtzeitig für Holznachschub.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["pyromane", "grillmeister"],
+    "schenktAn": "pyromane"
+  },
+  {
+    "id": "pyromane",
+    "title": "Pyromane",
+    "emoji": "🎆",
+    "category": "Aufbau & Logistik",
+    "description": "Zuständig für Feuerstellen, Fackeln und (sicheres!) Feuerwerk.",
+    "reportsTo": "feuerteufel",
+    "worksWith": ["feuerteufel"],
+    "schenktAn": "parkplatz"
+  },
+  {
+    "id": "parkplatz",
+    "title": "Parkplatzeinweiser",
+    "emoji": "🚗",
+    "category": "Aufbau & Logistik",
+    "description": "Weist ankommende Autos ein und sorgt für geordnetes Parken.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["chauffeur", "empfang"],
+    "schenktAn": "chauffeur"
+  },
+  {
+    "id": "chauffeur",
+    "title": "Chauffeur",
+    "emoji": "🚐",
+    "category": "Aufbau & Logistik",
+    "description": "Fährt Gäste sicher von A nach B – Shuttle-Dienst nach Bedarf.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["parkplatz", "empfang"],
+    "schenktAn": "empfang"
+  },
+  {
+    "id": "empfang",
+    "title": "Empfangsherr / -dame",
+    "emoji": "🎩",
+    "category": "Aufbau & Logistik",
+    "description": "Begrüßt ankommende Gäste, verteilt Infos und das gute Gefühl, willkommen zu sein.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["parkplatz", "chauffeur", "dekorateur"],
+    "schenktAn": "fruehaufsteher"
+  },
+  {
+    "id": "fruehaufsteher",
+    "title": "Frühaufsteher",
+    "emoji": "⏰",
+    "category": "Aufbau & Logistik",
+    "description": "Steht als Erste:r auf, macht Kaffee und weckt sanft das Lager.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["fruehstuecksteam", "broetchenservice"],
+    "schenktAn": "wikinger"
+  },
+  {
+    "id": "wikinger",
+    "title": "Wikinger",
+    "emoji": "⚔️",
+    "category": "Aufbau & Logistik",
+    "description": "Packt überall mit roher Kraft an – Bierzeltgarnituren, Fässer, schwere Dinge.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["deko-onkel", "feuerteufel"],
+    "schenktAn": "beachmaus"
+  },
+  {
+    "id": "beachmaus",
+    "title": "Beachmaus",
+    "emoji": "🏖️",
+    "category": "Aufbau & Logistik",
+    "description": "Hält die Beach- und Badezone in Schuss und sorgt für Sommer-Vibes.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["spieleleitung"],
+    "schenktAn": "sanitaeterin"
+  },
+  {
+    "id": "sanitaeterin",
+    "title": "Sanitäter:in",
+    "emoji": "⛑️",
+    "category": "Spezial",
+    "description": "Erste Hilfe bei kleinen Wehwehchen. Hat Pflaster und Ruhe im Gepäck.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["empfang"],
+    "schenktAn": "wichtelfee"
+  },
+  {
+    "id": "wichtelfee",
+    "title": "Wichtelfee",
+    "emoji": "🎁",
+    "category": "Spezial",
+    "description": "Organisiert das Rollen-Wichteln und sorgt dafür, dass jedes Geschenk seinen Weg findet.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": ["zeremonienmeister"],
+    "schenktAn": "zeremonienmeister"
+  }
+]

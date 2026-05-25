@@ -27,7 +27,8 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Monteur 1",
-    "mitbringen": ""
+    "mitbringen": "Kuchen",
+    "updatedAt": "2026-05-25T02:02:03.233Z"
   },
   {
     "id": 3,
@@ -57,7 +58,8 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Zuhause bei sich",
-    "mitbringen": "Nudelsalat"
+    "mitbringen": "Nudelsalat",
+    "updatedAt": "2026-05-24T20:49:08.587Z"
   },
   {
     "id": 5,
@@ -87,7 +89,8 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Transporter",
-    "mitbringen": "Fleischküchle"
+    "mitbringen": "Fleischküchle",
+    "updatedAt": "2026-05-25T08:06:46.882Z"
   },
   {
     "id": 7,
@@ -116,8 +119,9 @@
     },
     "adults": 2,
     "kids": 0,
-    "uebernachtung": "Dachtest",
-    "mitbringen": ""
+    "uebernachtung": "Dachzelt",
+    "mitbringen": "Geiler Raketensalat, toxisch männliche Sprüche, große Klappe, Klappmesser",
+    "updatedAt": "2026-05-25T14:10:34.866Z"
   },
   {
     "id": 9,
@@ -177,7 +181,8 @@
     "adults": 2,
     "kids": 0,
     "uebernachtung": "AirBnB mit Benni (Fr-So)",
-    "mitbringen": ""
+    "mitbringen": "Sophia, Feli und Oscar, Kuchen",
+    "updatedAt": "2026-05-25T12:47:39.691Z"
   },
   {
     "id": 13,
@@ -192,7 +197,8 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Bei Barbara",
-    "mitbringen": ""
+    "mitbringen": "Zitronenkuchen",
+    "updatedAt": "2026-05-25T16:42:48.612Z"
   },
   {
     "id": 14,
@@ -282,7 +288,8 @@
     "adults": 2,
     "kids": 0,
     "uebernachtung": "Im Van",
-    "mitbringen": "Pizzaofen"
+    "mitbringen": "Pizzaofen",
+    "updatedAt": "2026-05-24T20:49:59.472Z"
   },
   {
     "id": 20,
@@ -342,7 +349,8 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "kein Bedarf (Hotel NH Stuttgart Airport, 7 Pers)",
-    "mitbringen": ""
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T21:09:33.677Z"
   },
   {
     "id": 24,
@@ -357,7 +365,8 @@
     "adults": 2,
     "kids": 2,
     "uebernachtung": "Nur Samstag",
-    "mitbringen": ""
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T06:34:50.601Z"
   },
   {
     "id": 25,
@@ -380,14 +389,15 @@
     "lastName": "Oberhofer",
     "response": "yes",
     "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
+      "friday": false,
+      "saturday": false,
+      "sunday": false
     },
     "adults": 1,
     "kids": 0,
     "uebernachtung": "kein Bedarf (Schwester)",
-    "mitbringen": ""
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T07:28:48.366Z"
   },
   {
     "id": 27,
@@ -402,7 +412,8 @@
     "adults": 2,
     "kids": 1,
     "uebernachtung": "kein Bedarf (Tante/heimfahren)",
-    "mitbringen": ""
+    "mitbringen": "",
+    "updatedAt": "2026-05-24T20:49:39.234Z"
   },
   {
     "id": 28,
@@ -476,8 +487,9 @@
     },
     "adults": 2,
     "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "uebernachtung": "Airbnb in Waldenbuch",
+    "mitbringen": "",
+    "updatedAt": "2026-05-24T21:16:35.352Z"
   },
   {
     "id": 33,
@@ -549,10 +561,11 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "adults": 2,
+    "kids": 1,
+    "uebernachtung": "Camper",
+    "mitbringen": "Salat, Spiele, meinen Penis, Alkohol",
+    "updatedAt": "2026-05-25T14:09:31.252Z"
   },
   {
     "id": 38,
@@ -650,13 +663,14 @@
     "lastName": "Müller",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "adults": 2,
     "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "uebernachtung": "Kein Bedarf",
+    "mitbringen": "Kuchen",
+    "updatedAt": "2026-05-25T10:34:01.536Z"
   }
 ]

@@ -21,6 +21,7 @@
 <a href="#program">Programm</a>
 <a href="#details">Details</a>
 <a href="#guests">Gäste</a>
+<a href="#roles">Rollen</a>
 <a href="#accommodations">Unterkünfte</a>
 </div>
 <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -31,6 +32,7 @@
 <a href="#program">Programm</a>
 <a href="#details">Details</a>
 <a href="#guests">Gäste</a>
+<a href="#roles">Rollen</a>
 <a href="#accommodations">Unterkünfte</a>
 </div>
 </nav>
@@ -444,11 +446,35 @@ referrerpolicy="no-referrer-when-downgrade">
 <textarea id="guestMitbringen" rows="2" placeholder="z. B. Salat, Kuchen, Pizzaofen ..."></textarea>
 </div>
 
+<div class="guest-modal-field">
+<label>Deine Rolle(n) <span class="role-hint">– such dir aus, was du übernimmst</span></label>
+<input type="text" id="roleSelectorSearch" class="role-selector-search" placeholder="Rolle suchen..." oninput="filterRoleSelector(this.value)">
+<div class="role-selector" id="roleSelector">
+<!-- Filled by JS -->
+</div>
+</div>
+
 <button class="submit-btn" onclick="saveGuestEdit()">
 <span>Speichern</span>
 </button>
 </div>
 </div>
+
+<!-- Roles Section -->
+<section class="section roles-section" id="roles">
+<div class="container">
+<h2 class="section-title scroll-reveal">Die Rollen</h2>
+<p class="section-subtitle scroll-reveal">Jeder Gast übernimmt mindestens eine Rolle. Klick auf eine Karte und schau dir an, was zu tun ist, mit wem zusammengearbeitet wird und für wen gewichtelt wird.</p>
+
+<div class="role-search scroll-reveal">
+<input type="text" id="roleSearch" placeholder="Rolle oder Name suchen..." oninput="filterRoles(this.value)">
+</div>
+
+<div class="roles-grid" id="rolesGrid">
+<!-- Filled by JS -->
+</div>
+</div>
+</section>
 
 <!-- Accommodations Section -->
 <section class="section accommodations" id="accommodations">
@@ -659,6 +685,7 @@ const GH_FILE = 'data/guests.json';
 const STORAGE_KEY = 'geburtstag40_guests';
 
 let allGuests = [];
+let allRoles = [];
 let ghFileSha = null;
 let saveTimeout = null;
 
@@ -667,6 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollReveal();
   initTabs();
+  loadRoles();
   loadGuests();
 });
 
@@ -766,6 +794,7 @@ async function loadGuests() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(allGuests));
     renderGuests();
     updateStats();
+    renderRoles();
     return;
   }
 
@@ -774,6 +803,7 @@ async function loadGuests() {
     allGuests = JSON.parse(stored);
     renderGuests();
     updateStats();
+    renderRoles();
     return;
   }
 
@@ -783,11 +813,28 @@ async function loadGuests() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(allGuests));
     renderGuests();
     updateStats();
+    renderRoles();
   } catch (e) {
     allGuests = [];
     renderGuests();
     updateStats();
+    renderRoles();
   }
+}
+
+async function loadRoles() {
+  try {
+    const resp = await fetch('data/roles.json?_=' + Date.now(), { cache: 'no-store' });
+    allRoles = await resp.json();
+  } catch (e) {
+    console.warn('Rollen konnten nicht geladen werden:', e);
+    allRoles = [];
+  }
+  renderRoles();
+}
+
+function roleById(id) {
+  return allRoles.find(r => r.id === id);
 }
 
 function saveGuests() {
@@ -866,12 +913,20 @@ function renderGuests() {
       ? `<div class="guest-updated">Zuletzt gespeichert: ${escapeHtml(formatUpdated(guest.updatedAt))}</div>`
       : '';
 
+    const roleChips = (guest.roles || []).map(rid => {
+      const r = roleById(rid);
+      if (!r) return '';
+      return `<span class="guest-role-chip" onclick="event.stopPropagation(); goToRole('${r.id}')" title="Zur Rolle: ${escapeHtml(r.title)}">${r.emoji} ${escapeHtml(r.title)}</span>`;
+    }).join('');
+    const rolesHtml = roleChips ? `<div class="guest-roles">${roleChips}</div>` : '';
+
     return `
       <div class="guest-card" onclick="openGuestModal(${guest.id})" title="Klick zum Bearbeiten">
         <div class="guest-avatar" style="background:${color}">${escapeHtml(initials)}</div>
         <div class="guest-info">
           <div class="guest-name">${escapeHtml(fn)} ${escapeHtml(ln)}${plusStr}</div>
           ${dayTags}
+          ${rolesHtml}
           ${updatedStr}
         </div>
         <div class="guest-edit-icon">
@@ -899,6 +954,129 @@ function getAvatarColor(name) {
 }
 
 // ============================================
+// Rollen
+// ============================================
+function renderRoles() {
+  const grid = document.getElementById('rolesGrid');
+  if (!grid || !allRoles.length) return;
+
+  // Zuweisung: Rollen-ID -> Liste der Gast-Namen
+  const assigned = {};
+  allGuests.filter(g => g.response === 'yes').forEach(g => {
+    (g.roles || []).forEach(rid => {
+      const name = ((g.firstName || '') + ' ' + (g.lastName || '')).trim();
+      (assigned[rid] = assigned[rid] || []).push(name);
+    });
+  });
+
+  // Nach Kategorie gruppieren (in Reihenfolge des ersten Auftretens)
+  const cats = [];
+  const byCat = {};
+  allRoles.forEach(r => {
+    if (!byCat[r.category]) { byCat[r.category] = []; cats.push(r.category); }
+    byCat[r.category].push(r);
+  });
+
+  grid.innerHTML = cats.map(cat => {
+    const cards = byCat[cat].map(r => roleCardHtml(r, assigned)).join('');
+    return `<div class="role-category">
+      <h3 class="role-category-title">${escapeHtml(cat)}</h3>
+      <div class="role-cards">${cards}</div>
+    </div>`;
+  }).join('');
+}
+
+function roleCardHtml(r, assigned) {
+  const reports = r.reportsTo ? roleById(r.reportsTo) : null;
+  const worksWith = (r.worksWith || []).map(roleById).filter(Boolean);
+  const gift = r.schenktAn ? roleById(r.schenktAn) : null;
+  const holders = assigned[r.id] || [];
+
+  const holdersHtml = holders.length
+    ? `<div class="role-holders">${holders.map(n => `<span class="role-holder">${escapeHtml(n)}</span>`).join('')}</div>`
+    : `<div class="role-holders"><span class="role-holder role-holder-empty">Noch frei</span></div>`;
+
+  const reportsHtml = reports
+    ? `<div class="role-meta-row"><span class="role-meta-label">Berichtet an</span> <a class="role-link" onclick="goToRole('${reports.id}')">${reports.emoji} ${escapeHtml(reports.title)}</a></div>`
+    : `<div class="role-meta-row"><span class="role-meta-label">Berichtet an</span> <span class="role-meta-top">ganz oben 👑</span></div>`;
+
+  const worksHtml = worksWith.length
+    ? `<div class="role-meta-row"><span class="role-meta-label">Arbeitet mit</span> ${worksWith.map(w => `<a class="role-link" onclick="goToRole('${w.id}')">${w.emoji} ${escapeHtml(w.title)}</a>`).join(' ')}</div>`
+    : '';
+
+  const giftHtml = gift
+    ? `<div class="role-meta-row role-gift"><span class="role-meta-label">🎁 Wichtelt für</span> <a class="role-link" onclick="goToRole('${gift.id}')">${gift.emoji} ${escapeHtml(gift.title)}</a></div>`
+    : '';
+
+  return `
+    <div class="role-card" id="role-${r.id}">
+      <div class="role-card-head">
+        <span class="role-emoji">${r.emoji}</span>
+        <h4 class="role-title">${escapeHtml(r.title)}</h4>
+      </div>
+      ${holdersHtml}
+      <p class="role-desc">${escapeHtml(r.description)}</p>
+      <div class="role-meta">
+        ${reportsHtml}
+        ${worksHtml}
+        ${giftHtml}
+      </div>
+    </div>`;
+}
+
+window.goToRole = function goToRole(id) {
+  closeGuestModal();
+  resetRoleFilter();
+  const card = document.getElementById('role-' + id);
+  if (!card) return;
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  card.classList.remove('role-highlight');
+  void card.offsetWidth;
+  card.classList.add('role-highlight');
+  setTimeout(() => card.classList.remove('role-highlight'), 2500);
+};
+
+window.filterRoles = function filterRoles(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('#rolesGrid .role-card').forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+  document.querySelectorAll('#rolesGrid .role-category').forEach(cat => {
+    const anyVisible = Array.from(cat.querySelectorAll('.role-card')).some(c => c.style.display !== 'none');
+    cat.style.display = anyVisible ? '' : 'none';
+  });
+};
+
+function resetRoleFilter() {
+  const inp = document.getElementById('roleSearch');
+  if (inp && inp.value) {
+    inp.value = '';
+    filterRoles('');
+  }
+}
+
+function renderRoleSelector(selectedIds) {
+  const cont = document.getElementById('roleSelector');
+  if (!cont || !allRoles.length) return;
+  const sel = new Set(selectedIds || []);
+  cont.innerHTML = allRoles.map(r => `
+    <button type="button" class="role-option ${sel.has(r.id) ? 'selected' : ''}" data-role-id="${r.id}" data-role-title="${escapeHtml(r.title.toLowerCase())}" onclick="toggleRoleOption(this)">
+      <span>${r.emoji} ${escapeHtml(r.title)}</span>
+    </button>`).join('');
+}
+
+window.toggleRoleOption = function toggleRoleOption(btn) {
+  btn.classList.toggle('selected');
+};
+
+window.filterRoleSelector = function filterRoleSelector(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('#roleSelector .role-option').forEach(opt => {
+    opt.style.display = opt.dataset.roleTitle.includes(q) ? '' : 'none';
+  });
+};
+
+// ============================================
 // Guest Edit Modal
 // ============================================
 function openGuestModal(id) {
@@ -917,6 +1095,10 @@ function openGuestModal(id) {
   document.getElementById('guestKids').value = guest.kids ?? 0;
   document.getElementById('guestUebernachtung').value = guest.uebernachtung || '';
   document.getElementById('guestMitbringen').value = guest.mitbringen || '';
+
+  const roleSearch = document.getElementById('roleSelectorSearch');
+  if (roleSearch) roleSearch.value = '';
+  renderRoleSelector(guest.roles || []);
 
   document.getElementById('guestEditModal').classList.remove('hidden');
 }
@@ -945,11 +1127,14 @@ function saveGuestEdit() {
   guest.kids = parseInt(document.getElementById('guestKids').value) || 0;
   guest.uebernachtung = document.getElementById('guestUebernachtung').value.trim();
   guest.mitbringen = document.getElementById('guestMitbringen').value.trim();
+  guest.roles = Array.from(document.querySelectorAll('#roleSelector .role-option.selected'))
+    .map(b => b.dataset.roleId);
   guest.updatedAt = new Date().toISOString();
 
   saveGuests();
   renderGuests();
   updateStats();
+  renderRoles();
   closeGuestModal();
 }
 

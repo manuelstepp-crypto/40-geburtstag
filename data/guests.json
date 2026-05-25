@@ -559,10 +559,11 @@
       "saturday": true,
       "sunday": true
     },
-    "adults": 1,
-    "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": ""
+    "adults": 2,
+    "kids": 1,
+    "uebernachtung": "Camper",
+    "mitbringen": "Salat, Spiele, meinen Penis, Alkohol",
+    "updatedAt": "2026-05-25T14:09:31.252Z"
   },
   {
     "id": 38,

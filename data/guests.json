@@ -385,14 +385,15 @@
     "lastName": "Oberhofer",
     "response": "yes",
     "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
+      "friday": false,
+      "saturday": false,
+      "sunday": false
     },
     "adults": 1,
     "kids": 0,
     "uebernachtung": "kein Bedarf (Schwester)",
-    "mitbringen": ""
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T07:28:48.366Z"
   },
   {
     "id": 27,

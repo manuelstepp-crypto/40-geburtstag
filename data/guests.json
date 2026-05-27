@@ -74,7 +74,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "barista"
+    ],
+    "updatedAt": "2026-05-27T07:31:27.120Z"
   },
   {
     "id": 6,

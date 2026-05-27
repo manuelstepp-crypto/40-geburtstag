@@ -6,7 +6,11 @@
     "category": "Programm & Stimmung",
     "description": "Der rote Faden des Wochenendes: koordiniert Programm, Ansagen und Übergänge und behält den Überblick über alle anderen Rollen.",
     "reportsTo": null,
-    "worksWith": ["soundmeister", "dj", "grillmeister"],
+    "worksWith": [
+      "soundmeister",
+      "dj",
+      "grillmeister"
+    ],
     "schenktAn": "crepes-meister"
   },
   {
@@ -16,7 +20,10 @@
     "category": "Essen & Trinken",
     "description": "Hält den Crêpes-Stand am Laufen: Teig anrühren, wenden, süß wie herzhaft belegen. Sorgt dafür, dass niemand mit leerem Teller dasteht.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["kuchenfee", "barista"],
+    "worksWith": [
+      "kuchenfee",
+      "barista"
+    ],
     "schenktAn": "getraenke"
   },
   {
@@ -26,7 +33,9 @@
     "category": "Essen & Trinken",
     "description": "Behält Getränkevorräte und Kühlung im Blick. Stellt sicher, dass Bier, Wasser und Limo immer kalt und griffbereit sind.",
     "reportsTo": "barkeeper",
-    "worksWith": ["barkeeper"],
+    "worksWith": [
+      "barkeeper"
+    ],
     "schenktAn": "barkeeper"
   },
   {
@@ -36,7 +45,10 @@
     "category": "Essen & Trinken",
     "description": "Mixt Cocktails und Longdrinks, kennt jedes Rezept und schenkt mit ruhiger Hand aus.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["getraenke", "barista"],
+    "worksWith": [
+      "getraenke",
+      "barista"
+    ],
     "schenktAn": "barista"
   },
   {
@@ -46,7 +58,10 @@
     "category": "Essen & Trinken",
     "description": "Zuständig für Espresso, Cappuccino & Co. Rettet am Samstagmorgen Leben.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["fruehstuecksteam", "kuchenfee"],
+    "worksWith": [
+      "fruehstuecks-capo",
+      "kuchenfee"
+    ],
     "schenktAn": "kuchenfee"
   },
   {
@@ -56,7 +71,10 @@
     "category": "Essen & Trinken",
     "description": "Zaubert Kuchen und süße Stückchen herbei und sorgt dafür, dass die Kuchentheke nie leer wird.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["barista", "crepes-meister"],
+    "worksWith": [
+      "barista",
+      "crepes-meister"
+    ],
     "schenktAn": "pizza-meister"
   },
   {
@@ -66,27 +84,102 @@
     "category": "Essen & Trinken",
     "description": "Heizt den Pizzaofen an und belegt, was das Zeug hält. Wacht über Teig, Temperatur und Timing.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["grillmeister", "feuerteufel"],
-    "schenktAn": "fruehstuecksteam"
+    "worksWith": [
+      "grillmeister",
+      "feuerteufel"
+    ],
+    "schenktAn": "fruehstuecks-capo"
   },
   {
-    "id": "fruehstuecksteam",
-    "title": "Frühstücks-Team",
-    "emoji": "🍳",
+    "id": "fruehstuecks-capo",
+    "title": "Frühstücks-Capo",
+    "emoji": "👨‍🍳",
     "category": "Essen & Trinken",
-    "description": "Deckt das Frühstücksbuffet auf und sorgt für einen gemütlichen Start in den Tag.",
+    "description": "Oberhaupt der Frühstücks-Mafia: koordiniert beide Frühstücks-Teams, behält Kaffee, Brötchen und Eier im Blick und sorgt dafür, dass morgens nichts schiefgeht.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["broetchenservice", "eierkocher", "barista"],
-    "schenktAn": "broetchenservice"
+    "worksWith": [
+      "eier-fluesterer",
+      "ruehrei-rebell",
+      "barista"
+    ],
+    "schenktAn": "eier-fluesterer"
   },
   {
-    "id": "broetchenservice",
-    "title": "Brötchenservice",
+    "id": "eier-fluesterer",
+    "title": "Eier-Flüsterer",
+    "emoji": "🥚",
+    "category": "Essen & Trinken",
+    "description": "Samstags-Team: bringt Eier in jede gewünschte Form – weich, hart, Rührei. Versteht die Sprache der Eier.",
+    "reportsTo": "fruehstuecks-capo",
+    "worksWith": [
+      "broetchen-baron",
+      "marmeladen-magier"
+    ],
+    "schenktAn": "broetchen-baron"
+  },
+  {
+    "id": "broetchen-baron",
+    "title": "Brötchen-Baron",
     "emoji": "🥐",
     "category": "Essen & Trinken",
-    "description": "Holt frische Brötchen und sorgt dafür, dass der Frühstückskorb morgens gut gefüllt ist.",
-    "reportsTo": "fruehstuecksteam",
-    "worksWith": ["fruehstuecksteam", "fruehaufsteher"],
+    "description": "Samstags-Team: herrscht über Brötchen, Croissants und Backwaren. Sorgt dafür, dass der Korb nie leer ist.",
+    "reportsTo": "fruehstuecks-capo",
+    "worksWith": [
+      "eier-fluesterer",
+      "marmeladen-magier"
+    ],
+    "schenktAn": "marmeladen-magier"
+  },
+  {
+    "id": "marmeladen-magier",
+    "title": "Marmeladen-Magier",
+    "emoji": "🍓",
+    "category": "Essen & Trinken",
+    "description": "Samstags-Team: zaubert Aufstriche, Marmeladen, Honig und Nutella auf den Tisch. Zuständig für die süße Seite des Morgens.",
+    "reportsTo": "fruehstuecks-capo",
+    "worksWith": [
+      "eier-fluesterer",
+      "broetchen-baron"
+    ],
+    "schenktAn": "ruehrei-rebell"
+  },
+  {
+    "id": "ruehrei-rebell",
+    "title": "Rührei-Rebell",
+    "emoji": "🍳",
+    "category": "Essen & Trinken",
+    "description": "Sonntags-Team: schwingt die Pfanne und macht Rührei, Spiegelei & Co. Lehnt sich gegen langweilige Frühstücke auf.",
+    "reportsTo": "fruehstuecks-capo",
+    "worksWith": [
+      "semmel-schmuggler",
+      "muesli-mogul"
+    ],
+    "schenktAn": "semmel-schmuggler"
+  },
+  {
+    "id": "semmel-schmuggler",
+    "title": "Semmel-Schmuggler",
+    "emoji": "🥖",
+    "category": "Essen & Trinken",
+    "description": "Sonntags-Team: organisiert frische Semmeln und Brot und schmuggelt sie rechtzeitig auf den Tisch.",
+    "reportsTo": "fruehstuecks-capo",
+    "worksWith": [
+      "ruehrei-rebell",
+      "muesli-mogul"
+    ],
+    "schenktAn": "muesli-mogul"
+  },
+  {
+    "id": "muesli-mogul",
+    "title": "Müsli-Mogul",
+    "emoji": "🥣",
+    "category": "Essen & Trinken",
+    "description": "Sonntags-Team: Imperium aus Müsli, Joghurt, Obst und Haferflocken. Für alle, die es morgens gesund mögen.",
+    "reportsTo": "fruehstuecks-capo",
+    "worksWith": [
+      "ruehrei-rebell",
+      "semmel-schmuggler"
+    ],
     "schenktAn": "grillmeister"
   },
   {
@@ -96,7 +189,11 @@
     "category": "Essen & Trinken",
     "description": "Herrscher über Kohle und Rost. Bestimmt, wann das Fleisch (und das Gemüse) perfekt ist.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["salatdiener", "feuerteufel", "tischservice"],
+    "worksWith": [
+      "salatdiener",
+      "feuerteufel",
+      "tischservice"
+    ],
     "schenktAn": "salatdiener"
   },
   {
@@ -106,17 +203,10 @@
     "category": "Essen & Trinken",
     "description": "Bereitet Salate zu und hält das Buffet frisch und bunt.",
     "reportsTo": "grillmeister",
-    "worksWith": ["grillmeister", "tischservice"],
-    "schenktAn": "eierkocher"
-  },
-  {
-    "id": "eierkocher",
-    "title": "Eierkocher",
-    "emoji": "🥚",
-    "category": "Essen & Trinken",
-    "description": "Kümmert sich um die perfekte Frühstücksei-Versorgung – weich, hart, ganz nach Wunsch.",
-    "reportsTo": "fruehstuecksteam",
-    "worksWith": ["fruehstuecksteam"],
+    "worksWith": [
+      "grillmeister",
+      "tischservice"
+    ],
     "schenktAn": "mittagssnack"
   },
   {
@@ -126,7 +216,10 @@
     "category": "Essen & Trinken",
     "description": "Sorgt mittags für die kleine Stärkung zwischendurch, damit niemand schwächelt.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["tischservice", "salatdiener"],
+    "worksWith": [
+      "tischservice",
+      "salatdiener"
+    ],
     "schenktAn": "besteckoffizier"
   },
   {
@@ -136,7 +229,9 @@
     "category": "Essen & Trinken",
     "description": "Hat Messer, Gabel und Löffel im Griff: nachlegen, einsammeln, organisieren.",
     "reportsTo": "tischservice",
-    "worksWith": ["tischservice"],
+    "worksWith": [
+      "tischservice"
+    ],
     "schenktAn": "tischservice"
   },
   {
@@ -146,7 +241,10 @@
     "category": "Essen & Trinken",
     "description": "Deckt Tische ein, räumt ab und hält die Tafel ansehnlich.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["besteckoffizier", "mittagssnack"],
+    "worksWith": [
+      "besteckoffizier",
+      "mittagssnack"
+    ],
     "schenktAn": "soundmeister"
   },
   {
@@ -156,7 +254,10 @@
     "category": "Programm & Stimmung",
     "description": "Verantwortlich für Anlage, Mikros und Pegel. Sorgt für guten Klang ohne Rückkopplung.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["dj", "zeremonienmeister"],
+    "worksWith": [
+      "dj",
+      "zeremonienmeister"
+    ],
     "schenktAn": "dj"
   },
   {
@@ -166,7 +267,10 @@
     "category": "Programm & Stimmung",
     "description": "Legt auf, liest die Stimmung und hält die Tanzfläche am Kochen.",
     "reportsTo": "soundmeister",
-    "worksWith": ["soundmeister", "domteur"],
+    "worksWith": [
+      "soundmeister",
+      "domteur"
+    ],
     "schenktAn": "reporterin"
   },
   {
@@ -176,7 +280,9 @@
     "category": "Programm & Stimmung",
     "description": "Fängt die schönsten Momente mit Kamera und Mikro ein – für die Nachwelt.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["zeremonienmeister"],
+    "worksWith": [
+      "zeremonienmeister"
+    ],
     "schenktAn": "kinderprogramm"
   },
   {
@@ -186,7 +292,10 @@
     "category": "Programm & Stimmung",
     "description": "Plant und leitet die Aktionen für die jüngsten Gäste.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["kinderbespasser", "spieleleitung"],
+    "worksWith": [
+      "kinderbespasser",
+      "spieleleitung"
+    ],
     "schenktAn": "kinderbespasser"
   },
   {
@@ -196,7 +305,10 @@
     "category": "Programm & Stimmung",
     "description": "Hält die Kinder bei Laune: Spiele, Quatsch und gute Laune garantiert.",
     "reportsTo": "kinderprogramm",
-    "worksWith": ["kinderprogramm", "spieleleitung"],
+    "worksWith": [
+      "kinderprogramm",
+      "spieleleitung"
+    ],
     "schenktAn": "spieleleitung"
   },
   {
@@ -206,7 +318,10 @@
     "category": "Programm & Stimmung",
     "description": "Organisiert Spiele und Turniere für Groß und Klein.",
     "reportsTo": "kinderprogramm",
-    "worksWith": ["kinderbespasser", "pingpong"],
+    "worksWith": [
+      "kinderbespasser",
+      "pingpong"
+    ],
     "schenktAn": "pingpong"
   },
   {
@@ -216,7 +331,9 @@
     "category": "Programm & Stimmung",
     "description": "Captain der Tischtennisplatte: organisiert Matches und führt die Rangliste.",
     "reportsTo": "spieleleitung",
-    "worksWith": ["spieleleitung"],
+    "worksWith": [
+      "spieleleitung"
+    ],
     "schenktAn": "domteur"
   },
   {
@@ -226,7 +343,10 @@
     "category": "Programm & Stimmung",
     "description": "Bändigt wilde Gäste und sorgt mit Charme für Ordnung auf der Tanzfläche.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["dj", "joker"],
+    "worksWith": [
+      "dj",
+      "joker"
+    ],
     "schenktAn": "amor"
   },
   {
@@ -236,7 +356,9 @@
     "category": "Programm & Stimmung",
     "description": "Verkuppelt, was zusammengehört, und sorgt für romantische Funken.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["joker"],
+    "worksWith": [
+      "joker"
+    ],
     "schenktAn": "joker"
   },
   {
@@ -246,7 +368,9 @@
     "category": "Programm & Stimmung",
     "description": "Die flexible Allzweckwaffe: springt überall ein, wo gerade Hände fehlen.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["zeremonienmeister"],
+    "worksWith": [
+      "zeremonienmeister"
+    ],
     "schenktAn": "dekorateur"
   },
   {
@@ -256,7 +380,10 @@
     "category": "Aufbau & Logistik",
     "description": "Verwandelt den Sonnenhang in eine Festkulisse: Lichter, Blumen, Details.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["deko-onkel", "empfang"],
+    "worksWith": [
+      "deko-onkel",
+      "empfang"
+    ],
     "schenktAn": "deko-onkel"
   },
   {
@@ -266,7 +393,10 @@
     "category": "Aufbau & Logistik",
     "description": "Rechte Hand der Deko-Abteilung: schleppt, hängt auf und schraubt fest.",
     "reportsTo": "dekorateur",
-    "worksWith": ["dekorateur", "wikinger"],
+    "worksWith": [
+      "dekorateur",
+      "wikinger"
+    ],
     "schenktAn": "feuerteufel"
   },
   {
@@ -276,7 +406,10 @@
     "category": "Aufbau & Logistik",
     "description": "Hält das Lagerfeuer am Brennen und sorgt rechtzeitig für Holznachschub.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["pyromane", "grillmeister"],
+    "worksWith": [
+      "pyromane",
+      "grillmeister"
+    ],
     "schenktAn": "pyromane"
   },
   {
@@ -286,7 +419,9 @@
     "category": "Aufbau & Logistik",
     "description": "Zuständig für Feuerstellen, Fackeln und (sicheres!) Feuerwerk.",
     "reportsTo": "feuerteufel",
-    "worksWith": ["feuerteufel"],
+    "worksWith": [
+      "feuerteufel"
+    ],
     "schenktAn": "parkplatz"
   },
   {
@@ -296,7 +431,10 @@
     "category": "Aufbau & Logistik",
     "description": "Weist ankommende Autos ein und sorgt für geordnetes Parken.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["chauffeur", "empfang"],
+    "worksWith": [
+      "chauffeur",
+      "empfang"
+    ],
     "schenktAn": "chauffeur"
   },
   {
@@ -306,7 +444,10 @@
     "category": "Aufbau & Logistik",
     "description": "Fährt Gäste sicher von A nach B – Shuttle-Dienst nach Bedarf.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["parkplatz", "empfang"],
+    "worksWith": [
+      "parkplatz",
+      "empfang"
+    ],
     "schenktAn": "empfang"
   },
   {
@@ -316,7 +457,11 @@
     "category": "Aufbau & Logistik",
     "description": "Nimmt jeden neuen Gast persönlich in Empfang und weist ihn in seine Rolle ein. Gibt jedem eine Mütze und schreibt die Rolle mit Kreppband darauf, klebt außerdem jedem ein Namensschild aus Kreppband auf den Pulli. Sorgt dafür, dass jede:r weiß, was zu tun ist und mit welcher Rolle gewichtelt wird.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["parkplatz", "chauffeur", "dekorateur"],
+    "worksWith": [
+      "parkplatz",
+      "chauffeur",
+      "dekorateur"
+    ],
     "schenktAn": "fruehaufsteher"
   },
   {
@@ -326,7 +471,10 @@
     "category": "Aufbau & Logistik",
     "description": "Steht als Erste:r auf, macht Kaffee und weckt sanft das Lager.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["fruehstuecksteam", "broetchenservice"],
+    "worksWith": [
+      "fruehstuecks-capo",
+      "broetchen-baron"
+    ],
     "schenktAn": "wikinger"
   },
   {
@@ -336,7 +484,10 @@
     "category": "Aufbau & Logistik",
     "description": "Packt überall mit roher Kraft an – Bierzeltgarnituren, Fässer, schwere Dinge.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["deko-onkel", "feuerteufel"],
+    "worksWith": [
+      "deko-onkel",
+      "feuerteufel"
+    ],
     "schenktAn": "beachmaus"
   },
   {
@@ -346,7 +497,9 @@
     "category": "Aufbau & Logistik",
     "description": "Hält die Beach- und Badezone in Schuss und sorgt für Sommer-Vibes.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["spieleleitung"],
+    "worksWith": [
+      "spieleleitung"
+    ],
     "schenktAn": "sanitaeterin"
   },
   {
@@ -356,7 +509,9 @@
     "category": "Spezial",
     "description": "Erste Hilfe bei kleinen Wehwehchen. Hat Pflaster und Ruhe im Gepäck.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["empfang"],
+    "worksWith": [
+      "empfang"
+    ],
     "schenktAn": "wichtelfee"
   },
   {
@@ -366,7 +521,9 @@
     "category": "Spezial",
     "description": "Organisiert das Rollen-Wichteln und sorgt dafür, dass jedes Geschenk seinen Weg findet.",
     "reportsTo": "zeremonienmeister",
-    "worksWith": ["zeremonienmeister"],
+    "worksWith": [
+      "zeremonienmeister"
+    ],
     "schenktAn": "zeremonienmeister"
   }
 ]

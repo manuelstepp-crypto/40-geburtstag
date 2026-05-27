@@ -94,7 +94,10 @@
     "kids": 0,
     "uebernachtung": "Transporter",
     "mitbringen": "Fleischküchle",
-    "updatedAt": "2026-05-25T08:06:46.882Z"
+    "updatedAt": "2026-05-27T07:32:47.121Z",
+    "roles": [
+      "feuerteufel"
+    ]
   },
   {
     "id": 7,

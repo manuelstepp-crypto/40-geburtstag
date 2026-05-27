@@ -554,7 +554,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "pingpong"
+    ],
+    "updatedAt": "2026-05-27T07:34:51.814Z"
   },
   {
     "id": 35,

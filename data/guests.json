@@ -132,7 +132,10 @@
     "kids": 0,
     "uebernachtung": "Dachzelt",
     "mitbringen": "Geiler Raketensalat, toxisch männliche Sprüche, große Klappe, Klappmesser",
-    "updatedAt": "2026-05-25T14:10:34.866Z"
+    "updatedAt": "2026-05-27T07:33:43.871Z",
+    "roles": [
+      "grillmeister"
+    ]
   },
   {
     "id": 9,

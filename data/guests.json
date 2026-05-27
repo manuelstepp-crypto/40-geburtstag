@@ -452,7 +452,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Hotel/AirBnB in Klärung",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "soundmeister"
+    ],
+    "updatedAt": "2026-05-27T07:34:12.720Z"
   },
   {
     "id": 29,

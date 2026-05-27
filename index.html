@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1780600000000">
+<link rel="stylesheet" href="style.css?v=1780700000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -170,6 +170,20 @@ referrerpolicy="no-referrer-when-downgrade">
 </div>
 </div>
 </section>
+
+<!-- Welcome Overlay (personalisierte Begrüßung) -->
+<div class="welcome-overlay hidden" id="welcomeOverlay">
+<div class="welcome-card">
+<button class="welcome-close" onclick="closeWelcome()">&times;</button>
+<div class="welcome-emoji">🎉</div>
+<h3 id="welcomeTitle">Ich freu mich auf dich!</h3>
+<p class="welcome-text">Ein Geschenk? Bitte <strong>keins</strong> mitbringen – wenn du kommst und eine der Rollen übernimmst, ist das mehr Geschenk als genug! 🎁</p>
+<div class="welcome-actions">
+<button class="submit-btn" onclick="closeWelcome()"><span>Los geht's!</span></button>
+<button class="welcome-secondary" onclick="welcomeToProfile()">Meine Rolle wählen</button>
+</div>
+</div>
+</div>
 
 <!-- Guest Edit Modal -->
 <div class="guest-modal-overlay hidden" id="guestEditModal">
@@ -1167,6 +1181,35 @@ window.setCurrentGuest = function setCurrentGuest(val) {
   else localStorage.removeItem('currentGuestId');
   renderProgram();
   renderMeBar();
+  maybeWelcome();
+};
+
+function maybeWelcome() {
+  if (!currentGuestId) return;
+  const greeted = sessionStorage.getItem('greetedId');
+  if (String(greeted) === String(currentGuestId)) return;
+  const me = allGuests.find(g => g.id === currentGuestId);
+  if (!me) return;
+  sessionStorage.setItem('greetedId', currentGuestId);
+  showWelcome(me);
+}
+
+function showWelcome(guest) {
+  const ov = document.getElementById('welcomeOverlay');
+  if (!ov) return;
+  const title = document.getElementById('welcomeTitle');
+  if (title) title.textContent = guest.firstName ? `Ich freu mich auf dich, ${guest.firstName}!` : 'Ich freu mich auf dich!';
+  ov.classList.remove('hidden');
+}
+
+window.closeWelcome = function closeWelcome() {
+  const ov = document.getElementById('welcomeOverlay');
+  if (ov) ov.classList.add('hidden');
+};
+
+window.welcomeToProfile = function welcomeToProfile() {
+  closeWelcome();
+  openOwnProfile();
 };
 
 window.toggleSignup = function toggleSignup(aid) {
@@ -1279,6 +1322,7 @@ function saveGuestEdit() {
 
 document.addEventListener('click', e => {
   if (e.target.id === 'guestEditModal') closeGuestModal();
+  if (e.target.id === 'welcomeOverlay') closeWelcome();
 });
 
 // ============================================

@@ -248,9 +248,6 @@
     "uebernachtung": "",
     "mitbringen": "",
     "signups": [
-      "fr-grill",
-      "fr-nacht",
-      "fr-lagerfeuer",
       "sa-fruehstueck",
       "sa-wikinger",
       "sa-brettspiele",
@@ -259,7 +256,7 @@
       "so-fruehstueck",
       "so-abreise"
     ],
-    "updatedAt": "2026-05-27T20:51:56.776Z"
+    "updatedAt": "2026-05-27T20:52:03.945Z"
   },
   {
     "id": 16,

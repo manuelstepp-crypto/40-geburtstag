@@ -246,8 +246,14 @@
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": "",
-    "signups": [],
-    "updatedAt": "2026-05-27T16:30:16.007Z"
+    "signups": [
+      "fr-kaffee",
+      "fr-tischtennis",
+      "fr-grill",
+      "fr-nacht",
+      "fr-lagerfeuer"
+    ],
+    "updatedAt": "2026-05-27T16:30:40.507Z"
   },
   {
     "id": 16,

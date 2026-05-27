@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1780000000000">
+<link rel="stylesheet" href="style.css?v=1780100000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -467,6 +467,13 @@ referrerpolicy="no-referrer-when-downgrade">
 <h2 class="section-title scroll-reveal">Die Rollen</h2>
 <p class="section-subtitle scroll-reveal">Jeder Gast übernimmt mindestens eine Rolle. Klick auf eine Karte und schau dir an, was zu tun ist, mit wem zusammengearbeitet wird und für wen gewichtelt wird.</p>
 
+<h3 class="roles-subhead scroll-reveal">Organigramm</h3>
+<p class="roles-subhead-hint scroll-reveal">Wer berichtet an wen. Klick auf eine Rolle, um Beschreibung &amp; „arbeitet mit" zu sehen.</p>
+<div class="org-chart scroll-reveal" id="orgChart">
+<!-- Filled by JS -->
+</div>
+
+<h3 class="roles-subhead scroll-reveal">Alle Steckbriefe</h3>
 <div class="role-search scroll-reveal">
 <input type="text" id="roleSearch" placeholder="Rolle oder Name suchen..." oninput="filterRoles(this.value)">
 </div>
@@ -832,6 +839,7 @@ async function loadRoles() {
     allRoles = [];
   }
   renderRoles();
+  renderOrgChart();
 }
 
 function roleById(id) {
@@ -985,6 +993,46 @@ function renderRoles() {
       <div class="role-cards">${cards}</div>
     </div>`;
   }).join('');
+}
+
+function renderOrgChart() {
+  const cont = document.getElementById('orgChart');
+  if (!cont || !allRoles.length) return;
+
+  const root = allRoles.find(r => !r.reportsTo) || allRoles[0];
+  const childrenOf = id => allRoles.filter(r => r.reportsTo === id && r.id !== root.id);
+
+  const nodeHtml = (r) => {
+    const kids = childrenOf(r.id);
+    const sub = kids.length
+      ? `<ul class="org-children">${kids.map(k => `<li>${nodeHtml(k)}</li>`).join('')}</ul>`
+      : '';
+    return `<div class="org-node" onclick="goToRole('${r.id}')" title="${escapeHtml(r.description)}">` +
+           `<span class="org-emoji">${r.emoji}</span>${escapeHtml(r.title)}</div>${sub}`;
+  };
+
+  // Direkt-Unterstellte der Spitze, nach Kategorie gruppiert
+  const directs = childrenOf(root.id);
+  const cats = [];
+  const byCat = {};
+  directs.forEach(r => {
+    if (!byCat[r.category]) { byCat[r.category] = []; cats.push(r.category); }
+    byCat[r.category].push(r);
+  });
+
+  const depts = cats.map(c => `
+    <div class="org-dept">
+      <div class="org-dept-title">${escapeHtml(c)}</div>
+      <ul class="org-list">${byCat[c].map(r => `<li>${nodeHtml(r)}</li>`).join('')}</ul>
+    </div>`).join('');
+
+  cont.innerHTML = `
+    <div class="org-top">
+      <div class="org-node org-root" onclick="goToRole('${root.id}')" title="${escapeHtml(root.description)}">
+        <span class="org-emoji">${root.emoji}</span>${escapeHtml(root.title)}
+      </div>
+    </div>
+    <div class="org-depts">${depts}</div>`;
 }
 
 function roleCardHtml(r, assigned) {

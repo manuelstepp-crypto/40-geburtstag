@@ -625,7 +625,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Bei den Eltern",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "joker"
+    ],
+    "updatedAt": "2026-05-27T07:30:33.173Z"
   },
   {
     "id": 42,

@@ -389,7 +389,11 @@
     "adults": 2,
     "kids": 1,
     "uebernachtung": "Zelt falls gutes Wetter",
-    "mitbringen": "Salat oder süß"
+    "mitbringen": "Salat oder süß",
+    "roles": [
+      "pyromane"
+    ],
+    "updatedAt": "2026-05-27T07:31:45.818Z"
   },
   {
     "id": 26,

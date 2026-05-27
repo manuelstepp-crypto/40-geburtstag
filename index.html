@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1780400000000">
+<link rel="stylesheet" href="style.css?v=1780500000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -24,6 +24,10 @@
 <a href="#roles">Rollen</a>
 <a href="#accommodations">Unterkünfte</a>
 </div>
+<button class="nav-profile-btn hidden" id="navProfileBtn" onclick="openOwnProfile()">
+<span class="nav-profile-avatar" id="navProfileAvatar"></span>
+<span id="navProfileName">Mein Profil</span>
+</button>
 <button class="nav-toggle" id="navToggle" aria-label="Menu">
 <span></span><span></span><span></span>
 </button>
@@ -99,7 +103,7 @@ Route planen &rarr;
 </div>
 <h3>Was?</h3>
 <p class="detail-main">Sommerfest</p>
-<p class="detail-sub">Ein ganzes Wochenende mit Kind und Kegel, grillen, spielen und feiern – mit guter Laune!</p>
+<p class="detail-sub">Ein ganzes Wochenende mit Kind und Kegel, grillen, spielen und feiern!</p>
 </div>
 </div>
 
@@ -125,15 +129,6 @@ referrerpolicy="no-referrer-when-downgrade">
 <span class="legend-item"><span class="legend-dot legend-sportplatz"></span>Sportplatz</span>
 <span class="legend-item"><span class="legend-dot legend-casino"></span>Casino</span>
 <span class="legend-item"><span class="legend-dot legend-musik"></span>Musikzimmer</span>
-</div>
-
-<!-- Crêpe-Flatrate -->
-<div class="program-flatrate scroll-reveal">
-<span class="program-flatrate-emoji">🥞</span>
-<div>
-<strong>Crêpe-Flatrate das ganze Wochenende</strong>
-<p>Morgens, mittags, abends &mdash; so viel ihr wollt!</p>
-</div>
 </div>
 
 <div class="program-me-bar scroll-reveal" id="programMeBar"></div>
@@ -1025,6 +1020,16 @@ function guestName(g) {
   return ((g.firstName || '') + ' ' + (g.lastName || '')).trim();
 }
 
+function activitySlotIds(aid) {
+  for (const d of programData) {
+    for (const s of d.slots) {
+      const ids = s.activities.map(a => a.id);
+      if (ids.includes(aid)) return ids;
+    }
+  }
+  return [aid];
+}
+
 function renderProgram() {
   const cont = document.getElementById('programDays');
   if (!cont) return;
@@ -1034,10 +1039,13 @@ function renderProgram() {
     (g.signups || []).forEach(aid => { (parts[aid] = parts[aid] || []).push(g); });
   });
   const me = currentGuestId ? allGuests.find(g => g.id === currentGuestId) : null;
+  const mySignups = me ? (me.signups || []) : [];
 
   cont.innerHTML = programData.map(day => {
     const slots = day.slots.map(slot => {
-      const acts = slot.activities.map(a => activityCardHtml(a, parts[a.id] || [], me)).join('');
+      // pro Zeitblock nur ein Angebot: gewähltes Angebot in diesem Slot ermitteln
+      const chosen = slot.activities.find(a => mySignups.includes(a.id));
+      const acts = slot.activities.map(a => activityCardHtml(a, parts[a.id] || [], me, chosen)).join('');
       return `<div class="program-slot"><span class="program-time">${escapeHtml(slot.time)}</span><div class="program-activities">${acts}</div></div>`;
     }).join('');
     return `<div class="program-day">
@@ -1047,16 +1055,25 @@ function renderProgram() {
   }).join('');
 }
 
-function activityCardHtml(a, participants, me) {
+function activityCardHtml(a, participants, me, chosen) {
+  const joined = !!(me && (me.signups || []).includes(a.id));
+  const locked = !!(chosen && !joined); // anderes Angebot im selben Zeitblock gewählt
   const cls = ['program-activity', a.loc];
   if (a.full) cls.push('full-width');
   if (a.highlight) cls.push('highlight');
-  const joined = me && (me.signups || []).includes(a.id);
+  if (locked) cls.push('locked');
   const note = a.note ? `<p>${escapeHtml(a.note)}</p>` : '';
   const chips = participants.length
     ? `<div class="activity-participants">${participants.map(g => `<span class="participant-chip">${escapeHtml(guestName(g))}</span>`).join('')}</div>`
     : `<div class="activity-participants activity-participants-empty">Noch niemand angemeldet</div>`;
-  const btn = `<button type="button" class="join-btn ${joined ? 'joined' : ''}" onclick="toggleSignup('${a.id}')">${joined ? '✓ Du bist dabei' : '+ Mitmachen'}</button>`;
+  let btn;
+  if (joined) {
+    btn = `<button type="button" class="join-btn joined" onclick="toggleSignup('${a.id}')">✓ Du bist dabei</button>`;
+  } else if (locked) {
+    btn = `<button type="button" class="join-btn" disabled title="Du bist in diesem Zeitblock schon woanders dabei">+ Mitmachen</button>`;
+  } else {
+    btn = `<button type="button" class="join-btn" onclick="toggleSignup('${a.id}')">+ Mitmachen</button>`;
+  }
   return `<div class="${cls.join(' ')}">
     <span class="activity-location">${escapeHtml(a.locName)}</span>
     <h4>${escapeHtml(a.title)}</h4>
@@ -1071,6 +1088,7 @@ function activityCardHtml(a, participants, me) {
 
 function renderMeBar() {
   const bar = document.getElementById('programMeBar');
+  updateProfileButton();
   if (!bar) return;
   const yes = allGuests.filter(g => g.response === 'yes')
     .sort((a, b) => (a.firstName || '').localeCompare(b.firstName || '', 'de'));
@@ -1085,8 +1103,28 @@ function renderMeBar() {
         ${opts}
       </select>
     </div>
-    <span class="me-bar-hint">${me ? 'Tippe bei den Programmpunkten auf „Mitmachen".' : 'Wähle deinen Namen, dann kannst du dich mit einem Tipp anmelden.'}</span>`;
+    <span class="me-bar-hint">${me ? 'Pro Zeitblock kannst du ein Angebot wählen – tippe auf „Mitmachen".' : 'Wähle deinen Namen, dann kannst du dich mit einem Tipp anmelden.'}</span>`;
 }
+
+function updateProfileButton() {
+  const btn = document.getElementById('navProfileBtn');
+  if (!btn) return;
+  const me = currentGuestId ? allGuests.find(g => g.id === currentGuestId) : null;
+  if (me) {
+    const initials = ((me.firstName || '')[0] || '') + ((me.lastName || '')[0] || '');
+    const av = document.getElementById('navProfileAvatar');
+    const nm = document.getElementById('navProfileName');
+    if (av) av.textContent = initials;
+    if (nm) nm.textContent = me.firstName || 'Profil';
+    btn.classList.remove('hidden');
+  } else {
+    btn.classList.add('hidden');
+  }
+}
+
+window.openOwnProfile = function openOwnProfile() {
+  if (currentGuestId) openGuestModal(currentGuestId);
+};
 
 window.setCurrentGuest = function setCurrentGuest(val) {
   currentGuestId = val ? parseInt(val) : null;
@@ -1111,8 +1149,14 @@ window.toggleSignup = function toggleSignup(aid) {
   const g = allGuests.find(x => x.id === currentGuestId);
   if (!g) return;
   g.signups = g.signups || [];
-  if (g.signups.includes(aid)) g.signups = g.signups.filter(x => x !== aid);
-  else g.signups.push(aid);
+  if (g.signups.includes(aid)) {
+    g.signups = g.signups.filter(x => x !== aid);
+  } else {
+    // pro Zeitblock nur ein Angebot
+    const slotIds = activitySlotIds(aid);
+    if (g.signups.some(x => x !== aid && slotIds.includes(x))) return;
+    g.signups.push(aid);
+  }
   g.updatedAt = new Date().toISOString();
   saveGuests(currentGuestId);
   renderProgram();
@@ -1152,13 +1196,19 @@ function renderGuestCalendar(guest) {
     cont.innerHTML = '<p class="guest-calendar-empty">Noch nichts ausgewählt – melde dich unten im Programm-Bereich an.</p>';
     return;
   }
-  const items = [];
-  programData.forEach(day => day.slots.forEach(slot => slot.activities.forEach(a => {
-    if (ids.includes(a.id)) items.push({ day: day.badge, time: slot.time, title: a.title });
-  })));
-  cont.innerHTML = items.map(it =>
-    `<div class="guest-calendar-item"><span class="cal-day">${it.day}</span><span class="cal-time">${escapeHtml(it.time)}</span><span class="cal-title">${escapeHtml(it.title)}</span></div>`
-  ).join('');
+  const groups = [];
+  programData.forEach(day => {
+    const items = [];
+    day.slots.forEach(slot => slot.activities.forEach(a => {
+      if (ids.includes(a.id)) items.push({ time: slot.time, title: a.title, loc: a.locName });
+    }));
+    if (items.length) groups.push({ title: day.title, items });
+  });
+  cont.innerHTML = groups.map(gr => `
+    <div class="cal-day-group">
+      <div class="cal-day-head">${escapeHtml(gr.title)}</div>
+      ${gr.items.map(it => `<div class="guest-calendar-item"><span class="cal-time">${escapeHtml(it.time)}</span><span class="cal-title">${escapeHtml(it.title)}</span><span class="cal-loc">${escapeHtml(it.loc)}</span></div>`).join('')}
+    </div>`).join('');
 }
 
 function closeGuestModal() {

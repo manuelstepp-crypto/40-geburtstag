@@ -431,7 +431,10 @@
     "kids": 1,
     "uebernachtung": "kein Bedarf (Tante/heimfahren)",
     "mitbringen": "",
-    "updatedAt": "2026-05-24T20:49:39.234Z"
+    "updatedAt": "2026-05-27T07:33:02.246Z",
+    "roles": [
+      "kinderprogramm"
+    ]
   },
   {
     "id": 28,

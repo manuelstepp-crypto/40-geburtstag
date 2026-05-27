@@ -592,14 +592,18 @@
     "lastName": "Neubauer",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
       "sunday": true
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "Elternhaus Waldenbuch? (klärt mit Familie)",
-    "mitbringen": ""
+    "uebernachtung": "Sindelfingen",
+    "mitbringen": "Kuchen",
+    "roles": [
+      "mittagssnack"
+    ],
+    "updatedAt": "2026-05-27T10:23:46.737Z"
   },
   {
     "id": 37,

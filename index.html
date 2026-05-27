@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1779300000000">
+<link rel="stylesheet" href="style.css?v=1780000000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -447,11 +447,12 @@ referrerpolicy="no-referrer-when-downgrade">
 </div>
 
 <div class="guest-modal-field">
-<label>Deine Rolle(n) <span class="role-hint">– such dir aus, was du übernimmst</span></label>
-<input type="text" id="roleSelectorSearch" class="role-selector-search" placeholder="Rolle suchen..." oninput="filterRoleSelector(this.value)">
-<div class="role-selector" id="roleSelector">
-<!-- Filled by JS -->
-</div>
+<label for="roleDropdown">Deine Rolle(n) <span class="role-hint">– aus der Liste auswählen</span></label>
+<select id="roleDropdown" class="role-dropdown" onchange="addRoleFromDropdown(this)">
+<option value="">+ Rolle hinzufügen ...</option>
+</select>
+<div class="selected-roles" id="selectedRoles"></div>
+<div class="role-descriptions" id="roleDescriptions"></div>
 </div>
 
 <button class="submit-btn" onclick="saveGuestEdit()">
@@ -1055,26 +1056,71 @@ function resetRoleFilter() {
   }
 }
 
-function renderRoleSelector(selectedIds) {
-  const cont = document.getElementById('roleSelector');
-  if (!cont || !allRoles.length) return;
-  const sel = new Set(selectedIds || []);
-  cont.innerHTML = allRoles.map(r => `
-    <button type="button" class="role-option ${sel.has(r.id) ? 'selected' : ''}" data-role-id="${r.id}" data-role-title="${escapeHtml(r.title.toLowerCase())}" onclick="toggleRoleOption(this)">
-      <span>${r.emoji} ${escapeHtml(r.title)}</span>
-    </button>`).join('');
+let modalRoles = [];
+
+function openRoleSelector(selectedIds) {
+  modalRoles = Array.isArray(selectedIds) ? selectedIds.slice() : [];
+  buildRoleDropdown();
+  renderSelectedRoles();
 }
 
-window.toggleRoleOption = function toggleRoleOption(btn) {
-  btn.classList.toggle('selected');
+function buildRoleDropdown() {
+  const sel = document.getElementById('roleDropdown');
+  if (!sel || !allRoles.length) return;
+  const cats = [];
+  const byCat = {};
+  allRoles.forEach(r => {
+    if (!byCat[r.category]) { byCat[r.category] = []; cats.push(r.category); }
+    byCat[r.category].push(r);
+  });
+  sel.innerHTML = '<option value="">+ Rolle hinzufügen ...</option>' +
+    cats.map(c => `<optgroup label="${escapeHtml(c)}">` +
+      byCat[c].map(r => `<option value="${r.id}">${r.emoji} ${escapeHtml(r.title)}</option>`).join('') +
+      `</optgroup>`).join('');
+  sel.value = '';
+}
+
+window.addRoleFromDropdown = function addRoleFromDropdown(sel) {
+  const id = sel.value;
+  if (id && !modalRoles.includes(id)) modalRoles.push(id);
+  sel.value = '';
+  renderSelectedRoles();
 };
 
-window.filterRoleSelector = function filterRoleSelector(query) {
-  const q = query.toLowerCase().trim();
-  document.querySelectorAll('#roleSelector .role-option').forEach(opt => {
-    opt.style.display = opt.dataset.roleTitle.includes(q) ? '' : 'none';
-  });
+window.removeRole = function removeRole(id) {
+  modalRoles = modalRoles.filter(x => x !== id);
+  renderSelectedRoles();
 };
+
+function renderSelectedRoles() {
+  const chips = document.getElementById('selectedRoles');
+  const desc = document.getElementById('roleDescriptions');
+  if (!chips || !desc) return;
+
+  if (!modalRoles.length) {
+    chips.innerHTML = '<span class="no-role">Noch keine Rolle gewählt</span>';
+    desc.innerHTML = '';
+    return;
+  }
+
+  chips.innerHTML = modalRoles.map(id => {
+    const r = roleById(id);
+    if (!r) return '';
+    return `<span class="selected-role-chip">${r.emoji} ${escapeHtml(r.title)}<button type="button" class="remove-role" onclick="removeRole('${r.id}')" aria-label="Entfernen">&times;</button></span>`;
+  }).join('');
+
+  desc.innerHTML = modalRoles.map(id => {
+    const r = roleById(id);
+    if (!r) return '';
+    const gift = r.schenktAn ? roleById(r.schenktAn) : null;
+    return `<div class="role-desc-card">
+      <div class="role-desc-head">${r.emoji} <strong>${escapeHtml(r.title)}</strong></div>
+      <p>${escapeHtml(r.description)}</p>
+      ${gift ? `<div class="role-desc-gift">🎁 Wichtelt für: ${gift.emoji} ${escapeHtml(gift.title)}</div>` : ''}
+      <a class="role-desc-link" onclick="goToRole('${r.id}')">Zur Rolle im Überblick &rarr;</a>
+    </div>`;
+  }).join('');
+}
 
 // ============================================
 // Guest Edit Modal
@@ -1096,9 +1142,7 @@ function openGuestModal(id) {
   document.getElementById('guestUebernachtung').value = guest.uebernachtung || '';
   document.getElementById('guestMitbringen').value = guest.mitbringen || '';
 
-  const roleSearch = document.getElementById('roleSelectorSearch');
-  if (roleSearch) roleSearch.value = '';
-  renderRoleSelector(guest.roles || []);
+  openRoleSelector(guest.roles || []);
 
   document.getElementById('guestEditModal').classList.remove('hidden');
 }
@@ -1127,8 +1171,7 @@ function saveGuestEdit() {
   guest.kids = parseInt(document.getElementById('guestKids').value) || 0;
   guest.uebernachtung = document.getElementById('guestUebernachtung').value.trim();
   guest.mitbringen = document.getElementById('guestMitbringen').value.trim();
-  guest.roles = Array.from(document.querySelectorAll('#roleSelector .role-option.selected'))
-    .map(b => b.dataset.roleId);
+  guest.roles = modalRoles.slice();
   guest.updatedAt = new Date().toISOString();
 
   saveGuests();

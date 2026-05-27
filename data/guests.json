@@ -245,7 +245,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "",
+    "signups": [
+      "fr-kaffee"
+    ],
+    "updatedAt": "2026-05-27T16:30:10.132Z"
   },
   {
     "id": 16,

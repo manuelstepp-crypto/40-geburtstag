@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1780500000000">
+<link rel="stylesheet" href="style.css?v=1780600000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -140,7 +140,7 @@ referrerpolicy="no-referrer-when-downgrade">
 <section class="section guests-section" id="guests">
 <div class="container">
 <h2 class="section-title scroll-reveal">Wer kommt?</h2>
-<p class="section-subtitle scroll-reveal">Klick auf deinen Namen, um deine Details (Tage, Personen, Übernachtung, Mitbringsel) einzutragen oder zu ändern.</p>
+<p class="section-subtitle scroll-reveal">Klick auf deinen Namen, um deine Details (Tage, Übernachtung, Mitbringsel, Rolle) einzutragen oder zu ändern.</p>
 
 <div class="guest-stats scroll-reveal">
 <div class="guest-stat">
@@ -193,25 +193,6 @@ referrerpolicy="no-referrer-when-downgrade">
 <input type="checkbox" id="daySunday" checked>
 <span>Sonntag</span>
 </label>
-</div>
-</div>
-
-<div class="guest-modal-row">
-<div class="guest-modal-field">
-<label>Erwachsene</label>
-<div class="stepper">
-<button type="button" onclick="stepValue('guestAdults', -1)">-</button>
-<input type="number" id="guestAdults" min="0" max="20" value="1">
-<button type="button" onclick="stepValue('guestAdults', 1)">+</button>
-</div>
-</div>
-<div class="guest-modal-field">
-<label>Kinder</label>
-<div class="stepper">
-<button type="button" onclick="stepValue('guestKids', -1)">-</button>
-<input type="number" id="guestKids" min="0" max="20" value="0">
-<button type="button" onclick="stepValue('guestKids', 1)">+</button>
-</div>
 </div>
 </div>
 
@@ -475,6 +456,7 @@ let ghFileSha = null;
 let saveTimeout = null;
 let dirtyGuestIds = new Set();
 let currentGuestId = parseInt(localStorage.getItem('currentGuestId')) || null;
+let urlMeApplied = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   initParticles();
@@ -618,6 +600,7 @@ async function loadGuests() {
     renderRoles();
     renderProgram();
     renderMeBar();
+    applyUrlMe();
     return;
   }
 
@@ -629,6 +612,7 @@ async function loadGuests() {
     renderRoles();
     renderProgram();
     renderMeBar();
+    applyUrlMe();
     return;
   }
 
@@ -641,6 +625,7 @@ async function loadGuests() {
     renderRoles();
     renderProgram();
     renderMeBar();
+    applyUrlMe();
   } catch (e) {
     allGuests = [];
     renderGuests();
@@ -648,6 +633,7 @@ async function loadGuests() {
     renderRoles();
     renderProgram();
     renderMeBar();
+    applyUrlMe();
   }
 }
 
@@ -1103,7 +1089,8 @@ function renderMeBar() {
         ${opts}
       </select>
     </div>
-    <span class="me-bar-hint">${me ? 'Pro Zeitblock kannst du ein Angebot wählen – tippe auf „Mitmachen".' : 'Wähle deinen Namen, dann kannst du dich mit einem Tipp anmelden.'}</span>`;
+    ${me ? '<button type="button" class="share-link-btn" id="shareLinkBtn" onclick="shareMyLink()">🔗 Link teilen</button>' : ''}
+    <span class="me-bar-hint">${me ? 'Pro Zeitblock kannst du ein Angebot wählen – tippe auf „Mitmachen". Mit „Link teilen" kann jemand mit vorgewähltem Namen einsteigen.' : 'Wähle deinen Namen, dann kannst du dich mit einem Tipp anmelden.'}</span>`;
 }
 
 function updateProfileButton() {
@@ -1115,16 +1102,64 @@ function updateProfileButton() {
     const av = document.getElementById('navProfileAvatar');
     const nm = document.getElementById('navProfileName');
     if (av) av.textContent = initials;
-    if (nm) nm.textContent = me.firstName || 'Profil';
+    if (nm) nm.textContent = me.firstName ? possessive(me.firstName) + ' Profil' : 'Mein Profil';
     btn.classList.remove('hidden');
   } else {
     btn.classList.add('hidden');
   }
 }
 
+// Deutscher Genitiv für Vornamen: Cordula -> Cordulas, Lukas -> Lukas'
+function possessive(name) {
+  return /[sxzß]$/i.test(name) ? name + '’' : name + 's';
+}
+
 window.openOwnProfile = function openOwnProfile() {
   if (currentGuestId) openGuestModal(currentGuestId);
 };
+
+window.shareMyLink = async function shareMyLink() {
+  if (!currentGuestId) return;
+  const url = location.origin + location.pathname + '?me=' + currentGuestId;
+  const me = allGuests.find(g => g.id === currentGuestId);
+  const name = me ? (me.firstName || '') : '';
+  const shareData = {
+    title: 'Sommerfest am Sonnenhang',
+    text: name ? `${name}, hier ist dein persönlicher Link zum Sommerfest:` : 'Dein Link zum Sommerfest:',
+    url
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+      return;
+    }
+  } catch (e) { return; }
+  try {
+    await navigator.clipboard.writeText(url);
+    flashShareCopied();
+  } catch (e) {
+    window.prompt('Link kopieren:', url);
+  }
+};
+
+function flashShareCopied() {
+  const btn = document.getElementById('shareLinkBtn');
+  if (!btn) return;
+  const old = btn.textContent;
+  btn.textContent = '✓ Link kopiert';
+  setTimeout(() => { btn.textContent = old; }, 1800);
+}
+
+function applyUrlMe() {
+  if (urlMeApplied) return;
+  const params = new URLSearchParams(location.search);
+  if (!params.has('me')) return;
+  urlMeApplied = true;
+  const meId = parseInt(params.get('me'));
+  if (meId && allGuests.some(g => g.id === meId)) {
+    setCurrentGuest(String(meId));
+  }
+}
 
 window.setCurrentGuest = function setCurrentGuest(val) {
   currentGuestId = val ? parseInt(val) : null;
@@ -1177,8 +1212,6 @@ function openGuestModal(id) {
   document.getElementById('daySaturday').checked = !!days.saturday;
   document.getElementById('daySunday').checked = !!days.sunday;
 
-  document.getElementById('guestAdults').value = guest.adults ?? 1;
-  document.getElementById('guestKids').value = guest.kids ?? 0;
   document.getElementById('guestUebernachtung').value = guest.uebernachtung || '';
   document.getElementById('guestMitbringen').value = guest.mitbringen || '';
 
@@ -1231,8 +1264,6 @@ function saveGuestEdit() {
     saturday: document.getElementById('daySaturday').checked,
     sunday: document.getElementById('daySunday').checked
   };
-  guest.adults = parseInt(document.getElementById('guestAdults').value) || 0;
-  guest.kids = parseInt(document.getElementById('guestKids').value) || 0;
   guest.uebernachtung = document.getElementById('guestUebernachtung').value.trim();
   guest.mitbringen = document.getElementById('guestMitbringen').value.trim();
   guest.roles = modalRoles.slice();

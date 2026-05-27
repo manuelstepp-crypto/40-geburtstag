@@ -306,7 +306,10 @@
     "kids": 0,
     "uebernachtung": "Im Van",
     "mitbringen": "Pizzaofen",
-    "updatedAt": "2026-05-24T20:49:59.472Z"
+    "updatedAt": "2026-05-27T07:34:26.125Z",
+    "roles": [
+      "pizza-meister"
+    ]
   },
   {
     "id": 20,

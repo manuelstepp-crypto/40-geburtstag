@@ -215,8 +215,11 @@
     "kids": 0,
     "uebernachtung": "Bei Barbara",
     "mitbringen": "Zitronenkuchen",
-    "updatedAt": "2026-05-27T16:33:50.399Z",
-    "signups": []
+    "updatedAt": "2026-05-27T21:37:00.259Z",
+    "signups": [],
+    "roles": [
+      "zeremonienmeister"
+    ]
   },
   {
     "id": 14,

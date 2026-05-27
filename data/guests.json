@@ -248,8 +248,6 @@
     "uebernachtung": "",
     "mitbringen": "",
     "signups": [
-      "fr-kaffee",
-      "fr-tischtennis",
       "fr-grill",
       "fr-nacht",
       "fr-lagerfeuer",
@@ -261,7 +259,7 @@
       "so-fruehstueck",
       "so-abreise"
     ],
-    "updatedAt": "2026-05-27T16:30:53.627Z"
+    "updatedAt": "2026-05-27T20:51:56.776Z"
   },
   {
     "id": 16,

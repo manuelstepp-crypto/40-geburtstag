@@ -678,7 +678,9 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "",
+    "signups": [],
+    "updatedAt": "2026-05-27T21:48:31.703Z"
   },
   {
     "id": 41,

@@ -62,6 +62,45 @@
       "fruehstuecks-capo",
       "kuchenfee"
     ],
+    "schenktAn": "cocktail-shaker"
+  },
+  {
+    "id": "cocktail-shaker",
+    "title": "Cocktail-Shaker",
+    "emoji": "🍹",
+    "category": "Essen & Trinken",
+    "description": "Zweite Kraft an der Cocktailbar: shaket, rührt und garniert, damit die Schlange nie zu lang wird.",
+    "reportsTo": "barkeeper",
+    "worksWith": [
+      "barkeeper",
+      "bier-baron"
+    ],
+    "schenktAn": "bier-baron"
+  },
+  {
+    "id": "bier-baron",
+    "title": "Bier-Baron",
+    "emoji": "🍺",
+    "category": "Essen & Trinken",
+    "description": "Herrscht über Zapfanlage und Bierfässer und sorgt dafür, dass das Bier immer kalt und frisch gezapft ist.",
+    "reportsTo": "barkeeper",
+    "worksWith": [
+      "barkeeper",
+      "getraenke"
+    ],
+    "schenktAn": "schnaps-schmied"
+  },
+  {
+    "id": "schnaps-schmied",
+    "title": "Schnaps-Schmied",
+    "emoji": "🥃",
+    "category": "Essen & Trinken",
+    "description": "Zuständig für Kurze, Shots und Verdauerli – serviert im richtigen Moment.",
+    "reportsTo": "barkeeper",
+    "worksWith": [
+      "barkeeper",
+      "cocktail-shaker"
+    ],
     "schenktAn": "kuchenfee"
   },
   {
@@ -207,6 +246,58 @@
       "grillmeister",
       "tischservice"
     ],
+    "schenktAn": "kohle-kommandant"
+  },
+  {
+    "id": "kohle-kommandant",
+    "title": "Kohle-Kommandant",
+    "emoji": "🪵",
+    "category": "Essen & Trinken",
+    "description": "Heizt den Grill an und wacht über die Glut – damit die Kohle immer perfekt durchgeglüht ist.",
+    "reportsTo": "grillmeister",
+    "worksWith": [
+      "grillmeister",
+      "fleisch-fluesterer"
+    ],
+    "schenktAn": "fleisch-fluesterer"
+  },
+  {
+    "id": "fleisch-fluesterer",
+    "title": "Fleisch-Flüsterer",
+    "emoji": "🥩",
+    "category": "Essen & Trinken",
+    "description": "Kümmert sich um Steaks, Würste und Spareribs und weiß genau, wann alles auf den Punkt ist.",
+    "reportsTo": "grillmeister",
+    "worksWith": [
+      "grillmeister",
+      "veggie-general"
+    ],
+    "schenktAn": "veggie-general"
+  },
+  {
+    "id": "veggie-general",
+    "title": "Veggie-General",
+    "emoji": "🌽",
+    "category": "Essen & Trinken",
+    "description": "Befehligt Grillgemüse, Halloumi und Maiskolben. Sorgt dafür, dass auch ohne Fleisch keiner hungert.",
+    "reportsTo": "grillmeister",
+    "worksWith": [
+      "fleisch-fluesterer",
+      "salatdiener"
+    ],
+    "schenktAn": "marinaden-meister"
+  },
+  {
+    "id": "marinaden-meister",
+    "title": "Marinaden-Meister",
+    "emoji": "🧂",
+    "category": "Essen & Trinken",
+    "description": "Mariniert, würzt und rührt Saucen an. Das Geheimnis hinter dem guten Geschmack.",
+    "reportsTo": "grillmeister",
+    "worksWith": [
+      "fleisch-fluesterer",
+      "veggie-general"
+    ],
     "schenktAn": "mittagssnack"
   },
   {
@@ -271,6 +362,32 @@
       "soundmeister",
       "domteur"
     ],
+    "schenktAn": "playlist-pirat"
+  },
+  {
+    "id": "playlist-pirat",
+    "title": "Playlist-Pirat",
+    "emoji": "🎵",
+    "category": "Programm & Stimmung",
+    "description": "Kapert tagsüber die Boxen und kuratiert die passende Playlist für jede Stimmung.",
+    "reportsTo": "soundmeister",
+    "worksWith": [
+      "dj",
+      "soundmeister"
+    ],
+    "schenktAn": "karaoke-koenig"
+  },
+  {
+    "id": "karaoke-koenig",
+    "title": "Karaoke-König",
+    "emoji": "👑",
+    "category": "Programm & Stimmung",
+    "description": "Leitet die Karaoke-Runden, verteilt Mikros und traut sich als Erste:r ans Mikrofon.",
+    "reportsTo": "soundmeister",
+    "worksWith": [
+      "soundmeister",
+      "dj"
+    ],
     "schenktAn": "reporterin"
   },
   {
@@ -321,6 +438,32 @@
     "worksWith": [
       "kinderbespasser",
       "pingpong"
+    ],
+    "schenktAn": "bastel-boss"
+  },
+  {
+    "id": "bastel-boss",
+    "title": "Bastel-Boss",
+    "emoji": "✂️",
+    "category": "Programm & Stimmung",
+    "description": "Betreut den Basteltisch für die Kids – Kleber, Schere, Glitzer im Griff.",
+    "reportsTo": "kinderprogramm",
+    "worksWith": [
+      "kinderprogramm",
+      "kinderbespasser"
+    ],
+    "schenktAn": "schatzsuche-scout"
+  },
+  {
+    "id": "schatzsuche-scout",
+    "title": "Schatzsuche-Scout",
+    "emoji": "🗺️",
+    "category": "Programm & Stimmung",
+    "description": "Organisiert Schnitzeljagd und Schatzsuche und versteckt die kleinen Überraschungen.",
+    "reportsTo": "kinderprogramm",
+    "worksWith": [
+      "kinderprogramm",
+      "spieleleitung"
     ],
     "schenktAn": "pingpong"
   },
@@ -397,6 +540,45 @@
       "dekorateur",
       "wikinger"
     ],
+    "schenktAn": "lichterketten-lord"
+  },
+  {
+    "id": "lichterketten-lord",
+    "title": "Lichterketten-Lord",
+    "emoji": "💡",
+    "category": "Aufbau & Logistik",
+    "description": "Verantwortlich für Beleuchtung und Lichterketten – taucht den Sonnenhang abends in warmes Licht.",
+    "reportsTo": "dekorateur",
+    "worksWith": [
+      "dekorateur",
+      "deko-onkel"
+    ],
+    "schenktAn": "blumen-boss"
+  },
+  {
+    "id": "blumen-boss",
+    "title": "Blumen-Boss",
+    "emoji": "🌸",
+    "category": "Aufbau & Logistik",
+    "description": "Kümmert sich um Blumen und Tischschmuck und bringt Farbe auf jede Tafel.",
+    "reportsTo": "dekorateur",
+    "worksWith": [
+      "dekorateur",
+      "lichterketten-lord"
+    ],
+    "schenktAn": "ballon-baron"
+  },
+  {
+    "id": "ballon-baron",
+    "title": "Ballon-Baron",
+    "emoji": "🎈",
+    "category": "Aufbau & Logistik",
+    "description": "Bläst Luftballons auf und hängt Girlanden – für den festlichen Partylook.",
+    "reportsTo": "dekorateur",
+    "worksWith": [
+      "dekorateur",
+      "blumen-boss"
+    ],
     "schenktAn": "feuerteufel"
   },
   {
@@ -421,6 +603,19 @@
     "reportsTo": "feuerteufel",
     "worksWith": [
       "feuerteufel"
+    ],
+    "schenktAn": "stockbrot-sergeant"
+  },
+  {
+    "id": "stockbrot-sergeant",
+    "title": "Stockbrot-Sergeant",
+    "emoji": "🔥",
+    "category": "Aufbau & Logistik",
+    "description": "Stellt Stockbrot-Teig und Marshmallows bereit und kommandiert die Spieße übers Lagerfeuer.",
+    "reportsTo": "feuerteufel",
+    "worksWith": [
+      "feuerteufel",
+      "pyromane"
     ],
     "schenktAn": "parkplatz"
   },
@@ -500,6 +695,57 @@
     "worksWith": [
       "spieleleitung"
     ],
+    "schenktAn": "abwasch-admiral"
+  },
+  {
+    "id": "abwasch-admiral",
+    "title": "Abwasch-Admiral",
+    "emoji": "🧽",
+    "category": "Aufbau & Logistik",
+    "description": "Befehligt die Spülstraße und sorgt für sauberes Geschirr im Nachschub.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "tischservice",
+      "muell-magnat"
+    ],
+    "schenktAn": "muell-magnat"
+  },
+  {
+    "id": "muell-magnat",
+    "title": "Müll-Magnat",
+    "emoji": "🗑️",
+    "category": "Aufbau & Logistik",
+    "description": "Hat Müll und Recycling im Griff – Tonnen leeren, Säcke wechseln, Ordnung halten.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "abwasch-admiral",
+      "wikinger"
+    ],
+    "schenktAn": "strom-sheriff"
+  },
+  {
+    "id": "strom-sheriff",
+    "title": "Strom-Sheriff",
+    "emoji": "🔌",
+    "category": "Aufbau & Logistik",
+    "description": "Kümmert sich um Kabel, Verlängerungen und Generator – damit überall Strom fließt.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "soundmeister",
+      "lichterketten-lord"
+    ],
+    "schenktAn": "klo-kapitaen"
+  },
+  {
+    "id": "klo-kapitaen",
+    "title": "Klo-Kapitän",
+    "emoji": "🚽",
+    "category": "Aufbau & Logistik",
+    "description": "Hält Toiletten und Sanitärbereich versorgt und sauber – der unbesungene Held des Wochenendes.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "muell-magnat"
+    ],
     "schenktAn": "sanitaeterin"
   },
   {
@@ -523,6 +769,133 @@
     "reportsTo": "zeremonienmeister",
     "worksWith": [
       "zeremonienmeister"
+    ],
+    "schenktAn": "tanzflaechen-anheizer"
+  },
+  {
+    "id": "tanzflaechen-anheizer",
+    "title": "Tanzflächen-Anheizer",
+    "emoji": "🕺",
+    "category": "Spaß & gute Laune",
+    "description": "Kein echter Auftrag außer: als Erste:r auf die Tanzfläche und dafür sorgen, dass sie nie leer wird. Ideal für Samstags-Gäste.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "dj",
+      "stimmungskanone"
+    ],
+    "schenktAn": "hofnarr"
+  },
+  {
+    "id": "hofnarr",
+    "title": "Hofnarr",
+    "emoji": "🤡",
+    "category": "Spaß & gute Laune",
+    "description": "Erzählt Witze und hält die Stimmung locker. Einziger Job: für Lacher sorgen.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "stimmungskanone",
+      "applaus-direktor"
+    ],
+    "schenktAn": "stimmungskanone"
+  },
+  {
+    "id": "stimmungskanone",
+    "title": "Stimmungs-Kanone",
+    "emoji": "🎉",
+    "category": "Spaß & gute Laune",
+    "description": "Gute Laune ist der ganze Auftrag. Verbreitet überall Energie – perfekt für Kurzentschlossene.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "tanzflaechen-anheizer",
+      "hofnarr"
+    ],
+    "schenktAn": "prost-pilot"
+  },
+  {
+    "id": "prost-pilot",
+    "title": "Prost-Pilot",
+    "emoji": "🍻",
+    "category": "Spaß & gute Laune",
+    "description": "Ruft zu Toasts auf und sorgt fürs gemeinsame Anstoßen. Lockere Rolle ohne Vorbereitung.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "barkeeper",
+      "stimmungskanone"
+    ],
+    "schenktAn": "selfie-sheriff"
+  },
+  {
+    "id": "selfie-sheriff",
+    "title": "Selfie-Sheriff",
+    "emoji": "🤳",
+    "category": "Spaß & gute Laune",
+    "description": "Sammelt Gruppenfotos und Selfies ein – ganz ohne Stress. Was für Samstag-only-Gäste.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "reporterin"
+    ],
+    "schenktAn": "lounge-loewe"
+  },
+  {
+    "id": "lounge-loewe",
+    "title": "Lounge-Löwe",
+    "emoji": "🛋️",
+    "category": "Spaß & gute Laune",
+    "description": "Vorbild im Entspannen: hält die Chill-Ecke besetzt und sorgt für gemütliche Vibes.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "stimmungskanone"
+    ],
+    "schenktAn": "quiz-master"
+  },
+  {
+    "id": "quiz-master",
+    "title": "Quiz-Master",
+    "emoji": "🧠",
+    "category": "Spaß & gute Laune",
+    "description": "Stellt zwischendurch ein paar Quizfragen – locker und ohne Vorbereitung.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "spieleleitung"
+    ],
+    "schenktAn": "afterhour-admiral"
+  },
+  {
+    "id": "afterhour-admiral",
+    "title": "Afterhour-Admiral",
+    "emoji": "🌙",
+    "category": "Spaß & gute Laune",
+    "description": "Bleibt am längsten wach und hält die Late-Night-Crew zusammen.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "dj",
+      "lounge-loewe"
+    ],
+    "schenktAn": "applaus-direktor"
+  },
+  {
+    "id": "applaus-direktor",
+    "title": "Applaus-Direktor",
+    "emoji": "👏",
+    "category": "Spaß & gute Laune",
+    "description": "Sorgt zur richtigen Zeit für Applaus und Jubel. Leichte Rolle für jeden Moment.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "hofnarr",
+      "stimmungskanone"
+    ],
+    "schenktAn": "gute-laune-maskottchen"
+  },
+  {
+    "id": "gute-laune-maskottchen",
+    "title": "Gute-Laune-Maskottchen",
+    "emoji": "🦸",
+    "category": "Spaß & gute Laune",
+    "description": "Läuft rum und verbreitet einfach Freude. Kein Plan, nur Spaß – ideal zum Reinschnuppern.",
+    "reportsTo": "zeremonienmeister",
+    "worksWith": [
+      "stimmungskanone",
+      "tanzflaechen-anheizer"
     ],
     "schenktAn": "zeremonienmeister"
   }

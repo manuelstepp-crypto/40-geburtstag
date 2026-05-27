@@ -538,7 +538,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Monteur 1",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "barkeeper"
+    ],
+    "updatedAt": "2026-05-27T07:31:00.082Z"
   },
   {
     "id": 36,

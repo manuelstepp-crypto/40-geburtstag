@@ -494,7 +494,11 @@
     "adults": 2,
     "kids": 1,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "sanitaeterin"
+    ],
+    "updatedAt": "2026-05-27T07:33:14.415Z"
   },
   {
     "id": 32,

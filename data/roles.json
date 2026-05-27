@@ -314,7 +314,7 @@
     "title": "Empfangsherr / -dame",
     "emoji": "🎩",
     "category": "Aufbau & Logistik",
-    "description": "Begrüßt ankommende Gäste, verteilt Infos und das gute Gefühl, willkommen zu sein.",
+    "description": "Nimmt jeden neuen Gast persönlich in Empfang und weist ihn in seine Rolle ein. Gibt jedem eine Mütze und schreibt die Rolle mit Kreppband darauf, klebt außerdem jedem ein Namensschild aus Kreppband auf den Pulli. Sorgt dafür, dass jede:r weiß, was zu tun ist und mit welcher Rolle gewichtelt wird.",
     "reportsTo": "zeremonienmeister",
     "worksWith": ["parkplatz", "chauffeur", "dekorateur"],
     "schenktAn": "fruehaufsteher"

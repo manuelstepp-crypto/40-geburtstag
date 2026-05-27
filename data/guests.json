@@ -105,7 +105,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Monteurwohnung? (mit David)",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [
+      "reporterin"
+    ],
+    "updatedAt": "2026-05-27T07:30:43.330Z"
   },
   {
     "id": 8,

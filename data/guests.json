@@ -267,8 +267,11 @@
     "kids": 0,
     "uebernachtung": "Bei ihrem Papa",
     "mitbringen": "",
-    "signups": [],
-    "updatedAt": "2026-05-28T10:13:29.565Z"
+    "signups": [
+      "sa-skat",
+      "sa-fruehstueck"
+    ],
+    "updatedAt": "2026-05-28T10:13:35.729Z"
   },
   {
     "id": 17,

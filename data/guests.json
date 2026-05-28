@@ -185,7 +185,10 @@
       "fr-kaffee",
       "fr-tischtennis"
     ],
-    "updatedAt": "2026-05-28T17:42:58.457Z"
+    "updatedAt": "2026-05-28T17:44:33.855Z",
+    "roles": [
+      "quiz-master"
+    ]
   },
   {
     "id": 12,

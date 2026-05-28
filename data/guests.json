@@ -736,14 +736,16 @@
     "lastName": "Eberhardt",
     "response": "yes",
     "days": {
-      "friday": true,
+      "friday": false,
       "saturday": true,
-      "sunday": true
+      "sunday": false
     },
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Bei sich",
-    "mitbringen": ""
+    "mitbringen": "",
+    "roles": [],
+    "updatedAt": "2026-05-28T19:30:42.830Z"
   },
   {
     "id": 44,

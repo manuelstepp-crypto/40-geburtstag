@@ -180,7 +180,12 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "AirBnB gewünscht (Fr-So, 5 Pers mit Ruth, Andreas, José, Eva)",
-    "mitbringen": ""
+    "mitbringen": "",
+    "signups": [
+      "fr-kaffee",
+      "fr-tischtennis"
+    ],
+    "updatedAt": "2026-05-28T17:42:58.457Z"
   },
   {
     "id": 12,

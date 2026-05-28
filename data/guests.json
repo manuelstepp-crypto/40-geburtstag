@@ -452,11 +452,14 @@
     "kids": 1,
     "uebernachtung": "kein Bedarf (Tante/heimfahren)",
     "mitbringen": "",
-    "updatedAt": "2026-05-28T11:54:52.832Z",
+    "updatedAt": "2026-05-28T11:54:57.774Z",
     "roles": [
       "kinderprogramm"
     ],
-    "signups": []
+    "signups": [
+      "fr-poker",
+      "fr-lagerfeuer"
+    ]
   },
   {
     "id": 28,

@@ -68,17 +68,17 @@
     "response": "yes",
     "days": {
       "friday": true,
-      "saturday": true,
-      "sunday": true
+      "saturday": false,
+      "sunday": false
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": "",
+    "uebernachtung": "Gästehaus mit Simon",
+    "mitbringen": "Zitronenkuchen",
     "roles": [
       "barista"
     ],
-    "updatedAt": "2026-05-27T07:31:27.120Z"
+    "updatedAt": "2026-05-28T19:55:41.914Z"
   },
   {
     "id": 6,

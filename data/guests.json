@@ -266,7 +266,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Bei ihrem Papa",
-    "mitbringen": ""
+    "mitbringen": "",
+    "signups": [
+      "fr-kaffee"
+    ],
+    "updatedAt": "2026-05-28T10:13:00.174Z"
   },
   {
     "id": 17,

@@ -452,9 +452,12 @@
     "kids": 1,
     "uebernachtung": "kein Bedarf (Tante/heimfahren)",
     "mitbringen": "",
-    "updatedAt": "2026-05-28T11:54:12.787Z",
+    "updatedAt": "2026-05-28T11:54:47.190Z",
     "roles": [
       "kinderprogramm"
+    ],
+    "signups": [
+      "fr-dixit"
     ]
   },
   {

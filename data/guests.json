@@ -182,9 +182,10 @@
     "uebernachtung": "AirBnB gewünscht (Fr-So, 5 Pers mit Ruth, Andreas, José, Eva)",
     "mitbringen": "",
     "signups": [
-      "fr-kaffee"
+      "fr-kaffee",
+      "sa-tanzen"
     ],
-    "updatedAt": "2026-05-29T15:33:37.556Z",
+    "updatedAt": "2026-05-29T15:34:02.640Z",
     "roles": [
       "quiz-master"
     ]

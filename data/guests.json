@@ -43,7 +43,11 @@
     "adults": 1,
     "kids": 0,
     "uebernachtung": "Monteur 1",
-    "mitbringen": ""
+    "mitbringen": "",
+    "signups": [
+      "so-beach"
+    ],
+    "updatedAt": "2026-06-01T14:38:30.615Z"
   },
   {
     "id": 4,

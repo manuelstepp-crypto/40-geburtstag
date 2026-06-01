@@ -42,12 +42,15 @@
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "Monteur 1",
-    "mitbringen": "",
+    "uebernachtung": "",
+    "mitbringen": "Russischer Zupfkuchen",
     "signups": [
       "so-beach"
     ],
-    "updatedAt": "2026-06-01T14:38:30.615Z"
+    "updatedAt": "2026-06-01T14:41:15.627Z",
+    "roles": [
+      "beachmaus"
+    ]
   },
   {
     "id": 4,

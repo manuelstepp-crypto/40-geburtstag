@@ -336,9 +336,13 @@
     "kids": 0,
     "uebernachtung": "Im Van",
     "mitbringen": "Pizzaofen",
-    "updatedAt": "2026-05-27T07:34:26.125Z",
+    "updatedAt": "2026-06-04T09:33:25.147Z",
     "roles": [
       "pizza-meister"
+    ],
+    "signups": [
+      "fr-tischtennis",
+      "fr-grill"
     ]
   },
   {

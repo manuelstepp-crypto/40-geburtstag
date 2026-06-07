@@ -615,9 +615,10 @@
     "roles": [
       "barkeeper"
     ],
-    "updatedAt": "2026-06-07T14:02:55.422Z",
+    "updatedAt": "2026-06-07T14:03:17.643Z",
     "signups": [
-      "fr-tischtennis"
+      "fr-tischtennis",
+      "fr-poker"
     ]
   },
   {

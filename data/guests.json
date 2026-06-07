@@ -615,7 +615,10 @@
     "roles": [
       "barkeeper"
     ],
-    "updatedAt": "2026-05-27T07:31:00.082Z"
+    "updatedAt": "2026-06-07T14:02:55.422Z",
+    "signups": [
+      "fr-tischtennis"
+    ]
   },
   {
     "id": 36,

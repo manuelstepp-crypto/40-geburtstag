@@ -615,12 +615,13 @@
     "roles": [
       "barkeeper"
     ],
-    "updatedAt": "2026-06-07T14:03:36.063Z",
+    "updatedAt": "2026-06-07T14:03:45.154Z",
     "signups": [
       "fr-tischtennis",
       "fr-poker",
       "fr-lagerfeuer",
-      "sa-wikinger"
+      "sa-wikinger",
+      "sa-fussball"
     ]
   },
   {

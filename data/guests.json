@@ -610,12 +610,12 @@
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "Monteur 1",
+    "uebernachtung": "",
     "mitbringen": "",
     "roles": [
       "barkeeper"
     ],
-    "updatedAt": "2026-06-07T14:04:16.292Z",
+    "updatedAt": "2026-06-07T14:06:15.990Z",
     "signups": [
       "fr-tischtennis",
       "fr-poker",

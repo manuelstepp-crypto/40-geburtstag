@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1781100000000">
+<link rel="stylesheet" href="style.css?v=1781200000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -21,7 +21,6 @@
 <a href="#program">Programm</a>
 <a href="#details">Details</a>
 <a href="#guests">Gäste</a>
-<a href="#roles">Rollen</a>
 <a href="#accommodations">Unterkünfte</a>
 </div>
 <button class="nav-profile-btn hidden" id="navProfileBtn" onclick="openOwnProfile()">
@@ -36,7 +35,6 @@
 <a href="#program">Programm</a>
 <a href="#details">Details</a>
 <a href="#guests">Gäste</a>
-<a href="#roles">Rollen</a>
 <a href="#accommodations">Unterkünfte</a>
 </div>
 </nav>
@@ -138,7 +136,7 @@ referrerpolicy="no-referrer-when-downgrade">
 <section class="section guests-section" id="guests">
 <div class="container">
 <h2 class="section-title scroll-reveal">Wer kommt?</h2>
-<p class="section-subtitle scroll-reveal">Klick auf deinen Namen, um deine Details (Tage, Übernachtung, Mitbringsel, Rolle) einzutragen oder zu ändern.</p>
+<p class="section-subtitle scroll-reveal">Klick auf deinen Namen, um deine Anmeldungen, Übernachtung und Mitbringsel einzutragen.</p>
 
 <div class="guest-stats scroll-reveal">
 <div class="guest-stat">
@@ -175,10 +173,10 @@ referrerpolicy="no-referrer-when-downgrade">
 <button class="welcome-close" onclick="closeWelcome()">&times;</button>
 <div class="welcome-emoji">🎉</div>
 <h3 id="welcomeTitle">Ich freu mich auf dich!</h3>
-<p class="welcome-text">Ein Geschenk? Bitte <strong>keins</strong> mitbringen – wenn du kommst und eine der Rollen übernimmst, ist das mehr Geschenk als genug! 🎁</p>
+<p class="welcome-text">Ein Geschenk? Bitte <strong>keins</strong> mitbringen – dass du kommst, ist Geschenk genug! 🎁</p>
 <div class="welcome-actions">
 <button class="submit-btn" onclick="closeWelcome()"><span>Los geht's!</span></button>
-<button class="welcome-secondary" onclick="welcomeToProfile()">Meine Rolle wählen</button>
+<button class="welcome-secondary" onclick="welcomeToProfile()">Mein Profil öffnen</button>
 </div>
 </div>
 </div>
@@ -205,36 +203,11 @@ referrerpolicy="no-referrer-when-downgrade">
 <textarea id="guestMitbringen" rows="2" placeholder="z. B. Salat, Kuchen, Pizzaofen ..."></textarea>
 </div>
 
-<div class="guest-modal-field">
-<label for="roleDropdown">Deine Rolle(n) <span class="role-hint">– aus der Liste auswählen</span></label>
-<select id="roleDropdown" class="role-dropdown" onchange="addRoleFromDropdown(this)">
-<option value="">+ Rolle hinzufügen ...</option>
-</select>
-<div class="selected-roles" id="selectedRoles"></div>
-<div class="role-descriptions" id="roleDescriptions"></div>
-</div>
-
 <button class="submit-btn" onclick="saveGuestEdit()">
 <span>Speichern</span>
 </button>
 </div>
 </div>
-
-<!-- Roles Section -->
-<section class="section roles-section" id="roles">
-<div class="container">
-<h2 class="section-title scroll-reveal">Die Rollen</h2>
-<p class="section-subtitle scroll-reveal">Jeder Gast übernimmt mindestens eine Rolle. Klick auf eine Karte und schau dir an, was zu tun ist, mit wem zusammengearbeitet wird und für wen gewichtelt wird.</p>
-
-<div class="role-search scroll-reveal">
-<input type="text" id="roleSearch" placeholder="Rolle oder Name suchen..." oninput="filterRoles(this.value)">
-</div>
-
-<div class="roles-grid" id="rolesGrid">
-<!-- Filled by JS -->
-</div>
-</div>
-</section>
 
 <!-- Accommodations Section -->
 <section class="section accommodations" id="accommodations">
@@ -721,19 +694,11 @@ function renderGuests() {
       ? `<div class="guest-updated">Zuletzt gespeichert: ${escapeHtml(formatUpdated(guest.updatedAt))}</div>`
       : '';
 
-    const roleChips = (guest.roles || []).map(rid => {
-      const r = roleById(rid);
-      if (!r) return '';
-      return `<span class="guest-role-chip" onclick="event.stopPropagation(); goToRole('${r.id}')" title="Zur Rolle: ${escapeHtml(r.title)}">${r.emoji} ${escapeHtml(r.title)}</span>`;
-    }).join('');
-    const rolesHtml = roleChips ? `<div class="guest-roles">${roleChips}</div>` : '';
-
     return `
       <div class="guest-card" onclick="openGuestModal(${guest.id})" title="Klick zum Bearbeiten">
         <div class="guest-avatar" style="background:${color}">${escapeHtml(initials)}</div>
         <div class="guest-info">
           <div class="guest-name">${escapeHtml(fn)} ${escapeHtml(ln)}${plusStr}</div>
-          ${rolesHtml}
           ${updatedStr}
         </div>
         <div class="guest-edit-icon">
@@ -1222,7 +1187,6 @@ function openGuestModal(id) {
   document.getElementById('guestUebernachtung').value = guest.uebernachtung || '';
   document.getElementById('guestMitbringen').value = guest.mitbringen || '';
 
-  openRoleSelector(guest.roles || []);
   renderProfileProgram(guest);
 
   document.getElementById('guestEditModal').classList.remove('hidden');
@@ -1317,7 +1281,6 @@ function saveGuestEdit() {
 
   guest.uebernachtung = document.getElementById('guestUebernachtung').value.trim();
   guest.mitbringen = document.getElementById('guestMitbringen').value.trim();
-  guest.roles = modalRoles.slice();
   guest.updatedAt = new Date().toISOString();
 
   saveGuests(id);

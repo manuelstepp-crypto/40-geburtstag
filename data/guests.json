@@ -411,16 +411,8 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [
-      "fr-kaffee",
-      "fr-grill",
-      "sa-wikinger",
-      "sa-fruehstueck",
-      "sa-mittag",
-      "sa-catering",
-      "so-fruehstueck"
-    ],
-    "updatedAt": "2026-06-10T11:48:44.460Z"
+    "signups": [],
+    "updatedAt": "2026-06-10T11:48:56.178Z"
   },
   {
     "id": 32,

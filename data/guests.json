@@ -372,9 +372,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-kaffee"
+      "fr-kaffee",
+      "fr-grill"
     ],
-    "updatedAt": "2026-06-10T15:07:06.868Z"
+    "updatedAt": "2026-06-10T15:07:16.804Z"
   },
   {
     "id": 24,

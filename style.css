@@ -690,6 +690,7 @@ img {
 }
 
 .legend-sportplatz { background: #22c55e; }
+.legend-essen { background: #ec4899; }
 .legend-casino { background: #8b5cf6; }
 .legend-musik { background: #f59e0b; }
 
@@ -772,6 +773,7 @@ img {
 }
 
 .program-activity.sportplatz { border-left-color: #22c55e; }
+.program-activity.essen { border-left-color: #ec4899; }
 .program-activity.casino { border-left-color: #8b5cf6; }
 .program-activity.musik { border-left-color: #f59e0b; }
 
@@ -796,6 +798,7 @@ img {
 }
 
 .sportplatz .activity-location { color: #22c55e; }
+.essen .activity-location { color: #ec4899; }
 .casino .activity-location { color: #8b5cf6; }
 .musik .activity-location { color: #f59e0b; }
 
@@ -1511,6 +1514,7 @@ img {
 }
 
 .profile-act.sportplatz .profile-act-loc { color: #22c55e; }
+.profile-act.essen .profile-act-loc { color: #ec4899; }
 .profile-act.musik .profile-act-loc { color: #f59e0b; }
 
 .profile-act-title {

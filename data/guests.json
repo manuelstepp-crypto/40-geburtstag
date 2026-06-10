@@ -303,7 +303,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-kaffee"
+    ],
+    "updatedAt": "2026-06-10T15:02:45.790Z"
   },
   {
     "id": 21,

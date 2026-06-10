@@ -964,9 +964,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-nacht"
+      "fr-nacht",
+      "fr-lagerfeuer"
     ],
-    "updatedAt": "2026-06-10T19:16:42.684Z"
+    "updatedAt": "2026-06-10T19:16:59.123Z"
   },
   {
     "id": 56,

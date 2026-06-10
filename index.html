@@ -127,7 +127,6 @@ referrerpolicy="no-referrer-when-downgrade">
 <!-- Location Legend -->
 <div class="program-legend scroll-reveal">
 <span class="legend-item"><span class="legend-dot legend-sportplatz"></span>Sportplatz</span>
-<span class="legend-item"><span class="legend-dot legend-casino"></span>Casino</span>
 <span class="legend-item"><span class="legend-dot legend-musik"></span>Musikzimmer</span>
 </div>
 
@@ -957,11 +956,10 @@ function renderSelectedRoles() {
 const programData = [
   { badge: 'Fr', title: 'Freitag, 10. Juli', slots: [
     { time: '15:00 - 17:00', activities: [
-      { id: 'fr-kaffee', loc: 'casino', locName: 'Casino', title: 'Kaffee & Kuchen', note: 'Der Barista serviert Kaffee, dazu selbst mitgebrachter Kuchen', full: true }
+      { id: 'fr-kaffee', loc: 'sportplatz', locName: 'Sportplatz', title: 'Kaffee & Kuchen', note: 'Der Barista serviert Kaffee, dazu selbst mitgebrachter Kuchen', full: true }
     ]},
     { time: '17:00 - 19:00', activities: [
       { id: 'fr-tischtennis', loc: 'sportplatz', locName: 'Sportplatz', title: 'Tischtennis-Turnier', note: 'mit Felix' },
-      { id: 'fr-dixit', loc: 'casino', locName: 'Casino', title: 'Dixit spielen', note: 'mit Janosch' },
       { id: 'fr-tarot', loc: 'musik', locName: 'Musikzimmer', title: 'Tarot legen', note: 'mit Cristian' }
     ]},
     { time: '19:00 - 21:00', activities: [
@@ -969,7 +967,6 @@ const programData = [
     ]},
     { time: '21:00 - 23:00', activities: [
       { id: 'fr-nacht', loc: 'sportplatz', locName: 'Sportplatz', title: 'Nacht-Spaziergang', note: 'mit Emil' },
-      { id: 'fr-poker', loc: 'casino', locName: 'Casino', title: 'Pokerturnier', note: 'mit Matze' },
       { id: 'fr-impuls', loc: 'musik', locName: 'Musikzimmer', title: 'Impuls von Prof. Löhlein', note: 'mit Lukas' }
     ]},
     { time: '23:00 - 01:00', activities: [
@@ -982,7 +979,6 @@ const programData = [
     ]},
     { time: '11:00 - 13:00', activities: [
       { id: 'sa-wikinger', loc: 'sportplatz', locName: 'Sportplatz', title: 'Wikingerschach', note: 'mit Bela' },
-      { id: 'sa-skat', loc: 'casino', locName: 'Casino', title: 'Skatturnier', note: 'mit Paul' },
       { id: 'sa-stimme', loc: 'musik', locName: 'Musikzimmer', title: 'Stimme erleben', note: 'mit Colla' }
     ]},
     { time: '13:00 - 15:00', activities: [
@@ -990,14 +986,10 @@ const programData = [
     ]},
     { time: '15:00 - 17:00', activities: [
       { id: 'sa-fussball', loc: 'sportplatz', locName: 'Sportplatz', title: 'Fußballturnier', note: 'mit Jose' },
-      { id: 'sa-brettspiele', loc: 'casino', locName: 'Casino', title: 'Siedler von Catan', note: 'mit Nora' },
       { id: 'sa-tanzen', loc: 'musik', locName: 'Musikzimmer', title: 'Tanzen', note: 'mit Isis' }
     ]},
     { time: '17:00 - 19:00', activities: [
       { id: 'sa-catering', loc: 'sportplatz', locName: 'Sportplatz', title: 'Schwäbisches Catering', note: 'Schwäbische Köstlichkeiten, frisch vom Catering kredenzt', full: true, highlight: true }
-    ]},
-    { time: '21:00 - 23:00', activities: [
-      { id: 'sa-cocktail', loc: 'casino', locName: 'Casino', title: 'Cocktailbar + Lichtshow', note: '', full: true, highlight: true }
     ]},
     { time: '23:00 - 01:00', activities: [
       { id: 'sa-dj', loc: 'sportplatz', locName: 'Sportplatz', title: 'DJ Bibi', note: '', full: true, highlight: true }

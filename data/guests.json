@@ -134,9 +134,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-mittag"
+      "sa-mittag",
+      "sa-catering"
     ],
-    "updatedAt": "2026-06-10T13:24:35.040Z"
+    "updatedAt": "2026-06-10T13:24:43.361Z"
   },
   {
     "id": 11,

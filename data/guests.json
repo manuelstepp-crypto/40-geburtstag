@@ -14,13 +14,18 @@
     "uebernachtung": "",
     "mitbringen": "",
     "roles": [],
-    "updatedAt": "2026-06-10T09:25:29.679Z",
+    "updatedAt": "2026-06-10T09:25:47.700Z",
     "signups": [
       "fr-kaffee",
       "fr-tarot",
       "fr-grill",
       "fr-nacht",
-      "fr-lagerfeuer"
+      "fr-lagerfeuer",
+      "sa-fruehstueck",
+      "sa-stimme",
+      "sa-mittag",
+      "sa-tanzen",
+      "sa-catering"
     ]
   },
   {

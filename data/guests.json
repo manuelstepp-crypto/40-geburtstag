@@ -1026,9 +1026,9 @@
     },
     "adults": 1,
     "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": "",
-    "updatedAt": "2026-06-10T20:06:26.463Z",
+    "uebernachtung": "AirBnB",
+    "mitbringen": "Butterkuchen und bei Bed. griechischen Salat",
+    "updatedAt": "2026-06-10T20:08:21.919Z",
     "signups": [
       "fr-grill",
       "fr-impuls",

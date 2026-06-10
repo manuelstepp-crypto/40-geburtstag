@@ -962,7 +962,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-nacht"
+    ],
+    "updatedAt": "2026-06-10T19:16:42.684Z"
   },
   {
     "id": 56,

@@ -43,9 +43,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-grill"
+      "fr-grill",
+      "fr-impuls"
     ],
-    "updatedAt": "2026-06-10T19:58:54.693Z"
+    "updatedAt": "2026-06-10T19:59:02.310Z"
   },
   {
     "id": 4,

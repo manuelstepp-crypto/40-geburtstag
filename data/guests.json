@@ -372,7 +372,10 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": "",
+    "updatedAt": "2026-06-10T13:28:24.360Z"
   },
   {
     "id": 28,

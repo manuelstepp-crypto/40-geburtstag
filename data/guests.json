@@ -460,9 +460,13 @@
       "sa-fruehstueck",
       "sa-stimme",
       "sa-mittag",
-      "sa-tanzen"
+      "sa-tanzen",
+      "sa-catering",
+      "sa-dj",
+      "so-fruehstueck",
+      "so-abreise"
     ],
-    "updatedAt": "2026-06-10T16:19:01.774Z"
+    "updatedAt": "2026-06-10T16:19:06.762Z"
   },
   {
     "id": 27,

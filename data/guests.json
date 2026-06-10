@@ -304,9 +304,11 @@
     "uebernachtung": "",
     "mitbringen": "",
     "signups": [
-      "fr-grill"
+      "fr-grill",
+      "sa-fruehstueck",
+      "sa-mittag"
     ],
-    "updatedAt": "2026-06-10T07:11:05.895Z"
+    "updatedAt": "2026-06-10T07:11:16.485Z"
   },
   {
     "id": 18,

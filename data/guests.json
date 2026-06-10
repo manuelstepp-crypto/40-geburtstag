@@ -95,9 +95,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-mittag"
+      "sa-mittag",
+      "sa-fussball"
     ],
-    "updatedAt": "2026-06-10T13:40:31.286Z"
+    "updatedAt": "2026-06-10T13:40:36.921Z"
   },
   {
     "id": 8,

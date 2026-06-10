@@ -885,7 +885,8 @@ img {
 }
 
 /* Anmeldung pro Programmpunkt */
-.activity-signup {
+.activity-signup,
+.activity-count-row {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1403,12 +1404,130 @@ img {
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 36px;
-    max-width: 420px;
-    width: 90%;
-    max-height: 90vh;
+    max-width: 720px;
+    width: 92%;
+    max-height: 92vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     position: relative;
+}
+
+/* Mini-Programm im Profil */
+.profile-program {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.profile-day {
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+}
+
+.profile-day-head {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.profile-day-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #1a1a2e;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.profile-slot {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 6px;
+}
+
+.profile-slot:last-child { margin-bottom: 0; }
+
+.profile-slot-time {
+    font-size: 11px;
+    color: var(--color-text-dim);
+    padding-top: 8px;
+    white-space: nowrap;
+}
+
+.profile-slot-acts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.profile-act {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 8px 10px;
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition);
+    min-height: 52px;
+}
+
+.profile-act:hover:not(.locked):not(:disabled) {
+    border-color: var(--color-primary);
+}
+
+.profile-act.joined {
+    border-color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.profile-act.locked {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.profile-act-loc {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-dim);
+}
+
+.profile-act.sportplatz .profile-act-loc { color: #22c55e; }
+.profile-act.musik .profile-act-loc { color: #f59e0b; }
+
+.profile-act-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .profile-slot {
+        grid-template-columns: 55px 1fr;
+    }
+    .profile-slot-acts {
+        grid-template-columns: 1fr;
+    }
+    .profile-act-title { font-size: 12px; }
+    .guest-modal { padding: 24px 18px; }
 }
 
 .guest-modal-close {

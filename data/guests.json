@@ -302,7 +302,11 @@
     "adults": 2,
     "kids": 0,
     "uebernachtung": "",
-    "mitbringen": ""
+    "mitbringen": "",
+    "signups": [
+      "fr-grill"
+    ],
+    "updatedAt": "2026-06-10T07:11:05.895Z"
   },
   {
     "id": 18,

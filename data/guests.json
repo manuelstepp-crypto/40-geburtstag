@@ -305,9 +305,11 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-kaffee"
+      "fr-kaffee",
+      "fr-grill",
+      "fr-tarot"
     ],
-    "updatedAt": "2026-06-10T15:02:54.237Z"
+    "updatedAt": "2026-06-10T15:03:08.815Z"
   },
   {
     "id": 21,

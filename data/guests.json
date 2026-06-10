@@ -313,7 +313,6 @@
       "fr-kaffee",
       "fr-grill",
       "fr-tarot",
-      "fr-nacht",
       "fr-lagerfeuer",
       "sa-fruehstueck",
       "sa-stimme",
@@ -321,9 +320,10 @@
       "sa-tanzen",
       "sa-catering",
       "sa-dj",
-      "so-fruehstueck"
+      "so-fruehstueck",
+      "fr-impuls"
     ],
-    "updatedAt": "2026-06-10T15:03:51.231Z"
+    "updatedAt": "2026-06-10T15:07:33.868Z"
   },
   {
     "id": 21,

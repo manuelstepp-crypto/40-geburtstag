@@ -331,10 +331,9 @@
       "sa-catering",
       "sa-dj",
       "so-fruehstueck",
-      "so-abreise",
       "fr-impuls"
     ],
-    "updatedAt": "2026-06-10T15:09:39.421Z"
+    "updatedAt": "2026-06-10T15:07:33.868Z"
   },
   {
     "id": 21,
@@ -391,9 +390,10 @@
       "sa-fussball",
       "sa-catering",
       "sa-dj",
-      "so-fruehstueck"
+      "so-fruehstueck",
+      "sa-fruehstueck"
     ],
-    "updatedAt": "2026-06-10T15:09:13.233Z"
+    "updatedAt": "2026-06-10T15:09:42.334Z"
   },
   {
     "id": 24,

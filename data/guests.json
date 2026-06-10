@@ -826,7 +826,12 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-catering",
+      "sa-dj"
+    ],
+    "updatedAt": "2026-06-10T15:00:17.216Z"
   },
   {
     "id": 55,

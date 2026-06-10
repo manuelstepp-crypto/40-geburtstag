@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1780800000000">
+<link rel="stylesheet" href="style.css?v=1780900000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -122,7 +122,6 @@ referrerpolicy="no-referrer-when-downgrade">
 <section class="section program" id="program">
 <div class="container">
 <h2 class="section-title scroll-reveal">Das Programm</h2>
-<p class="section-subtitle scroll-reveal">3 Tage, 3 Locations &mdash; parallel Programm!</p>
 
 <!-- Location Legend -->
 <div class="program-legend scroll-reveal">
@@ -130,7 +129,6 @@ referrerpolicy="no-referrer-when-downgrade">
 <span class="legend-item"><span class="legend-dot legend-musik"></span>Musikzimmer</span>
 </div>
 
-<div class="program-me-bar scroll-reveal" id="programMeBar"></div>
 <div id="programDays"></div>
 </div>
 </section>
@@ -192,21 +190,8 @@ referrerpolicy="no-referrer-when-downgrade">
 <input type="hidden" id="guestEditId">
 
 <div class="guest-modal-field">
-<label>Wann bist du da?</label>
-<div class="day-checkboxes">
-<label class="day-checkbox">
-<input type="checkbox" id="dayFriday" checked>
-<span>Freitag</span>
-</label>
-<label class="day-checkbox">
-<input type="checkbox" id="daySaturday" checked>
-<span>Samstag</span>
-</label>
-<label class="day-checkbox">
-<input type="checkbox" id="daySunday" checked>
-<span>Sonntag</span>
-</label>
-</div>
+<label>Mein Programm <span class="role-hint">– tippe an, wo du mitmachst</span></label>
+<div class="profile-program" id="profileProgram"></div>
 </div>
 
 <div class="guest-modal-field">
@@ -226,11 +211,6 @@ referrerpolicy="no-referrer-when-downgrade">
 </select>
 <div class="selected-roles" id="selectedRoles"></div>
 <div class="role-descriptions" id="roleDescriptions"></div>
-</div>
-
-<div class="guest-modal-field">
-<label>Mein Programm <span class="role-hint">– Anmeldung im Programm-Bereich</span></label>
-<div class="guest-calendar" id="guestCalendar"></div>
 </div>
 
 <button class="submit-btn" onclick="saveGuestEdit()">
@@ -673,17 +653,15 @@ function saveGuests(changedId) {
 
 function updateStats() {
   const yes = allGuests.filter(g => g.response === 'yes');
-  let total = 0, fri = 0, sat = 0, sun = 0;
+  let fri = 0, sat = 0, sun = 0;
   yes.forEach(g => {
-    const people = (g.adults || 1) + (g.kids || 0);
-    total += people;
-    const d = g.days || {friday:true,saturday:true,sunday:true};
-    if (d.friday) fri += people;
-    if (d.saturday) sat += people;
-    if (d.sunday) sun += people;
+    const su = g.signups || [];
+    if (su.some(id => id.startsWith('fr-'))) fri++;
+    if (su.some(id => id.startsWith('sa-'))) sat++;
+    if (su.some(id => id.startsWith('so-'))) sun++;
   });
   const el = id => document.getElementById(id);
-  if (el('statTotal')) el('statTotal').textContent = total;
+  if (el('statTotal')) el('statTotal').textContent = yes.length;
   if (el('statFriday')) el('statFriday').textContent = fri;
   if (el('statSaturday')) el('statSaturday').textContent = sat;
   if (el('statSunday')) el('statSunday').textContent = sun;
@@ -1048,32 +1026,18 @@ function renderProgram() {
 }
 
 function activityCardHtml(a, participants, me, chosen) {
-  const joined = !!(me && (me.signups || []).includes(a.id));
-  const locked = !!(chosen && !joined); // anderes Angebot im selben Zeitblock gewählt
   const cls = ['program-activity', a.loc];
   if (a.full) cls.push('full-width');
   if (a.highlight) cls.push('highlight');
-  if (locked) cls.push('locked');
   const note = a.note ? `<p>${escapeHtml(a.note)}</p>` : '';
   const chips = participants.length
     ? `<div class="activity-participants">${participants.map(g => `<span class="participant-chip">${escapeHtml(guestName(g))}</span>`).join('')}</div>`
     : `<div class="activity-participants activity-participants-empty">Noch niemand angemeldet</div>`;
-  let btn;
-  if (joined) {
-    btn = `<button type="button" class="join-btn joined" onclick="toggleSignup('${a.id}')">✓ Du bist dabei</button>`;
-  } else if (locked) {
-    btn = `<button type="button" class="join-btn" disabled title="Du bist in diesem Zeitblock schon woanders dabei">+ Mitmachen</button>`;
-  } else {
-    btn = `<button type="button" class="join-btn" onclick="toggleSignup('${a.id}')">+ Mitmachen</button>`;
-  }
   return `<div class="${cls.join(' ')}">
     <span class="activity-location">${escapeHtml(a.locName)}</span>
     <h4>${escapeHtml(a.title)}</h4>
     ${note}
-    <div class="activity-signup">
-      <span class="activity-count">👥 ${participants.length}</span>
-      ${btn}
-    </div>
+    <div class="activity-count-row"><span class="activity-count">👥 ${participants.length}</span></div>
     ${chips}
   </div>`;
 }
@@ -1242,19 +1206,63 @@ function openGuestModal(id) {
   document.getElementById('guestEditId').value = id;
   document.getElementById('guestEditTitle').textContent = (guest.firstName || '') + ' ' + (guest.lastName || '');
 
-  const days = guest.days || { friday: true, saturday: true, sunday: true };
-  document.getElementById('dayFriday').checked = !!days.friday;
-  document.getElementById('daySaturday').checked = !!days.saturday;
-  document.getElementById('daySunday').checked = !!days.sunday;
-
   document.getElementById('guestUebernachtung').value = guest.uebernachtung || '';
   document.getElementById('guestMitbringen').value = guest.mitbringen || '';
 
   openRoleSelector(guest.roles || []);
-  renderGuestCalendar(guest);
+  renderProfileProgram(guest);
 
   document.getElementById('guestEditModal').classList.remove('hidden');
 }
+
+function renderProfileProgram(guest) {
+  const cont = document.getElementById('profileProgram');
+  if (!cont) return;
+  const signups = guest.signups || [];
+  cont.innerHTML = programData.map(day => {
+    const slots = day.slots.map(slot => {
+      const chosen = slot.activities.find(a => signups.includes(a.id));
+      const acts = slot.activities.map(a => {
+        const joined = signups.includes(a.id);
+        const locked = chosen && !joined;
+        const cls = ['profile-act', a.loc];
+        if (joined) cls.push('joined');
+        if (locked) cls.push('locked');
+        const click = locked ? '' : `onclick="toggleProfileSignup(${guest.id}, '${a.id}')"`;
+        return `<button type="button" class="${cls.join(' ')}" ${click}>
+          <span class="profile-act-loc">${escapeHtml(a.locName)}</span>
+          <span class="profile-act-title">${escapeHtml(a.title)}</span>
+        </button>`;
+      }).join('');
+      return `<div class="profile-slot">
+        <span class="profile-slot-time">${escapeHtml(slot.time)}</span>
+        <div class="profile-slot-acts">${acts}</div>
+      </div>`;
+    }).join('');
+    return `<div class="profile-day">
+      <div class="profile-day-head"><span class="profile-day-badge">${day.badge}</span> ${escapeHtml(day.title)}</div>
+      ${slots}
+    </div>`;
+  }).join('');
+}
+
+window.toggleProfileSignup = function toggleProfileSignup(guestId, aid) {
+  const g = allGuests.find(x => x.id === guestId);
+  if (!g) return;
+  g.signups = g.signups || [];
+  if (g.signups.includes(aid)) {
+    g.signups = g.signups.filter(x => x !== aid);
+  } else {
+    const slotIds = activitySlotIds(aid);
+    if (g.signups.some(x => x !== aid && slotIds.includes(x))) return;
+    g.signups.push(aid);
+  }
+  g.updatedAt = new Date().toISOString();
+  saveGuests(guestId);
+  renderProfileProgram(g);
+  renderProgram();
+  updateStats();
+};
 
 function renderGuestCalendar(guest) {
   const cont = document.getElementById('guestCalendar');
@@ -1294,11 +1302,6 @@ function saveGuestEdit() {
   const guest = allGuests.find(g => g.id === id);
   if (!guest) return;
 
-  guest.days = {
-    friday: document.getElementById('dayFriday').checked,
-    saturday: document.getElementById('daySaturday').checked,
-    sunday: document.getElementById('daySunday').checked
-  };
   guest.uebernachtung = document.getElementById('guestUebernachtung').value.trim();
   guest.mitbringen = document.getElementById('guestMitbringen').value.trim();
   guest.roles = modalRoles.slice();

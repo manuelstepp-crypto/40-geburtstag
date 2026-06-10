@@ -139,10 +139,9 @@
     "kids": 0,
     "signups": [
       "fr-kaffee",
-      "fr-tischtennis",
-      "fr-nacht"
+      "fr-tischtennis"
     ],
-    "updatedAt": "2026-06-10T15:07:23.264Z"
+    "updatedAt": "2026-06-10T15:07:11.042Z"
   },
   {
     "id": 10,
@@ -376,7 +375,7 @@
       "fr-kaffee",
       "fr-grill"
     ],
-    "updatedAt": "2026-06-10T15:07:16.804Z"
+    "updatedAt": "2026-06-10T15:07:22.575Z"
   },
   {
     "id": 24,

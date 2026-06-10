@@ -1028,14 +1028,18 @@
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": "",
-    "updatedAt": "2026-06-10T20:06:18.706Z",
+    "updatedAt": "2026-06-10T20:06:26.463Z",
     "signups": [
       "fr-grill",
       "fr-impuls",
       "fr-lagerfeuer",
       "sa-fruehstueck",
       "sa-stimme",
-      "sa-mittag"
+      "sa-mittag",
+      "sa-tanzen",
+      "sa-catering",
+      "sa-dj",
+      "so-fruehstueck"
     ]
   },
   {

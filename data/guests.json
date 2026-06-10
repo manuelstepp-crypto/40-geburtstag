@@ -324,7 +324,6 @@
       "fr-kaffee",
       "fr-grill",
       "fr-tarot",
-      "fr-lagerfeuer",
       "sa-fruehstueck",
       "sa-stimme",
       "sa-mittag",
@@ -333,9 +332,10 @@
       "sa-dj",
       "so-fruehstueck",
       "so-abreise",
-      "fr-impuls"
+      "fr-impuls",
+      "fr-lagerfeuer"
     ],
-    "updatedAt": "2026-06-10T15:09:39.421Z"
+    "updatedAt": "2026-06-10T15:11:57.226Z"
   },
   {
     "id": 21,

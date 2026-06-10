@@ -139,9 +139,13 @@
     "kids": 0,
     "signups": [
       "fr-kaffee",
-      "fr-tischtennis"
+      "fr-tischtennis",
+      "fr-nacht",
+      "fr-lagerfeuer",
+      "sa-fruehstueck",
+      "sa-wikinger"
     ],
-    "updatedAt": "2026-06-10T15:07:11.042Z"
+    "updatedAt": "2026-06-10T15:07:52.107Z"
   },
   {
     "id": 10,

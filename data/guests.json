@@ -387,7 +387,6 @@
     "signups": [
       "fr-kaffee",
       "fr-grill",
-      "sa-wikinger",
       "sa-fussball",
       "sa-catering",
       "sa-dj",
@@ -395,9 +394,10 @@
       "sa-fruehstueck",
       "fr-tischtennis",
       "fr-lagerfeuer",
-      "sa-mittag"
+      "sa-mittag",
+      "sa-stimme"
     ],
-    "updatedAt": "2026-06-10T15:11:39.085Z",
+    "updatedAt": "2026-06-10T15:13:14.545Z",
     "uebernachtung": "Camper",
     "mitbringen": "Pizzaofen"
   },

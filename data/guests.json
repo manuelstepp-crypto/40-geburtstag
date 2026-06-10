@@ -649,9 +649,14 @@
     "kids": 0,
     "signups": [
       "fr-kaffee",
-      "fr-grill"
+      "fr-grill",
+      "fr-tischtennis",
+      "fr-nacht",
+      "fr-lagerfeuer",
+      "sa-fruehstueck",
+      "sa-wikinger"
     ],
-    "updatedAt": "2026-06-10T14:14:28.679Z"
+    "updatedAt": "2026-06-10T14:15:14.308Z"
   },
   {
     "id": 45,

@@ -1028,9 +1028,12 @@
     "kids": 0,
     "uebernachtung": "",
     "mitbringen": "",
-    "updatedAt": "2026-06-10T20:05:42.996Z",
+    "updatedAt": "2026-06-10T20:05:59.008Z",
     "signups": [
-      "fr-grill"
+      "fr-grill",
+      "fr-impuls",
+      "fr-lagerfeuer",
+      "sa-fruehstueck"
     ]
   },
   {

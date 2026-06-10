@@ -141,7 +141,6 @@
       "fr-kaffee",
       "fr-tischtennis",
       "fr-nacht",
-      "fr-lagerfeuer",
       "sa-fruehstueck",
       "sa-wikinger",
       "sa-mittag",
@@ -150,9 +149,10 @@
       "sa-dj",
       "so-fruehstueck",
       "so-beach",
-      "fr-grill"
+      "fr-grill",
+      "fr-lagerfeuer"
     ],
-    "updatedAt": "2026-06-10T15:11:46.209Z"
+    "updatedAt": "2026-06-10T15:12:11.366Z"
   },
   {
     "id": 10,

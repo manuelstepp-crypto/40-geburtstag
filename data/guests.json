@@ -487,9 +487,11 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-grill"
+      "fr-grill",
+      "sa-fruehstueck",
+      "sa-mittag"
     ],
-    "updatedAt": "2026-06-10T13:25:04.619Z"
+    "updatedAt": "2026-06-10T13:25:11.025Z"
   },
   {
     "id": 37,

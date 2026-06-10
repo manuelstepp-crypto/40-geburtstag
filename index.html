@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1780900000000">
+<link rel="stylesheet" href="style.css?v=1781000000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -126,6 +126,7 @@ referrerpolicy="no-referrer-when-downgrade">
 <!-- Location Legend -->
 <div class="program-legend scroll-reveal">
 <span class="legend-item"><span class="legend-dot legend-sportplatz"></span>Sportplatz</span>
+<span class="legend-item"><span class="legend-dot legend-essen"></span>Essen &amp; Trinken</span>
 <span class="legend-item"><span class="legend-dot legend-musik"></span>Musikzimmer</span>
 </div>
 
@@ -196,7 +197,7 @@ referrerpolicy="no-referrer-when-downgrade">
 
 <div class="guest-modal-field">
 <label for="guestUebernachtung">Wo übernachtest du?</label>
-<textarea id="guestUebernachtung" rows="2" placeholder="z. B. AirBnB, bei Manu, Camper, kein Bedarf ..."></textarea>
+<textarea id="guestUebernachtung" rows="2" placeholder="z. B. AirBnB, Camper, kein Bedarf ..."></textarea>
 </div>
 
 <div class="guest-modal-field">
@@ -732,7 +733,6 @@ function renderGuests() {
         <div class="guest-avatar" style="background:${color}">${escapeHtml(initials)}</div>
         <div class="guest-info">
           <div class="guest-name">${escapeHtml(fn)} ${escapeHtml(ln)}${plusStr}</div>
-          ${dayTags}
           ${rolesHtml}
           ${updatedStr}
         </div>
@@ -934,14 +934,14 @@ function renderSelectedRoles() {
 const programData = [
   { badge: 'Fr', title: 'Freitag, 10. Juli', slots: [
     { time: '15:00 - 17:00', activities: [
-      { id: 'fr-kaffee', loc: 'sportplatz', locName: 'Sportplatz', title: 'Kaffee & Kuchen', note: 'Der Barista serviert Kaffee, dazu selbst mitgebrachter Kuchen', full: true }
+      { id: 'fr-kaffee', loc: 'essen', locName: 'Essen & Trinken', title: 'Kaffee & Kuchen', note: 'Der Barista serviert Kaffee, dazu selbst mitgebrachter Kuchen', full: true }
     ]},
     { time: '17:00 - 19:00', activities: [
       { id: 'fr-tischtennis', loc: 'sportplatz', locName: 'Sportplatz', title: 'Tischtennis-Turnier', note: 'mit Felix' },
       { id: 'fr-tarot', loc: 'musik', locName: 'Musikzimmer', title: 'Tarot legen', note: 'mit Cristian' }
     ]},
     { time: '19:00 - 21:00', activities: [
-      { id: 'fr-grill', loc: 'sportplatz', locName: 'Sportplatz', title: 'Grill, Pizza & Salat', note: 'Der Grillmeister grillt, die Pizzabäcker machen frische Pizza aus dem Holzofen – dazu mitgebrachte Salate', full: true, highlight: true }
+      { id: 'fr-grill', loc: 'essen', locName: 'Essen & Trinken', title: 'Grill, Pizza & Salat', note: 'Der Grillmeister grillt, die Pizzabäcker machen frische Pizza aus dem Holzofen – dazu mitgebrachte Salate', full: true, highlight: true }
     ]},
     { time: '21:00 - 23:00', activities: [
       { id: 'fr-nacht', loc: 'sportplatz', locName: 'Sportplatz', title: 'Nacht-Spaziergang', note: 'mit Emil' },
@@ -953,21 +953,21 @@ const programData = [
   ]},
   { badge: 'Sa', title: 'Samstag, 11. Juli', slots: [
     { time: '09:00 - 11:00', activities: [
-      { id: 'sa-fruehstueck', loc: 'sportplatz', locName: 'Sportplatz', title: 'Frühstück & Crêpes', note: '', full: true }
+      { id: 'sa-fruehstueck', loc: 'essen', locName: 'Essen & Trinken', title: 'Frühstück & Crêpes', note: '', full: true }
     ]},
     { time: '11:00 - 13:00', activities: [
       { id: 'sa-wikinger', loc: 'sportplatz', locName: 'Sportplatz', title: 'Wikingerschach', note: 'mit Bela' },
       { id: 'sa-stimme', loc: 'musik', locName: 'Musikzimmer', title: 'Stimme erleben', note: 'mit Colla' }
     ]},
     { time: '13:00 - 15:00', activities: [
-      { id: 'sa-mittag', loc: 'sportplatz', locName: 'Sportplatz', title: 'Mittagssnack', note: '', full: true }
+      { id: 'sa-mittag', loc: 'essen', locName: 'Essen & Trinken', title: 'Mittagssnack', note: '', full: true }
     ]},
     { time: '15:00 - 17:00', activities: [
       { id: 'sa-fussball', loc: 'sportplatz', locName: 'Sportplatz', title: 'Fußballturnier', note: 'mit Jose' },
       { id: 'sa-tanzen', loc: 'musik', locName: 'Musikzimmer', title: 'Tanzen', note: 'mit Isis' }
     ]},
     { time: '17:00 - 19:00', activities: [
-      { id: 'sa-catering', loc: 'sportplatz', locName: 'Sportplatz', title: 'Schwäbisches Catering', note: 'Schwäbische Köstlichkeiten, frisch vom Catering kredenzt', full: true, highlight: true }
+      { id: 'sa-catering', loc: 'essen', locName: 'Essen & Trinken', title: 'Schwäbisches Catering', note: 'Schwäbische Köstlichkeiten, frisch vom Catering kredenzt', full: true, highlight: true }
     ]},
     { time: '23:00 - 01:00', activities: [
       { id: 'sa-dj', loc: 'sportplatz', locName: 'Sportplatz', title: 'DJ Bibi', note: '', full: true, highlight: true }
@@ -975,7 +975,7 @@ const programData = [
   ]},
   { badge: 'So', title: 'Sonntag, 12. Juli', slots: [
     { time: '09:00 - 11:00', activities: [
-      { id: 'so-fruehstueck', loc: 'sportplatz', locName: 'Sportplatz', title: 'Frühstück / Brunch', note: '', full: true }
+      { id: 'so-fruehstueck', loc: 'essen', locName: 'Essen & Trinken', title: 'Frühstück / Brunch', note: '', full: true }
     ]},
     { time: '13:00 - 15:00', activities: [
       { id: 'so-abreise', loc: 'sportplatz', locName: 'Sportplatz', title: 'Abreise', note: 'Tschüss sagen und nach Hause fahren', full: true }
@@ -1123,6 +1123,17 @@ function flashShareCopied() {
 function applyUrlMe() {
   if (urlMeApplied) return;
   const params = new URLSearchParams(location.search);
+  const profileVal = params.get('profile');
+  if (profileVal != null) {
+    urlMeApplied = true;
+    const id = parseInt(profileVal);
+    if (id && allGuests.some(g => g.id === id)) {
+      setCurrentGuest(String(id));
+      // direkt das Profil öffnen
+      openGuestModal(id);
+    }
+    return;
+  }
   if (!params.has('me')) return;
   urlMeApplied = true;
   const meId = parseInt(params.get('me'));

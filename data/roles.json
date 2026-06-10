@@ -148,7 +148,7 @@
     "title": "Eier-Flüsterer",
     "emoji": "🥚",
     "category": "Essen & Trinken",
-    "description": "Samstags-Team: bringt Eier in jede gewünschte Form – weich, hart, Rührei. Versteht die Sprache der Eier.",
+    "description": "Bringt Eier in jede gewünschte Form – weich, hart, Rührei. Versteht die Sprache der Eier.",
     "reportsTo": "fruehstuecks-capo",
     "worksWith": [
       "broetchen-baron",
@@ -161,7 +161,7 @@
     "title": "Brötchen-Baron",
     "emoji": "🥐",
     "category": "Essen & Trinken",
-    "description": "Samstags-Team: herrscht über Brötchen, Croissants und Backwaren. Sorgt dafür, dass der Korb nie leer ist.",
+    "description": "Herrscht über Brötchen, Croissants und Backwaren. Sorgt dafür, dass der Korb nie leer ist.",
     "reportsTo": "fruehstuecks-capo",
     "worksWith": [
       "eier-fluesterer",
@@ -174,7 +174,7 @@
     "title": "Marmeladen-Magier",
     "emoji": "🍓",
     "category": "Essen & Trinken",
-    "description": "Samstags-Team: zaubert Aufstriche, Marmeladen, Honig und Nutella auf den Tisch. Zuständig für die süße Seite des Morgens.",
+    "description": "Zaubert Aufstriche, Marmeladen, Honig und Nutella auf den Tisch. Zuständig für die süße Seite des Morgens.",
     "reportsTo": "fruehstuecks-capo",
     "worksWith": [
       "eier-fluesterer",
@@ -187,7 +187,7 @@
     "title": "Rührei-Rebell",
     "emoji": "🍳",
     "category": "Essen & Trinken",
-    "description": "Sonntags-Team: schwingt die Pfanne und macht Rührei, Spiegelei & Co. Lehnt sich gegen langweilige Frühstücke auf.",
+    "description": "Schwingt die Pfanne und macht Rührei, Spiegelei & Co. Lehnt sich gegen langweilige Frühstücke auf.",
     "reportsTo": "fruehstuecks-capo",
     "worksWith": [
       "semmel-schmuggler",
@@ -200,7 +200,7 @@
     "title": "Semmel-Schmuggler",
     "emoji": "🥖",
     "category": "Essen & Trinken",
-    "description": "Sonntags-Team: organisiert frische Semmeln und Brot und schmuggelt sie rechtzeitig auf den Tisch.",
+    "description": "Organisiert frische Semmeln und Brot und schmuggelt sie rechtzeitig auf den Tisch.",
     "reportsTo": "fruehstuecks-capo",
     "worksWith": [
       "ruehrei-rebell",
@@ -213,7 +213,7 @@
     "title": "Müsli-Mogul",
     "emoji": "🥣",
     "category": "Essen & Trinken",
-    "description": "Sonntags-Team: Imperium aus Müsli, Joghurt, Obst und Haferflocken. Für alle, die es morgens gesund mögen.",
+    "description": "Imperium aus Müsli, Joghurt, Obst und Haferflocken. Für alle, die es morgens gesund mögen.",
     "reportsTo": "fruehstuecks-capo",
     "worksWith": [
       "ruehrei-rebell",

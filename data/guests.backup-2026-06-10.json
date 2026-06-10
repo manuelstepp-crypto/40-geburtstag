@@ -1,0 +1,794 @@
+[
+  {
+    "id": 1,
+    "firstName": "Patrick",
+    "lastName": "Frankfurt",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
+  },
+  {
+    "id": 2,
+    "firstName": "Isabel",
+    "lastName": "Kloppenburg",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Monteur 1",
+    "mitbringen": "Kuchen",
+    "updatedAt": "2026-05-25T02:02:03.233Z"
+  },
+  {
+    "id": 3,
+    "firstName": "Leo",
+    "lastName": "Kloppenburg",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": "Russischer Zupfkuchen",
+    "signups": [
+      "so-beach"
+    ],
+    "updatedAt": "2026-06-01T14:41:15.627Z",
+    "roles": [
+      "beachmaus"
+    ]
+  },
+  {
+    "id": 4,
+    "firstName": "Benni",
+    "lastName": "Hartmann",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Zuhause bei sich",
+    "mitbringen": "Nudelsalat",
+    "updatedAt": "2026-05-24T20:49:08.587Z"
+  },
+  {
+    "id": 5,
+    "firstName": "Thomas",
+    "lastName": "Hansmeier",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": false,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Gästehaus mit Simon",
+    "mitbringen": "Zitronenkuchen",
+    "roles": [
+      "barista"
+    ],
+    "updatedAt": "2026-05-28T19:56:38.512Z"
+  },
+  {
+    "id": 6,
+    "firstName": "Raphael",
+    "lastName": "Pichlmaier",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Transporter",
+    "mitbringen": "Fleischküchle",
+    "updatedAt": "2026-05-27T07:32:47.121Z",
+    "roles": [
+      "feuerteufel"
+    ]
+  },
+  {
+    "id": 7,
+    "firstName": "Simon",
+    "lastName": "Enz",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Monteurwohnung? (mit David)",
+    "mitbringen": "",
+    "roles": [
+      "reporterin"
+    ],
+    "updatedAt": "2026-05-27T07:30:43.330Z"
+  },
+  {
+    "id": 8,
+    "firstName": "Matthias",
+    "lastName": "Eberle",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "Dachzelt",
+    "mitbringen": "Geiler Raketensalat, toxisch männliche Sprüche, große Klappe, Klappmesser",
+    "updatedAt": "2026-05-27T07:33:43.871Z",
+    "roles": [
+      "grillmeister"
+    ]
+  },
+  {
+    "id": 9,
+    "firstName": "Felix",
+    "lastName": "Meissner",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "kein Bedarf",
+    "mitbringen": ""
+  },
+  {
+    "id": 10,
+    "firstName": "Jose",
+    "lastName": "Niethammer",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "AirBnB (mit Benni-Gruppe, Fr-So)",
+    "mitbringen": ""
+  },
+  {
+    "id": 11,
+    "firstName": "Benni",
+    "lastName": "Niethammer",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "AirBnB gewünscht (Fr-So, 5 Pers mit Ruth, Andreas, José, Eva)",
+    "mitbringen": "",
+    "signups": [
+      "fr-kaffee",
+      "sa-tanzen"
+    ],
+    "updatedAt": "2026-06-04T09:23:36.809Z",
+    "roles": [
+      "quiz-master"
+    ]
+  },
+  {
+    "id": 12,
+    "firstName": "Ruth",
+    "lastName": "Niethammer",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "AirBnB mit Benni (Fr-So)",
+    "mitbringen": "Sophia, Feli und Oscar, Kuchen",
+    "updatedAt": "2026-05-27T07:32:07.081Z",
+    "roles": [
+      "amor"
+    ]
+  },
+  {
+    "id": 13,
+    "firstName": "Cordula",
+    "lastName": "Stepp",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Bei Barbara",
+    "mitbringen": "Zitronenkuchen",
+    "updatedAt": "2026-05-27T21:37:00.259Z",
+    "signups": [],
+    "roles": [
+      "zeremonienmeister"
+    ]
+  },
+  {
+    "id": 14,
+    "firstName": "Lucy",
+    "lastName": "Weller",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "Camper (überlegt noch)",
+    "mitbringen": ""
+  },
+  {
+    "id": 15,
+    "firstName": "Angela",
+    "lastName": "Weller",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": "",
+    "signups": [],
+    "updatedAt": "2026-06-10T07:10:46.732Z",
+    "roles": []
+  },
+  {
+    "id": 16,
+    "firstName": "Carmen",
+    "lastName": "Schickinger",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Bei ihrem Papa",
+    "mitbringen": "",
+    "signups": [
+      "sa-skat",
+      "sa-fruehstueck"
+    ],
+    "updatedAt": "2026-05-28T10:13:35.729Z"
+  },
+  {
+    "id": 17,
+    "firstName": "Emil",
+    "lastName": "Diaconu",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": "",
+    "signups": [
+      "fr-grill",
+      "sa-fruehstueck",
+      "sa-mittag",
+      "sa-catering",
+      "so-fruehstueck"
+    ],
+    "updatedAt": "2026-06-10T07:11:45.735Z"
+  },
+  {
+    "id": 18,
+    "firstName": "Christian",
+    "lastName": "Schäfer",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 2,
+    "uebernachtung": "Eigenes AirBnB (Filderstadt)",
+    "mitbringen": "",
+    "roles": [
+      "fruehaufsteher"
+    ],
+    "updatedAt": "2026-05-27T07:37:01.289Z"
+  },
+  {
+    "id": 19,
+    "firstName": "Eike",
+    "lastName": "Johann",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "Im Van",
+    "mitbringen": "Pizzaofen",
+    "updatedAt": "2026-06-04T09:33:25.147Z",
+    "roles": [
+      "pizza-meister"
+    ],
+    "signups": [
+      "fr-tischtennis",
+      "fr-grill"
+    ]
+  },
+  {
+    "id": 20,
+    "firstName": "Eli",
+    "lastName": "Welz",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "Bei sich (FFM Anreise Do Abend)",
+    "mitbringen": ""
+  },
+  {
+    "id": 21,
+    "firstName": "Irina",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
+  },
+  {
+    "id": 22,
+    "firstName": "Bela",
+    "lastName": "Bartmes",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Bei Barbara",
+    "mitbringen": ""
+  },
+  {
+    "id": 23,
+    "firstName": "Pau",
+    "lastName": "Navalon",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "kein Bedarf (Hotel NH Stuttgart Airport, 7 Pers)",
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T21:09:33.677Z"
+  },
+  {
+    "id": 24,
+    "firstName": "Micha",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 2,
+    "kids": 2,
+    "uebernachtung": "Nur Samstag",
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T06:34:50.601Z"
+  },
+  {
+    "id": 25,
+    "firstName": "Steffen",
+    "lastName": "Petruch",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 1,
+    "uebernachtung": "Zelt falls gutes Wetter",
+    "mitbringen": "Salat oder süß",
+    "roles": [
+      "pyromane"
+    ],
+    "updatedAt": "2026-05-27T07:31:45.818Z"
+  },
+  {
+    "id": 26,
+    "firstName": "Laura",
+    "lastName": "Oberhofer",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": false,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "kein Bedarf (Schwester)",
+    "mitbringen": "",
+    "updatedAt": "2026-05-25T07:28:48.366Z"
+  },
+  {
+    "id": 27,
+    "firstName": "Nina",
+    "lastName": "Maier",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 2,
+    "kids": 1,
+    "uebernachtung": "kein Bedarf (Tante/heimfahren)",
+    "mitbringen": "",
+    "updatedAt": "2026-05-28T11:55:27.795Z",
+    "roles": [
+      "kinderprogramm"
+    ],
+    "signups": []
+  },
+  {
+    "id": 28,
+    "firstName": "Josip",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Hotel/AirBnB in Klärung",
+    "mitbringen": "",
+    "roles": [
+      "soundmeister"
+    ],
+    "updatedAt": "2026-05-27T07:34:12.720Z"
+  },
+  {
+    "id": 29,
+    "firstName": "David",
+    "lastName": "Weber",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Dachzelt/Monteurwohnung? (mit Simon)",
+    "mitbringen": ""
+  },
+  {
+    "id": 30,
+    "firstName": "Lukas",
+    "lastName": "Löhlein",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Bei sich",
+    "mitbringen": ""
+  },
+  {
+    "id": 31,
+    "firstName": "Nathalena",
+    "lastName": "Hein",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 1,
+    "uebernachtung": "",
+    "mitbringen": "",
+    "roles": [
+      "sanitaeterin"
+    ],
+    "updatedAt": "2026-05-27T07:33:14.415Z"
+  },
+  {
+    "id": 32,
+    "firstName": "Christina",
+    "lastName": "Selle",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "Airbnb in Waldenbuch",
+    "mitbringen": "",
+    "updatedAt": "2026-05-27T07:36:32.178Z",
+    "roles": [
+      "kuchenfee"
+    ]
+  },
+  {
+    "id": 33,
+    "firstName": "Marcel",
+    "lastName": "Wolf",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
+  },
+  {
+    "id": 34,
+    "firstName": "Clare",
+    "lastName": "Murray",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": "",
+    "roles": [
+      "pingpong"
+    ],
+    "updatedAt": "2026-05-27T07:34:51.814Z"
+  },
+  {
+    "id": 35,
+    "firstName": "Robert",
+    "lastName": "Beach",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Residenzhotel Stuttgart Airport",
+    "mitbringen": "",
+    "roles": [
+      "barkeeper"
+    ],
+    "updatedAt": "2026-06-07T16:30:38.894Z",
+    "signups": [
+      "fr-tischtennis",
+      "fr-poker",
+      "fr-lagerfeuer",
+      "sa-wikinger",
+      "sa-fussball",
+      "so-beach"
+    ]
+  },
+  {
+    "id": 36,
+    "firstName": "Arne",
+    "lastName": "Neubauer",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Sindelfingen",
+    "mitbringen": "Kuchen",
+    "roles": [
+      "mittagssnack"
+    ],
+    "updatedAt": "2026-05-27T10:23:46.737Z"
+  },
+  {
+    "id": 37,
+    "firstName": "Cristian",
+    "lastName": "Bossetti",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 1,
+    "uebernachtung": "Camper",
+    "mitbringen": "Salat, Spiele, meinen Penis, Alkohol",
+    "updatedAt": "2026-05-27T16:50:33.560Z",
+    "signups": [
+      "fr-kaffee",
+      "fr-tischtennis",
+      "sa-skat",
+      "sa-stimme",
+      "sa-brettspiele",
+      "sa-catering"
+    ]
+  },
+  {
+    "id": 38,
+    "firstName": "Paul",
+    "lastName": "Sprüssel",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
+  },
+  {
+    "id": 39,
+    "firstName": "Steffen",
+    "lastName": "Ketterer",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
+  },
+  {
+    "id": 40,
+    "firstName": "Andy",
+    "lastName": "Schneider",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": "",
+    "signups": [],
+    "updatedAt": "2026-05-27T21:48:31.703Z"
+  },
+  {
+    "id": 41,
+    "firstName": "Sarah",
+    "lastName": "Aderhold",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Bei den Eltern",
+    "mitbringen": "",
+    "roles": [
+      "joker"
+    ],
+    "updatedAt": "2026-05-27T07:30:33.173Z"
+  },
+  {
+    "id": 42,
+    "firstName": "Ralf",
+    "lastName": "Barnowsky",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "",
+    "mitbringen": ""
+  },
+  {
+    "id": 43,
+    "firstName": "Anni",
+    "lastName": "Eberhardt",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "uebernachtung": "Bei sich",
+    "mitbringen": "",
+    "roles": [],
+    "updatedAt": "2026-05-28T19:30:42.830Z"
+  },
+  {
+    "id": 44,
+    "firstName": "Johannes",
+    "lastName": "Müller",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 2,
+    "kids": 0,
+    "uebernachtung": "Kein Bedarf",
+    "mitbringen": "Kuchen",
+    "updatedAt": "2026-05-25T10:34:01.536Z"
+  }
+]

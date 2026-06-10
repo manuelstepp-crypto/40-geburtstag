@@ -1119,9 +1119,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-mittag"
+      "sa-mittag",
+      "sa-tanzen"
     ],
-    "updatedAt": "2026-06-10T19:09:59.525Z"
+    "updatedAt": "2026-06-10T19:10:32.647Z"
   },
   {
     "id": 65,

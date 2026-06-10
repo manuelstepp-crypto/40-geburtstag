@@ -527,8 +527,11 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [],
-    "updatedAt": "2026-06-10T21:00:29.334Z"
+    "signups": [
+      "fr-grill",
+      "fr-kaffee"
+    ],
+    "updatedAt": "2026-06-10T21:00:38.797Z"
   },
   {
     "id": 29,

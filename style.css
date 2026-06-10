@@ -1041,6 +1041,26 @@ img {
     .program-activity.full-width {
         grid-column: auto;
     }
+
+    /* Auf Mobile braucht es keine einheitliche Mindesthöhe */
+    .program-activity {
+        min-height: 0;
+        padding: 12px 14px;
+    }
+
+    .program-activity h4 {
+        font-size: 14px;
+    }
+
+    .activity-signup,
+    .activity-count-row {
+        padding-top: 8px;
+    }
+
+    /* Gäste-Karten kompakter */
+    .guest-updated {
+        font-size: 10px;
+    }
 }
 
 /* ============================================
@@ -1524,14 +1544,25 @@ img {
 }
 
 @media (max-width: 768px) {
+    /* Auf Mobile: Zeit als Header über die Aktivitäten, nicht als enge Spalte */
     .profile-slot {
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .profile-slot-time {
+        padding-top: 0;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--color-primary-light);
+        letter-spacing: 0.4px;
     }
     .profile-slot-acts {
         grid-template-columns: 1fr;
     }
-    .profile-act-title { font-size: 12px; }
+    .profile-act-title { font-size: 13px; }
+    .profile-act { padding: 10px 12px; min-height: 48px; }
     .guest-modal { padding: 24px 18px; }
+    .profile-day { padding: 12px 10px; }
 }
 
 .guest-modal-close {
@@ -2386,6 +2417,16 @@ img {
 
     .nav-toggle {
         display: flex;
+        background: rgba(10, 10, 15, 0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 50%;
+        padding: 10px;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
     }
 
     .nav-profile-btn {

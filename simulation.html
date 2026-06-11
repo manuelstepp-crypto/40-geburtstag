@@ -366,6 +366,21 @@ let raycaster, pointer;
 let selectedId = null;
 const fireLights = [];
 
+/* ---- Performance-Sparflamme für schwächere Geräte ---- */
+let lowPerf = /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent) && (navigator.hardwareConcurrency||8) <= 4;
+let perfFrames = 0, perfTime = 0, perfChecked = false;
+function enableLowPerf(){
+  if(lowPerf && renderer && !renderer.shadowMap.enabled) return;
+  lowPerf = true;
+  if(!renderer) return;
+  renderer.shadowMap.enabled = false;
+  renderer.setPixelRatio(1);
+  scene.traverse(o=>{
+    if(o.isMesh){ o.castShadow = false; if(o.material) o.material.needsUpdate = true; }
+    if(o.isDirectionalLight) o.castShadow = false;
+  });
+}
+
 function init3D(){
   scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0x0a0a0f, 60, 140);
@@ -373,10 +388,10 @@ function init3D(){
   camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 500);
   camera.position.set(34, 30, 48);
 
-  renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer = new THREE.WebGLRenderer({antialias:!lowPerf});
   renderer.setSize(innerWidth, innerHeight);
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-  renderer.shadowMap.enabled = true;
+  renderer.setPixelRatio(lowPerf ? 1 : Math.min(devicePixelRatio,2));
+  renderer.shadowMap.enabled = !lowPerf;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   document.getElementById('app').appendChild(renderer.domElement);
 
@@ -389,7 +404,7 @@ function init3D(){
   // Licht
   scene.add(new THREE.HemisphereLight(0xbfd4ff, 0x3a4a2a, 0.6));
   const sun = new THREE.DirectionalLight(0xffe6b8, 1.1);
-  sun.position.set(40, 55, 20); sun.castShadow = true;
+  sun.position.set(40, 55, 20); sun.castShadow = !lowPerf;
   sun.shadow.mapSize.set(2048,2048);
   const d=70; sun.shadow.camera.left=-d;sun.shadow.camera.right=d;sun.shadow.camera.top=d;sun.shadow.camera.bottom=-d;
   sun.shadow.camera.far=200;
@@ -710,6 +725,15 @@ function animate(){
   const dt=Math.min(clock.getDelta(),.05);
   const t=clock.elapsedTime;
 
+  // FPS-Check: läuft es in den ersten Sekunden zu zäh, Sparflamme aktivieren
+  if(!perfChecked){
+    perfFrames++; perfTime+=dt;
+    if(perfTime>5){
+      perfChecked=true;
+      if(perfFrames/perfTime < 27) enableLowPerf();
+    }
+  }
+
   // Auto-Advance
   if(playing){
     blockTimer += dt*speed;
@@ -896,11 +920,10 @@ function setMood(mood){
     night: {bg:0x0b1026, fog:0x0b1026, sun:0.15,amb:0.25,sunC:0x6c7bd6, fogN:25,fogF:85}
   }[mood]||{};
   scene.background=new THREE.Color(cfg.bg);
-  scene.fog.color.setHex(cfg.fog);scene.fog.near=cfg.fogN;scene.fog.far=cfg.fogF;
+  const fogScale = lowPerf ? 0.7 : 1;
+  scene.fog.color.setHex(cfg.fog);scene.fog.near=cfg.fogN*fogScale;scene.fog.far=cfg.fogF*fogScale;
   scene.sun.intensity=cfg.sun;scene.sun.color.setHex(cfg.sunC);
   scene.amb.intensity=cfg.amb;
-  // Lichterketten an bei Abend/Nacht
-  const fl=scene.getObjectByName('fairyLights');
 }
 slider.addEventListener('input',()=>{ playing=false; playBtn.textContent='▶'; blockTimer=0; setBlock(parseInt(slider.value)); });
 playBtn.addEventListener('click',()=>{

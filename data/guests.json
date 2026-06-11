@@ -69,7 +69,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-grill"
+    ],
+    "updatedAt": "2026-06-11T05:34:21.473Z"
   },
   {
     "id": 5,

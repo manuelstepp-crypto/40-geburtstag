@@ -1303,7 +1303,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-tarot"
+    ],
+    "updatedAt": "2026-06-11T13:11:38.264Z"
   },
   {
     "id": 70,

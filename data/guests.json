@@ -253,7 +253,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-mittag"
+    ],
+    "updatedAt": "2026-06-11T13:26:50.373Z"
   },
   {
     "id": 14,

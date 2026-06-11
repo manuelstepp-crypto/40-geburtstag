@@ -645,9 +645,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-catering"
+      "sa-catering",
+      "fr-grill"
     ],
-    "updatedAt": "2026-06-11T17:15:50.765Z"
+    "updatedAt": "2026-06-11T17:16:01.366Z"
   },
   {
     "id": 35,

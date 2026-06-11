@@ -1278,5 +1278,18 @@
     },
     "adults": 1,
     "kids": 0
+  },
+  {
+    "id": 68,
+    "firstName": "Bojana",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0
   }
 ]

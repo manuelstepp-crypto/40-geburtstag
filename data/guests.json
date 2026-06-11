@@ -1205,8 +1205,10 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [],
-    "updatedAt": "2026-06-11T05:30:37.954Z"
+    "signups": [
+      "sa-fruehstueck"
+    ],
+    "updatedAt": "2026-06-11T05:30:47.998Z"
   },
   {
     "id": 66,

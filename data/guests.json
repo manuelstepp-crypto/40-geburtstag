@@ -71,9 +71,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-grill"
+      "fr-grill",
+      "fr-lagerfeuer"
     ],
-    "updatedAt": "2026-06-11T05:34:21.473Z"
+    "updatedAt": "2026-06-11T05:34:25.686Z"
   },
   {
     "id": 5,

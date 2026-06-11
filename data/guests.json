@@ -1304,5 +1304,18 @@
     },
     "adults": 1,
     "kids": 0
+  },
+  {
+    "id": 70,
+    "firstName": "Eva B.",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0
   }
 ]

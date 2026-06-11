@@ -1291,5 +1291,18 @@
     },
     "adults": 1,
     "kids": 0
+  },
+  {
+    "id": 69,
+    "firstName": "Patrick",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0
   }
 ]

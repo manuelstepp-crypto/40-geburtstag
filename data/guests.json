@@ -1247,5 +1247,18 @@
       "sa-catering"
     ],
     "updatedAt": "2026-06-10T13:36:04.673Z"
+  },
+  {
+    "id": 67,
+    "firstName": "Cornelius",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0
   }
 ]

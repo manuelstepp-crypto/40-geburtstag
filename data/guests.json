@@ -1038,9 +1038,11 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-tischtennis"
+      "fr-tischtennis",
+      "fr-lagerfeuer",
+      "fr-grill"
     ],
-    "updatedAt": "2026-06-11T05:46:06.382Z"
+    "updatedAt": "2026-06-11T05:46:19.015Z"
   },
   {
     "id": 57,

@@ -884,7 +884,12 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-grill",
+      "fr-nacht"
+    ],
+    "updatedAt": "2026-06-11T18:16:16.275Z"
   },
   {
     "id": 47,

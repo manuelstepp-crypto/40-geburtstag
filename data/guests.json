@@ -1305,9 +1305,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-tarot"
+      "fr-tarot",
+      "sa-wikinger"
     ],
-    "updatedAt": "2026-06-11T13:11:38.264Z"
+    "updatedAt": "2026-06-11T13:11:58.704Z"
   },
   {
     "id": 70,

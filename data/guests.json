@@ -1037,8 +1037,10 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [],
-    "updatedAt": "2026-06-11T05:43:54.700Z"
+    "signups": [
+      "fr-tischtennis"
+    ],
+    "updatedAt": "2026-06-11T05:46:06.382Z"
   },
   {
     "id": 57,

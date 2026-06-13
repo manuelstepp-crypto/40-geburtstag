@@ -1150,7 +1150,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "so-beach"
+    ],
+    "updatedAt": "2026-06-13T08:34:57.958Z"
   },
   {
     "id": 59,

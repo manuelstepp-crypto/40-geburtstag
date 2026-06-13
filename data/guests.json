@@ -569,7 +569,12 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-catering",
+      "sa-mittag"
+    ],
+    "updatedAt": "2026-06-13T05:41:06.020Z"
   },
   {
     "id": 30,

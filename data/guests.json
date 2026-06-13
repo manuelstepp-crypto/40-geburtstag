@@ -289,9 +289,12 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-stimme"
+      "sa-stimme",
+      "sa-catering",
+      "sa-dj",
+      "sa-mittag"
     ],
-    "updatedAt": "2026-06-13T15:58:31.336Z"
+    "updatedAt": "2026-06-13T15:58:55.334Z"
   },
   {
     "id": 15,

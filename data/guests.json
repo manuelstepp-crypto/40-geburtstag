@@ -93,9 +93,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-wikinger"
+      "sa-wikinger",
+      "sa-mittag"
     ],
-    "updatedAt": "2026-06-13T11:39:09.380Z"
+    "updatedAt": "2026-06-13T11:39:17.476Z"
   },
   {
     "id": 6,

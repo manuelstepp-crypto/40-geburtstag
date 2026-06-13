@@ -287,7 +287,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-stimme"
+    ],
+    "updatedAt": "2026-06-13T15:58:31.336Z"
   },
   {
     "id": 15,

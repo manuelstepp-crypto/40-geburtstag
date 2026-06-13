@@ -99,9 +99,11 @@
       "sa-catering",
       "fr-nacht",
       "fr-lagerfeuer",
-      "sa-fruehstueck"
+      "sa-fruehstueck",
+      "so-fruehstueck",
+      "so-abreise"
     ],
-    "updatedAt": "2026-06-13T11:40:18.982Z"
+    "updatedAt": "2026-06-13T11:40:32.489Z"
   },
   {
     "id": 6,

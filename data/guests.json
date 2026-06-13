@@ -91,7 +91,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-wikinger"
+    ],
+    "updatedAt": "2026-06-13T11:39:02.130Z"
   },
   {
     "id": 6,

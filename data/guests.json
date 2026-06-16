@@ -1269,9 +1269,11 @@
       "sa-mittag",
       "sa-fussball",
       "sa-catering",
-      "so-fruehstueck"
+      "so-fruehstueck",
+      "sa-fruehstueck",
+      "sa-wikinger"
     ],
-    "updatedAt": "2026-06-10T13:36:24.568Z",
+    "updatedAt": "2026-06-16T12:20:24.639Z",
     "uebernachtung": "Apartment",
     "mitbringen": "Zitronenkuchen"
   },

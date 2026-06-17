@@ -1326,8 +1326,10 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [],
-    "updatedAt": "2026-06-17T15:12:48.533Z"
+    "signups": [
+      "fr-grill"
+    ],
+    "updatedAt": "2026-06-17T15:13:25.925Z"
   },
   {
     "id": 66,

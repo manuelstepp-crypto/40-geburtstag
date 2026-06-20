@@ -655,7 +655,12 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-kaffee",
+      "fr-tischtennis"
+    ],
+    "updatedAt": "2026-06-20T17:29:29.298Z"
   },
   {
     "id": 34,

@@ -518,7 +518,7 @@
       "sa-catering",
       "so-fruehstueck"
     ],
-    "updatedAt": "2026-06-20T17:31:24.000Z",
+    "updatedAt": "2026-06-20T17:44:58.000Z",
     "mitbringen": "Gefüllte Weinblätter"
   },
   {
@@ -643,7 +643,13 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-mittag",
+      "sa-catering",
+      "so-fruehstueck"
+    ],
+    "updatedAt": "2026-06-20T17:45:12.000Z"
   },
   {
     "id": 33,
@@ -943,7 +949,13 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-mittag",
+      "sa-catering",
+      "so-fruehstueck"
+    ],
+    "updatedAt": "2026-06-20T17:45:12.000Z"
   },
   {
     "id": 48,
@@ -1316,7 +1328,7 @@
       "sa-catering",
       "so-fruehstueck"
     ],
-    "updatedAt": "2026-06-20T17:31:24.000Z",
+    "updatedAt": "2026-06-20T17:44:58.000Z",
     "mitbringen": "Gefüllte Weinblätter"
   },
   {

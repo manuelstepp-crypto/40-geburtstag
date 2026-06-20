@@ -113,19 +113,6 @@
     "mitbringen": "Kuchen und Kartoffelsalat \nWenn gewünscht auch Stockbrotteig"
   },
   {
-    "id": 6,
-    "firstName": "Annika",
-    "lastName": "",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0
-  },
-  {
     "id": 7,
     "firstName": "Arne",
     "lastName": "",
@@ -260,26 +247,6 @@
     },
     "adults": 1,
     "kids": 0
-  },
-  {
-    "id": 13,
-    "firstName": "Britta",
-    "lastName": "",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "sa-catering",
-      "sa-mittag"
-    ],
-    "updatedAt": "2026-06-11T13:27:05.573Z",
-    "uebernachtung": "",
-    "mitbringen": ""
   },
   {
     "id": 14,
@@ -544,22 +511,6 @@
     "updatedAt": "2026-06-10T16:19:26.640Z",
     "uebernachtung": "AirBnB",
     "mitbringen": "Kuchen zusammen mit Benni:)"
-  },
-  {
-    "id": 27,
-    "firstName": "Felix",
-    "lastName": "",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "uebernachtung": "",
-    "mitbringen": "",
-    "updatedAt": "2026-06-10T13:28:24.360Z"
   },
   {
     "id": 28,

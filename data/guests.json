@@ -422,8 +422,13 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [],
-    "updatedAt": "2026-06-14T20:45:37.944Z"
+    "signups": [
+      "sa-catering",
+      "sa-mittag",
+      "so-fruehstueck",
+      "sa-fruehstueck"
+    ],
+    "updatedAt": "2026-06-20T13:43:17.000Z"
   },
   {
     "id": 22,

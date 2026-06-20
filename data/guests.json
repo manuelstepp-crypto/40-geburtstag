@@ -486,7 +486,11 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "so-fruehstueck"
+    ],
+    "updatedAt": "2026-06-20T13:33:41.000Z"
   },
   {
     "id": 25,
@@ -499,7 +503,15 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-grill",
+      "sa-fruehstueck",
+      "sa-mittag",
+      "sa-catering",
+      "so-fruehstueck"
+    ],
+    "updatedAt": "2026-06-20T13:33:41.000Z"
   },
   {
     "id": 26,
@@ -988,7 +1000,16 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-catering",
+      "sa-dj",
+      "sa-tanzen",
+      "fr-grill",
+      "so-fruehstueck",
+      "so-beach"
+    ],
+    "updatedAt": "2026-06-20T13:33:41.000Z"
   },
   {
     "id": 52,
@@ -1032,7 +1053,12 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "sa-catering",
+      "sa-dj"
+    ],
+    "updatedAt": "2026-06-20T13:33:41.000Z"
   },
   {
     "id": 54,
@@ -1260,7 +1286,15 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "signups": [
+      "fr-grill",
+      "sa-fruehstueck",
+      "sa-mittag",
+      "sa-catering",
+      "so-fruehstueck"
+    ],
+    "updatedAt": "2026-06-20T13:33:41.000Z"
   },
   {
     "id": 64,

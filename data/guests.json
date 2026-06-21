@@ -250,21 +250,19 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-kaffee",
       "fr-grill",
       "sa-fussball",
       "sa-catering",
       "sa-dj",
       "so-fruehstueck",
       "sa-fruehstueck",
-      "fr-tischtennis",
       "fr-lagerfeuer",
       "sa-mittag",
       "sa-stimme"
     ],
     "uebernachtung": "Camper",
     "mitbringen": "Pizzaofen",
-    "updatedAt": "2026-06-20T13:25:08.000Z"
+    "updatedAt": "2026-06-21T10:28:56.214Z"
   },
   {
     "id": 14,

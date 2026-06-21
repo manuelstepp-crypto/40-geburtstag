@@ -258,11 +258,12 @@
       "fr-lagerfeuer",
       "sa-mittag",
       "sa-stimme",
-      "fr-impuls"
+      "fr-impuls",
+      "so-abreise"
     ],
     "uebernachtung": "Camper",
     "mitbringen": "Pizzaofen",
-    "updatedAt": "2026-06-21T10:30:23.324Z"
+    "updatedAt": "2026-06-21T10:30:49.328Z"
   },
   {
     "id": 14,

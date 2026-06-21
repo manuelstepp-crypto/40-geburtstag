@@ -257,11 +257,12 @@
       "sa-fruehstueck",
       "fr-lagerfeuer",
       "sa-mittag",
-      "sa-stimme"
+      "sa-stimme",
+      "sa-dj"
     ],
     "uebernachtung": "Camper",
     "mitbringen": "Pizzaofen",
-    "updatedAt": "2026-06-21T10:29:59.099Z"
+    "updatedAt": "2026-06-21T10:30:03.018Z"
   },
   {
     "id": 14,

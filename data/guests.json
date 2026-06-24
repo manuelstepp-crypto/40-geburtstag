@@ -632,25 +632,6 @@
     "mitbringen": "Bulgursalat"
   },
   {
-    "id": 32,
-    "firstName": "Isi",
-    "lastName": "",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "sa-mittag",
-      "sa-catering",
-      "so-fruehstueck"
-    ],
-    "updatedAt": "2026-06-20T17:45:12.000Z"
-  },
-  {
     "id": 33,
     "firstName": "Janosch",
     "lastName": "",
@@ -1464,18 +1445,5 @@
     "updatedAt": "2026-06-11T13:13:34.148Z",
     "uebernachtung": "hotel",
     "mitbringen": "offen für impulse :>"
-  },
-  {
-    "id": 70,
-    "firstName": "Eva B.",
-    "lastName": "",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0
   }
 ]

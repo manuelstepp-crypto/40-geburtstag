@@ -899,26 +899,6 @@
     "updatedAt": "2026-06-10T14:15:50.900Z"
   },
   {
-    "id": 45,
-    "firstName": "Micha",
-    "lastName": "",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "sa-mittag",
-      "sa-catering"
-    ],
-    "updatedAt": "2026-06-11T13:26:21.420Z",
-    "uebernachtung": "",
-    "mitbringen": ""
-  },
-  {
     "id": 46,
     "firstName": "Michael",
     "lastName": "",

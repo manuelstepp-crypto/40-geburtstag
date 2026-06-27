@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1782400000000">
+<link rel="stylesheet" href="style.css?v=1782500000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -1242,6 +1242,12 @@ function renderProfileProgram(guest) {
 }
 
 
+function teamSlug(name) {
+  return name.toLowerCase()
+    .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+    .replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function seniorsOf(info, selfName) {
   const sameRole = n => ROLE_BY_NAME[n].team === info.team && ROLE_BY_NAME[n].tk === info.tk && n !== selfName;
   let res = Object.keys(ROLE_BY_NAME).filter(n => sameRole(n) && ROLE_BY_NAME[n].level === 'Senior');
@@ -1275,7 +1281,7 @@ function renderProfileRole(guest) {
     <div class="role-name">${escapeHtml(info.role)}${levelLabel ? ` <span class="role-level">${levelLabel}</span>` : ''}</div>
     <ul class="role-tasks">${tasks}${juniorNote}</ul>
     ${foot}
-    <a class="role-orglink" href="organigramm.html">🧢 Ganzes Team-Organigramm ansehen →</a>
+    <a class="role-orglink" href="organigramm.html#team-${teamSlug(info.team)}">🧢 Mein Team im Organigramm ansehen →</a>
   </div>`;
 }
 

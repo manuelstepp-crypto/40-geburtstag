@@ -2597,3 +2597,31 @@ img {
   outline: none;
   border-color: var(--color-primary);
 }
+
+/* ===== Rollen-Karte im Profil ===== */
+.profile-role { margin-top: 4px; }
+.role-card {
+  border: 2px solid var(--rc, #f5b301);
+  border-radius: 14px;
+  padding: 13px 15px;
+  background: rgba(255,255,255,0.04);
+}
+.role-team {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: .02em;
+  display: flex; align-items: center; gap: 7px; opacity: .92;
+}
+.role-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--rc, #f5b301); display: inline-block; }
+.role-name { font-size: 1.18rem; font-weight: 800; margin: 5px 0 9px; color: #f5b301; }
+.role-level {
+  font-size: 0.72rem; background: var(--rc, #f5b301); color: #1a1a2e;
+  padding: 2px 9px; border-radius: 9px; vertical-align: middle; font-weight: 800;
+}
+.role-tasks { margin: 0 0 6px 1.15rem; padding: 0; }
+.role-tasks li { font-size: 0.87rem; margin: 4px 0; color: #dfe4f5; line-height: 1.35; }
+.role-tasks li.role-anleit { list-style: none; margin-left: -1.15rem; color: #f0b34a; font-style: italic; }
+.role-captain { font-size: 0.86rem; color: #cfd8ff; margin-top: 4px; }
+.role-license {
+  font-size: 0.85rem; background: rgba(245,179,1,0.13); border: 1px solid #f5b301;
+  border-radius: 9px; padding: 8px 11px; color: #ffe39a; margin-top: 6px; line-height: 1.4;
+}
+.role-none { opacity: .7; font-size: 0.9rem; }

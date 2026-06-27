@@ -2625,3 +2625,12 @@ img {
   border-radius: 9px; padding: 8px 11px; color: #ffe39a; margin-top: 6px; line-height: 1.4;
 }
 .role-none { opacity: .7; font-size: 0.9rem; }
+
+/* Link vom Profil zum Organigramm */
+.role-orglink {
+  display: inline-block; margin-top: 10px; font-size: 0.85rem; font-weight: 700;
+  color: #f5b301; text-decoration: none; border: 1px solid #f5b301;
+  border-radius: 9px; padding: 7px 12px; transition: background .15s;
+}
+.role-orglink:hover { background: rgba(245,179,1,0.15); }
+.role-none .role-orglink { margin-top: 6px; margin-left: 6px; padding: 4px 9px; }

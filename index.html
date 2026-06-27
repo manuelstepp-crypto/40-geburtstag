@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1782300000000">
+<link rel="stylesheet" href="style.css?v=1782400000000">
 </head>
 <body>
 <!-- Floating particles background -->
@@ -1242,16 +1242,30 @@ function renderProfileProgram(guest) {
 }
 
 
+function seniorsOf(info, selfName) {
+  const sameRole = n => ROLE_BY_NAME[n].team === info.team && ROLE_BY_NAME[n].tk === info.tk && n !== selfName;
+  let res = Object.keys(ROLE_BY_NAME).filter(n => sameRole(n) && ROLE_BY_NAME[n].level === 'Senior');
+  if (!res.length) res = Object.keys(ROLE_BY_NAME).filter(n => sameRole(n) && ROLE_BY_NAME[n].level === 'Captain');
+  if (!res.length && info.captain) res = [info.captain];
+  return res;
+}
+
 function renderProfileRole(guest) {
   const cont = document.getElementById('profileRole');
   if (!cont) return;
   const info = ROLE_BY_NAME[guest.firstName];
-  if (!info) { cont.innerHTML = '<div class="role-none">Dir ist noch keine Rolle zugeteilt.</div>'; return; }
+  if (!info) { cont.innerHTML = '<div class="role-none">Dir ist noch keine Rolle zugeteilt. <a class="role-orglink" href="organigramm.html">Zum Organigramm →</a></div>'; return; }
   const tasks = (ROLE_TASKS[info.tk] || []).map(t => `<li>${escapeHtml(t)}</li>`).join('');
-  const juniorNote = info.level === 'Junior' ? '<li class="role-anleit">⤷ Wird von der Senior-Kraft angeleitet.</li>' : '';
   const levelLabel = info.level === 'Captain' ? '👑 Captain' : (info.level || '');
+  let juniorNote = '';
   let foot = '';
-  if (info.level === 'Captain') {
+  if (info.level === 'Junior') {
+    const senList = seniorsOf(info, guest.firstName);
+    const sen = senList.map(escapeHtml).join(' & ');
+    juniorNote = sen ? `<li class="role-anleit">⤷ Wird von ${sen} angeleitet.</li>` : '<li class="role-anleit">⤷ Wird von der Senior-Kraft angeleitet.</li>';
+    foot = (sen ? `<div class="role-captain">Dein Senior: <b>${sen}</b></div>` : '')
+         + (info.captain && !senList.includes(info.captain) ? `<div class="role-captain">Dein Team-Captain: <b>${escapeHtml(info.captain)}</b></div>` : '');
+  } else if (info.level === 'Captain') {
     foot = '<div class="role-license">👑 Als Captain hast du die <b>Lizenz zum Schießen</b> mit der Wasserpistole 💦 – wenn dein Team seine Aufgaben vernachlässigt!</div>';
   } else if (info.captain) {
     foot = `<div class="role-captain">Dein Team-Captain: <b>${escapeHtml(info.captain)}</b></div>`;
@@ -1261,6 +1275,7 @@ function renderProfileRole(guest) {
     <div class="role-name">${escapeHtml(info.role)}${levelLabel ? ` <span class="role-level">${levelLabel}</span>` : ''}</div>
     <ul class="role-tasks">${tasks}${juniorNote}</ul>
     ${foot}
+    <a class="role-orglink" href="organigramm.html">🧢 Ganzes Team-Organigramm ansehen →</a>
   </div>`;
 }
 

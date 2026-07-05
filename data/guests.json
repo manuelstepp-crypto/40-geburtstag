@@ -1244,20 +1244,6 @@
     "mitbringen": ""
   },
   {
-    "id": 59,
-    "firstName": "Sarah W.",
-    "lastName": "",
-    "whatsappContact": "Sarah Wehr",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0
-  },
-  {
     "id": 60,
     "firstName": "Simon",
     "lastName": "",

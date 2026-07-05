@@ -711,7 +711,7 @@
     "id": 35,
     "firstName": "Jörg",
     "lastName": "",
-    "whatsappContact": "",
+    "whatsappContact": "Jörg Schwichtenberg (chrissi)",
     "response": "yes",
     "days": {
       "friday": true,
@@ -1435,7 +1435,7 @@
     "id": 67,
     "firstName": "Cornelius",
     "lastName": "",
-    "whatsappContact": "",
+    "whatsappContact": "Cornelius Weller",
     "response": "yes",
     "days": {
       "friday": true,
@@ -1453,7 +1453,7 @@
     "id": 68,
     "firstName": "Bojana",
     "lastName": "",
-    "whatsappContact": "",
+    "whatsappContact": "Bojana Arne",
     "response": "yes",
     "days": {
       "friday": true,
@@ -1500,7 +1500,8 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "whatsappContact": "Steffen Ketterer"
   },
   {
     "id": 71,
@@ -1513,6 +1514,7 @@
       "sunday": true
     },
     "adults": 1,
-    "kids": 0
+    "kids": 0,
+    "whatsappContact": "Paola Ketterer"
   }
 ]

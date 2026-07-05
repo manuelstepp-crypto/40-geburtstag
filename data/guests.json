@@ -1487,5 +1487,31 @@
     "updatedAt": "2026-06-11T13:13:34.148Z",
     "uebernachtung": "hotel",
     "mitbringen": "offen für impulse :>"
+  },
+  {
+    "id": 70,
+    "firstName": "Steffen K.",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0
+  },
+  {
+    "id": 71,
+    "firstName": "Paola",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": true,
+      "saturday": true,
+      "sunday": true
+    },
+    "adults": 1,
+    "kids": 0
   }
 ]

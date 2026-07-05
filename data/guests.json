@@ -24,7 +24,7 @@
     "id": 2,
     "firstName": "Annabelle",
     "lastName": "",
-    "whatsappContact": "",
+    "whatsappContact": "kein WhatsApp",
     "response": "yes",
     "days": {
       "friday": true,

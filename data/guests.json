@@ -440,7 +440,7 @@
     ],
     "updatedAt": "2026-06-10T15:14:49.539Z",
     "uebernachtung": "Hotel am Sonnenhang oder Hotel Barbara",
-    "mitbringen": "Zitronentarte"
+    "mitbringen": "Zitronentarte + Salat"
   },
   {
     "id": 21,
@@ -839,7 +839,7 @@
     ],
     "updatedAt": "2026-06-21T19:50:36.494Z",
     "uebernachtung": "Sifi",
-    "mitbringen": "Cevapcici (falls es einen Grill gibt); ansonsten Nudelsalat!"
+    "mitbringen": "Nudelsalat"
   },
   {
     "id": 42,
@@ -1429,7 +1429,8 @@
     "signups": [
       "sa-catering"
     ],
-    "updatedAt": "2026-06-10T13:36:04.673Z"
+    "updatedAt": "2026-06-10T13:36:04.673Z",
+    "mitbringen": "2x Träubleskuchen"
   },
   {
     "id": 67,

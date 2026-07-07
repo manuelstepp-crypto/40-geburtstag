@@ -775,9 +775,12 @@
       "fr-lagerfeuer",
       "so-beach",
       "so-fruehstueck",
-      "sa-fruehstueck"
+      "sa-fruehstueck",
+      "sa-mittag",
+      "sa-fussball",
+      "sa-tanzen"
     ],
-    "updatedAt": "2026-07-07T21:37:17.998Z",
+    "updatedAt": "2026-07-07T21:37:21.351Z",
     "uebernachtung": "",
     "mitbringen": ""
   },

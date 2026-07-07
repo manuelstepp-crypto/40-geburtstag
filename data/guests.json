@@ -407,9 +407,13 @@
     "kids": 0,
     "signups": [
       "fr-grill",
-      "fr-lagerfeuer"
+      "fr-lagerfeuer",
+      "sa-fruehstueck",
+      "sa-wikinger",
+      "sa-mittag",
+      "sa-catering"
     ],
-    "updatedAt": "2026-07-07T08:44:25.118Z",
+    "updatedAt": "2026-07-07T08:44:54.105Z",
     "uebernachtung": "",
     "mitbringen": "",
     "roles": []

@@ -103,34 +103,6 @@
     "mitbringen": "Blumenkohl-Taboulé"
   },
   {
-    "id": 5,
-    "firstName": "Angela",
-    "lastName": "",
-    "whatsappContact": "Angela Weller",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "sa-mittag",
-      "sa-stimme",
-      "sa-tanzen",
-      "sa-catering",
-      "fr-nacht",
-      "fr-lagerfeuer",
-      "sa-fruehstueck",
-      "so-fruehstueck",
-      "so-abreise"
-    ],
-    "updatedAt": "2026-06-13T11:44:03.439Z",
-    "uebernachtung": "",
-    "mitbringen": "Kuchen und Kartoffelsalat \nWenn gewünscht auch Stockbrotteig"
-  },
-  {
     "id": 7,
     "firstName": "Arne",
     "lastName": "",

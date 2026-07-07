@@ -411,9 +411,12 @@
       "sa-fruehstueck",
       "sa-wikinger",
       "sa-mittag",
-      "sa-catering"
+      "sa-catering",
+      "sa-atmen",
+      "sa-dj",
+      "so-fruehstueck"
     ],
-    "updatedAt": "2026-07-07T08:44:54.105Z",
+    "updatedAt": "2026-07-07T08:44:58.885Z",
     "uebernachtung": "",
     "mitbringen": "",
     "roles": []

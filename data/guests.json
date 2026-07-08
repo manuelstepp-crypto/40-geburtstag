@@ -348,10 +348,9 @@
       "fr-lagerfeuer",
       "sa-catering",
       "sa-fruehstueck",
-      "sa-mittag",
-      "so-fruehstueck"
+      "sa-mittag"
     ],
-    "updatedAt": "2026-07-08T20:13:19.474Z"
+    "updatedAt": "2026-07-08T20:12:54.998Z"
   },
   {
     "id": 18,
@@ -712,9 +711,10 @@
       "fr-nacht",
       "sa-fruehstueck",
       "sa-mittag",
-      "sa-catering"
+      "sa-catering",
+      "so-fruehstueck"
     ],
-    "updatedAt": "2026-07-08T20:13:04.236Z",
+    "updatedAt": "2026-07-08T20:13:18.800Z",
     "uebernachtung": "",
     "mitbringen": ""
   },

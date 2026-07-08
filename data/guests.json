@@ -728,9 +728,10 @@
       "fr-grill",
       "sa-fruehstueck",
       "sa-mittag",
-      "so-fruehstueck"
+      "so-fruehstueck",
+      "sa-catering"
     ],
-    "updatedAt": "2026-06-10T13:25:49.004Z",
+    "updatedAt": "2026-07-08T11:52:45.000Z",
     "uebernachtung": "",
     "mitbringen": ""
   },
@@ -1469,7 +1470,11 @@
     },
     "adults": 1,
     "kids": 0,
-    "whatsappContact": "Steffen Ketterer"
+    "whatsappContact": "Steffen Ketterer",
+    "signups": [
+      "sa-catering"
+    ],
+    "updatedAt": "2026-07-08T11:52:45.000Z"
   },
   {
     "id": 71,
@@ -1483,6 +1488,10 @@
     },
     "adults": 1,
     "kids": 0,
-    "whatsappContact": "Paola Ketterer"
+    "whatsappContact": "Paola Ketterer",
+    "signups": [
+      "sa-catering"
+    ],
+    "updatedAt": "2026-07-08T11:52:45.000Z"
   }
 ]

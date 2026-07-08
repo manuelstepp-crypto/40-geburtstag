@@ -706,15 +706,15 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "so-beach",
       "fr-grill",
       "fr-nacht",
       "sa-fruehstueck",
       "sa-mittag",
       "sa-catering",
-      "so-fruehstueck"
+      "so-fruehstueck",
+      "so-beach"
     ],
-    "updatedAt": "2026-07-08T20:13:18.800Z",
+    "updatedAt": "2026-07-08T20:13:29.800Z",
     "uebernachtung": "",
     "mitbringen": ""
   },

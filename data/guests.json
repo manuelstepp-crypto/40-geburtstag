@@ -1022,31 +1022,6 @@
     "mitbringen": ""
   },
   {
-    "id": 50,
-    "firstName": "Nora",
-    "lastName": "",
-    "whatsappContact": "Norah Brinkerhof",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "fr-grill",
-      "fr-tarot",
-      "sa-mittag",
-      "sa-fruehstueck",
-      "sa-catering",
-      "sa-tanzen"
-    ],
-    "updatedAt": "2026-06-10T13:51:29.203Z",
-    "uebernachtung": "Airbnb",
-    "mitbringen": "Salat"
-  },
-  {
     "id": 51,
     "firstName": "Olga",
     "lastName": "",

@@ -1419,24 +1419,6 @@
     "updatedAt": "2026-06-21T12:37:10.063Z"
   },
   {
-    "id": 68,
-    "firstName": "Bojana",
-    "lastName": "",
-    "whatsappContact": "Bojana Arne",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "fr-impuls"
-    ],
-    "updatedAt": "2026-06-11T13:18:43.306Z"
-  },
-  {
     "id": 69,
     "firstName": "Patrick",
     "lastName": "",

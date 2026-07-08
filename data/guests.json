@@ -1024,29 +1024,6 @@
     "mitbringen": ""
   },
   {
-    "id": 51,
-    "firstName": "Olga",
-    "lastName": "",
-    "whatsappContact": "Olga Josip",
-    "response": "yes",
-    "days": {
-      "friday": true,
-      "saturday": true,
-      "sunday": true
-    },
-    "adults": 1,
-    "kids": 0,
-    "signups": [
-      "sa-catering",
-      "sa-dj",
-      "sa-tanzen",
-      "sa-mittag"
-    ],
-    "updatedAt": "2026-06-21T10:03:56.222Z",
-    "uebernachtung": "Hotl",
-    "mitbringen": ""
-  },
-  {
     "id": 52,
     "firstName": "Pepe",
     "lastName": "",

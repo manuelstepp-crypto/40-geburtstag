@@ -348,9 +348,12 @@
       "fr-lagerfeuer",
       "sa-catering",
       "sa-fruehstueck",
-      "sa-mittag"
+      "sa-mittag",
+      "so-fruehstueck"
     ],
-    "updatedAt": "2026-07-08T20:12:54.998Z"
+    "updatedAt": "2026-07-08T20:14:20.095Z",
+    "uebernachtung": "Airbnb. Schon von dir gebucht",
+    "mitbringen": ""
   },
   {
     "id": 18,

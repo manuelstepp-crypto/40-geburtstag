@@ -1462,5 +1462,35 @@
       "sa-catering"
     ],
     "updatedAt": "2026-07-08T11:52:45.000Z"
+  },
+  {
+    "id": 72,
+    "firstName": "Micha",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "signups": [],
+    "updatedAt": "2026-07-08T21:12:30.000Z"
+  },
+  {
+    "id": 73,
+    "firstName": "Britta",
+    "lastName": "",
+    "response": "yes",
+    "days": {
+      "friday": false,
+      "saturday": true,
+      "sunday": false
+    },
+    "adults": 1,
+    "kids": 0,
+    "signups": [],
+    "updatedAt": "2026-07-08T21:12:30.000Z"
   }
 ]

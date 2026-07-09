@@ -141,11 +141,12 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-catering"
+      "sa-catering",
+      "fr-grill"
     ],
-    "updatedAt": "2026-06-10T13:34:49.470Z",
+    "updatedAt": "2026-07-09T07:35:47.000Z",
     "uebernachtung": "",
-    "mitbringen": "Salat und Kuchen"
+    "mitbringen": "Zwei Salate (bringt sie am Freitag mit)"
   },
   {
     "id": 9,

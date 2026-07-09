@@ -1407,10 +1407,8 @@
     },
     "adults": 1,
     "kids": 0,
-    "signups": [
-      "fr-impuls"
-    ],
-    "updatedAt": "2026-07-09T16:21:19.078Z"
+    "signups": [],
+    "updatedAt": "2026-07-09T16:21:24.330Z"
   },
   {
     "id": 69,

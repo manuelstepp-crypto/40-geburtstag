@@ -1402,15 +1402,13 @@
     "response": "yes",
     "days": {
       "friday": true,
-      "saturday": true,
-      "sunday": true
+      "saturday": false,
+      "sunday": false
     },
     "adults": 1,
     "kids": 0,
-    "signups": [
-      "sa-fussball"
-    ],
-    "updatedAt": "2026-06-21T12:37:10.063Z"
+    "signups": [],
+    "updatedAt": "2026-07-09T12:03:46.000Z"
   },
   {
     "id": 69,

@@ -1003,11 +1003,11 @@
     "kids": 0,
     "signups": [
       "sa-mittag",
-      "sa-tanzen",
       "sa-catering",
-      "so-fruehstueck"
+      "so-fruehstueck",
+      "sa-tanzen"
     ],
-    "updatedAt": "2026-06-10T16:15:04.149Z",
+    "updatedAt": "2026-07-09T09:22:00.229Z",
     "uebernachtung": "Air BnB",
     "mitbringen": "Muffins"
   },

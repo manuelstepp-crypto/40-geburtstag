@@ -694,9 +694,10 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "sa-catering"
+      "sa-catering",
+      "sa-wikinger"
     ],
-    "updatedAt": "2026-06-19T20:25:08.580Z"
+    "updatedAt": "2026-07-09T11:22:13.378Z"
   },
   {
     "id": 35,

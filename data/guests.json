@@ -1365,7 +1365,6 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-nacht",
       "sa-mittag",
       "sa-tanzen",
       "sa-catering",
@@ -1373,7 +1372,7 @@
       "sa-dj",
       "sa-fruehstueck"
     ],
-    "updatedAt": "2026-07-10T13:24:14.147Z",
+    "updatedAt": "2026-07-10T13:25:34.991Z",
     "uebernachtung": "kein Bedarf",
     "mitbringen": "blumenkohl tabbouleh"
   },

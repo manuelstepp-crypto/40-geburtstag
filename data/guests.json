@@ -1132,7 +1132,6 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-nacht",
       "fr-lagerfeuer",
       "sa-fruehstueck",
       "sa-mittag",
@@ -1140,9 +1139,10 @@
       "sa-catering",
       "sa-dj",
       "so-fruehstueck",
-      "so-abreise"
+      "so-abreise",
+      "fr-nacht"
     ],
-    "updatedAt": "2026-06-10T19:18:59.069Z",
+    "updatedAt": "2026-07-10T20:01:48.164Z",
     "uebernachtung": "Camper",
     "mitbringen": "Fleischpflanzerl/Fleischküchle"
   },

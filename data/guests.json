@@ -1365,17 +1365,15 @@
     "adults": 1,
     "kids": 0,
     "signups": [
-      "fr-grill",
       "fr-nacht",
       "sa-mittag",
       "sa-tanzen",
       "sa-catering",
       "sa-atmen",
       "sa-dj",
-      "sa-fruehstueck",
-      "fr-kaffee"
+      "sa-fruehstueck"
     ],
-    "updatedAt": "2026-07-10T13:23:59.101Z",
+    "updatedAt": "2026-07-10T13:24:14.147Z",
     "uebernachtung": "kein Bedarf",
     "mitbringen": "blumenkohl tabbouleh"
   },
